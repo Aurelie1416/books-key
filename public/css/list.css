@@ -1,0 +1,84 @@
+#list_article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+#list_article article {
+  margin: 20px;
+  width: 150px !important;
+  text-align: center;
+  border: solid #645E4E 1px;
+  border-radius: 10px;
+  padding: 2%;
+  -webkit-box-shadow: -10px 5px 5px #645E4E;
+          box-shadow: -10px 5px 5px #645E4E;
+  white-space: nowrap;
+}
+
+#list_article article .book img {
+  width: 100px;
+}
+
+#list_article article p, #list_article article h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#list_article article a:hover {
+  color: #645E4E;
+}
+
+#list_article article .add_cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  padding: 3px;
+}
+
+#list_article article .add_cart p {
+  padding-left: 5px;
+}
+
+@media screen and (min-width: 400px) {
+  #list_article article {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #list_article article {
+    max-width: 33%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #list_article article {
+    max-width: 25%;
+  }
+}
+/*# sourceMappingURL=list.css.map */

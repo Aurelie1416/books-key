@@ -1,0 +1,312 @@
+.book {
+	position: relative;
+	width: 100px; 
+	height: 180px;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+
+    .thanks {
+        display: inline-block;
+        margin-top: 50%; 
+        font-size: 0.8em;
+        font-weight: bold;
+        padding: 0.1em 0.4em;
+        text-align: center;
+    }
+
+    img{
+        width: 100px; 
+        object-fit: cover;
+    }
+
+    .cover_front {
+        transform: rotateY(-35deg) translateZ(8px);
+        z-index: 100;
+        transition: all 0.8s ease, z-index 0.6s;
+
+        div:first-child {
+            backface-visibility: hidden;
+            border-radius: 0px 3px 3px 0px;
+        }
+        /* reverse */
+        div:last-child {
+            background: #645E4E;
+            border-radius: 3px 0 0 3px;
+        }
+    }
+
+    .cover_back{
+        background: #645E4E;
+        border-radius: 0px 3px 3px 0px;
+        transform: rotateY(-15deg) translateZ(-1px);
+    } 
+
+    .book_spine{
+        div:first-child {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        div:last-child {
+            background: #645E4E;
+        }
+    } 
+
+    .page {
+        div {
+            background: linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+            box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.3), inset -1px 0px 1px rgba(150, 150, 150, 0.4);
+            border-radius: 0px 5px 5px 0px;
+        }
+        div:nth-child(1) {
+            transform: rotateY(-28deg);
+        }
+        div:nth-child(2) {
+            transform: rotateY(-30deg);
+        }
+        div:nth-child(3) {
+            transform: rotateY(-32deg);
+        }
+        div:nth-child(4) {
+            transform: rotateY(-34deg);
+        }
+        div:nth-child(5) {
+            transform: rotateY(-36deg);
+        }
+    } 
+}
+
+/*
+	4. position, transform & transition
+*/
+
+.cover_front,
+.cover_back,
+.book_spine,
+.cover_front div,
+.cover_back div,
+.book_spine div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+}
+
+.cover_front, .cover_back {
+	transform-origin: 0% 100%;
+}
+
+/* COVER front */
+.cover_front{
+    div:first-child {
+        transform: translateZ(2px);
+    }
+    div:last-child {
+        transform: rotateY(180deg) translateZ(2px);
+    }
+} 
+
+
+
+/* BOOK SPINE */
+.book_spine {
+	transform: rotateY(60deg) translateX(-5px) translateZ(-12px);
+	width: 16px;
+	z-index: 0;
+    div:first-child {
+        transform: translateZ(2px);
+    }
+    div:last-child {
+        transform: translateZ(-2px);
+    }
+}
+
+.page,
+.page > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-style: preserve-3d;
+}
+
+.page {
+	width: 100%;
+	height: 98%;
+	top: 1%;
+	left: 3%;
+	z-index: 10;
+}
+
+.page > div {
+	width: 100%;
+	height: 100%;
+	transform-origin: left center;
+	transition-property: transform;
+	transition-timing-function: ease;
+}
+
+.page > div:nth-child(1) {
+	transition-duration: 0.6s;
+}
+
+.page > div:nth-child(2) {
+	transition-duration: 0.6s;
+}
+
+.page > div:nth-child(3) {
+	transition-duration: 0.4s;
+}
+
+.page > div:nth-child(4) {
+	transition-duration: 0.5s;
+}
+
+.page > div:nth-child(5) {
+	transition-duration: 0.6s;
+}
+
+/*
+	5. events
+*/
+
+.book:hover > .cover_front {
+	transform: rotateY(-145deg) translateZ(0);
+	z-index: 0;
+}
+
+.book:hover > .page div:nth-child(1) {
+	transform: rotateY(-30deg);
+	transition-duration: 1.5s;
+}
+
+.book:hover > .page div:nth-child(2) {
+	transform: rotateY(-35deg);
+	transition-duration: 1.8s;
+}
+
+.book:hover > .page div:nth-child(3) {
+	transform: rotateY(-118deg);
+	transition-duration: 1.6s;
+}
+
+.book:hover > .page div:nth-child(4) {
+	transform: rotateY(-130deg);
+	transition-duration: 1.4s;
+}
+
+.book:hover > .page div:nth-child(5) {
+	transform: rotateY(-140deg);
+	transition-duration: 1.2s;
+}
+
+
+section{
+    
+    .book_info{
+        .cover{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+            img{
+                width: 100%;
+                max-width: 300px;
+                margin: auto;
+            }
+ 
+            .menu{
+                width: 100%;
+                margin-top: 20px;
+
+                .menu_info, .menu_synopsis{
+
+                    margin: 0 20px 0 0;
+                    padding: 0 10px 0 10px;
+                    display: inline-block;
+                }
+
+                .menu_synopsis{
+
+                    border-radius: 5px 5px 0 0;
+                    border-top: solid #009176 1px;
+                    border-left: solid #009176 1px;
+                    border-right: solid #009176 1px;
+                }
+
+                hr{
+
+                    margin: 0;
+                    width: 75vw;
+                    color: #009176;
+                }
+            }
+        }
+
+        .info{
+
+            display: none;
+        }
+
+        .synopsis{
+
+            line-height: 2em;
+        }
+
+        .synopsis::first-letter{
+
+            font-family: 'Fleur De Leah', cursive;
+            font-weight: bold;
+            font-size: xx-large;        
+            color: #009176;
+        }
+
+        .price{
+            color: #009176;
+            font-weight: bold;
+        }
+    }
+
+    .avatar_img{
+        text-align: center;
+        display: block;
+        font-size: 5em;
+        color: #009176;
+    }
+}
+
+@media screen and (min-width: 1100px){
+
+    section{
+
+        .book_info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+
+            .info{
+
+                display: block;
+                width: 50%;
+
+                p{
+                    font-size: x-large;
+                }
+            }
+
+            .menue_info{
+
+                display: none;
+            }
+
+            .synopsis{
+
+                width: 100%;
+                margin-right: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,197 @@
+table:not(#chart){
+    width: 100%;
+    margin-bottom: 2%;
+
+    caption{
+        text-transform: uppercase;
+        padding: 20px;
+    }
+
+    thead{
+        display: none;
+    }
+
+    tr{
+        border-bottom: solid #e5dabe 3px;
+        display: block;
+        background-color: #f2f2f2;
+        max-width: 400px;
+        margin: auto;
+        margin-bottom: 20px;
+
+        td {
+            border: solid #e5dabe 1px;
+            display: block;
+            text-align: right;
+            position: relative;
+
+            img{
+                height: 75px;
+            }
+
+            div, ul{
+                max-width: 50%;
+                margin-right: 0;
+                margin-left: auto;
+                word-wrap: break-word;
+            }
+        }
+
+        td::before {
+            content: attr(data-label);
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #009176;
+            font-size: 12px;
+            max-width: 50%;
+            text-align: start;
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        .link{
+            text-align: center;
+        }
+    }
+
+    .add{
+        border-bottom: none;
+        text-align: center;
+        background-color: initial;
+
+        td, th{
+            display: inline;
+            border: none;
+        }
+    }
+
+    #total{
+        padding: 20px;
+        border-bottom: none;
+        background-color: initial;   
+        border-top: solid #645E4E 3px;
+    } 
+}
+
+#chart_legend{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    li:first-child::before, td:nth-of-type(10n+1){
+        background-color: #009176;
+    } 
+
+    li:nth-child(2)::before, td:nth-of-type(10n+2){
+        background-color: #7D5073;
+    }
+
+    caption{
+        display: block;
+        margin: 20px;
+        text-transform: uppercase;
+        padding: 20px;
+    }
+ 
+    tr:nth-child(even) {
+        background-color:initial;
+    }
+
+    .column{
+        height: 300px;
+        max-width: 700px;
+    }
+
+    .legend{
+        background-color: #f2f2f2;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    span{
+        color: #f9f5eb;
+    }
+}
+
+@media screen and (min-width: 800px){
+
+    table:not(#chart){
+
+        .more_less{
+            .button_more_less{
+                right: calc(50% - (56px/2)); 
+            }
+        }
+
+        thead{
+            display: table-header-group;
+            background-color: #e5dabe;
+            text-transform: uppercase;
+        }
+
+        tr{
+            background-color: transparent;
+            margin-bottom: 0;
+            max-width: none;
+            border-bottom: none;
+            display: table-row;
+
+            td{
+                display: table-cell;
+                text-align: center;
+                border: none;
+                border-bottom: solid #e5dabe 1px;
+
+                div, ul{
+                    max-width: none;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+    
+            td:before{
+                display: none;
+            }
+        }
+
+        .add{
+            border-bottom: none;
+            text-align: center;
+            background-color: initial;
+            display: table-row;
+    
+            td, th{
+                display: table-cell;
+                border: none;
+            }
+        }
+    
+        #total{
+            padding: 20px;
+            background-color: initial;   
+            border-top: solid #645E4E 3px;
+        } 
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .add:nth-child(even) {
+            background-color: initial;
+        }
+    
+        tr:hover{
+            background-color: #e5dabe;
+        }
+    }
+
+    #chart_legend{
+        flex-direction: row-reverse;
+    }
+}

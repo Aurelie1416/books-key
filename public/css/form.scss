@@ -1,0 +1,347 @@
+form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .emailPhone{
+        visibility: hidden;
+    }
+
+    h3{
+        border-bottom: solid #009176 1px;
+
+        i{
+            border: solid #009176 1px;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            padding: 5px;
+        }
+    }
+
+    input, textarea{
+        width: 100%;
+    }
+
+    input {
+        height: 25px;
+        margin: 2% 5px 2% 0;
+        padding-right: 30px;
+    }
+
+    label {
+        i {
+            border-top: solid #645E4E 1px;
+            border-bottom: solid #645E4E 1px;
+            border-left: solid #645E4E 1px;
+            border-radius: 5px 0 0 5px;
+            padding: 6px;
+            margin: 5px 0;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        position: relative;
+        align-items: center;
+        min-width: 130px;
+        width: 100%;
+
+        .name_form, .password_form{
+            flex-wrap: wrap;
+            div{
+                margin-right: 5px;
+                width: 100%;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .name, .password_double_check{
+            width: 100%;
+        }
+
+        #postcode{
+            max-width: max-content;
+        }
+
+        #password, #password_bis{
+            padding-right: 30px;
+        }
+
+        .eye, .eye_close, .publication, .check, .nocheck {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+
+        .check, .nocheck, .eye_close{
+            display: none;
+        }
+
+        .check{
+            color: green;
+        }
+
+        .nocheck{
+            color: red;
+        }
+
+        #publication_date{
+            padding-right: 30px;
+        }
+    }
+
+    .info_creation{
+        flex-wrap: wrap;
+    }
+
+    .option {
+        justify-content: space-around;
+        min-width: 70px;
+        flex-wrap: wrap;
+
+        .payment_option, .format_form{
+            width: 50%;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: left;
+            
+            input{
+                width: initial;
+            }
+
+            img {
+                height: 40px;
+            }
+        }
+
+        .infi_sup, .radio{
+            width: 100%;
+
+            label{
+                margin-right: 5px;
+            }
+        }
+
+        .radio{
+            text-align: left;
+        }
+    }
+
+    .help{
+        justify-content: flex-start;
+        margin-top: 2%;
+        flex-wrap: wrap;
+
+        div{
+            flex-direction: column;
+            width: fit-content;
+            margin: 0 20px;
+
+            small{
+                text-align: left;
+            }
+
+            .help_input {
+                position: relative;
+                width: 160px;
+                margin: 2% 10px 2% 0;
+
+                .check, .nocheck{
+                    right: 20px;
+                }
+    
+                input{
+                    max-width: 150px;
+                    padding-right: 25px;
+                }
+    
+                .input_tooltip {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                    min-width: unset;
+                    width: fit-content;
+                    cursor: help;
+                    margin: 0;
+                }
+    
+                .info_help, .expiration_date, .date_form {
+                    position: relative;
+        
+                    .tooltip {
+                        visibility: hidden;
+                        width: 125px;
+                        background-color: #645E4E;
+                        color: #f9f5eb;
+                        text-align: center;
+                        border-radius: 6px;
+                        padding: 5px 0;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        position: absolute;
+                        z-index: 1;
+                        top: 125%;
+                        right: 50%;
+                        transform: translateX(50%);
+                        margin-left: -60px;
+                    }
+        
+                    .tooltip::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 100%;
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: transparent transparent #645E4E transparent;
+                    }
+                }
+                .info_help:hover {
+                    .tooltip {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            
+                .expiration_date:hover {
+                    .tooltip {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    .name, .password_double_check, .locate{
+        flex-wrap: wrap;
+    }
+
+    .locate{
+        .postcode_form{
+            width: fit-content;
+        }
+    }
+
+    .date_form{
+        width: 66%;
+        input{
+            margin-left: 10px;
+        }
+    } 
+
+    .img {
+        background-color: #ffffff;
+        color: #645E4E;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        margin: 2% 5px 2% 0;
+
+        div:nth-child(2){
+            width: 100%;
+            height: 30px;
+            border-radius: 5px 2px 2px 5px;
+            border: solid #645E4E 1px;
+            div{
+                border:none
+            }
+            .img_label{
+                width: fit-content;
+                min-width: initial;
+                height: 30px;
+                padding: 0 5px;
+                border-radius: 5px 0 0 5px;
+                border-right: solid #645E4E 1px;
+                background-color: #f9f5eb;
+            }
+            .img_input{
+                p{
+                    padding-left: 5px;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        #img_logo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            opacity: 0;
+            width: 100%;
+            height: 30px;
+            z-index: 1;
+        }
+    }
+
+    input[type="file"] {
+        position: fixed;
+        right: 100%;
+        bottom: 100%;
+    }
+}
+@media screen and(min-width: 450px) {
+    form {
+
+        .info_creation{
+            justify-content: right;
+            flex-wrap: nowrap;
+
+            .writer_form{
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 750px) {
+    form {
+        width: 75%;
+
+        div{
+            .name_form, .password_form{
+                width: 50%;
+            }
+        }
+    
+        .locate_form {
+            width: 33%;
+        }
+    }
+}
+
+@media screen and(min-width: 1000px) {
+    
+    form {
+
+        .option {
+
+            .payment_option{
+                width: 25%;
+            }
+
+            .info_supp, .radio{
+                width: 50%;
+            }
+        }
+    }
+    
+}
