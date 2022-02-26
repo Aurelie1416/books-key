@@ -36,6 +36,12 @@ form h3 i {
 
 form input, form textarea {
   width: 100%;
+  border: solid 1px #645E4E;
+  border-radius: 1px;
+}
+
+form input[type='radio'] {
+  border: none;
 }
 
 form input {
@@ -125,6 +131,10 @@ form .info_creation {
       flex-wrap: wrap;
 }
 
+form .info_creation .date_form .check, form .info_creation .date_form .nocheck {
+  right: 30px;
+}
+
 form .option {
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -162,11 +172,13 @@ form .option .payment_option img, form .option .format_form img {
   height: 40px;
 }
 
-form .option .infi_sup, form .option .radio {
+form .option .info_supp, form .option .radio {
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-form .option .infi_sup label, form .option .radio label {
+form .option .info_supp label, form .option .radio label {
   margin-right: 5px;
 }
 
@@ -304,12 +316,7 @@ form .img {
 form .img div:nth-child(2) {
   width: 100%;
   height: 30px;
-  border-radius: 5px 2px 2px 5px;
-  border: solid #645E4E 1px;
-}
-
-form .img div:nth-child(2) div {
-  border: none;
+  border-radius: 0 2px 2px 0;
 }
 
 form .img div:nth-child(2) .img_label {
@@ -320,7 +327,9 @@ form .img div:nth-child(2) .img_label {
   height: 30px;
   padding: 0 5px;
   border-radius: 5px 0 0 5px;
-  border-right: solid #645E4E 1px;
+  border-left: solid #645E4E 1px;
+  border-top: solid #645E4E 1px;
+  border-bottom: solid #645E4E 1px;
   background-color: #f9f5eb;
 }
 
@@ -378,7 +387,10 @@ form input[type="file"] {
     width: 25%;
   }
   form .option .info_supp, form .option .radio {
-    width: 50%;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 /*# sourceMappingURL=form.css.map */

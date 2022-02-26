@@ -504,6 +504,10 @@ main section input[type="radio"] {
           appearance: none;
 }
 
+main section input:focus-visible, main section textarea:focus-visible {
+  outline: solid 2px #645E4E;
+}
+
 main section input[type="radio"]:before {
   width: 15px;
   height: 15px;
@@ -533,6 +537,51 @@ main section input[type='radio']:checked:before {
   transition: all 0.2s ease;
   -webkit-box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em;
           box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em;
+}
+
+main section .isValid {
+  border: solid 3px green;
+}
+
+main section .isInvalid {
+  border: solid 3px red;
+}
+
+main section .isNeutral {
+  border: solid 1px #645E4E;
+  border-radius: 1px;
+}
+
+main section .input_tooltip {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  min-width: unset;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: help;
+  margin: 0;
+}
+
+main section small, main section label {
+  color: transparent;
+}
+
+main section .inputWrong {
+  color: red;
+  font-weight: bold;
+}
+
+main section .inputNeutral {
+  color: #645E4E;
+}
+
+main section .inputValid {
+  color: green;
+  font-weight: bold;
 }
 
 main section .delivered {
@@ -587,25 +636,33 @@ main section .delete:hover i {
   color: #f9f5eb;
 }
 
-main .more_less {
+main form .more_less {
   position: relative;
-}
-
-main .more_less .quantity {
-  height: 40px;
   width: 50px;
+  min-width: auto;
 }
 
-main .more_less .button_more_less {
+main form .more_less input {
+  padding: 0 5px 0 5px;
+}
+
+main form .more_less #price, main form .more_less #page_number, main form .more_less #quantity {
+  height: 40px;
+  width: 150px;
+}
+
+main form .more_less .button_more_less {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 11px;
+  right: -130px;
+  top: 2;
+  min-width: auto;
+  display: initial;
 }
 
-main .more_less .button_more_less .more, main .more_less .button_more_less .less {
+main form .more_less .button_more_less .more, main form .more_less .button_more_less .less {
   padding: 5px;
-  height: 11px;
+  height: 9px;
+  width: 30px;
   border: 1px solid black;
   background-color: #f2f2f2;
   display: -webkit-box;
@@ -614,10 +671,14 @@ main .more_less .button_more_less .more, main .more_less .button_more_less .less
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: auto;
   cursor: pointer;
 }
 
-main .more_less .button_more_less .more p, main .more_less .button_more_less .less p {
+main form .more_less .button_more_less .more p, main form .more_less .button_more_less .less p {
   margin: 0;
 }
 
@@ -747,6 +808,7 @@ footer div .instagram .instagram_brown {
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
   z-index: 1;
+  font-size: 28px;
 }
 
 footer div .instagram .instagram_color {
@@ -761,6 +823,8 @@ footer div .instagram .instagram_color {
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
   z-index: -1;
+  font-size: medium;
+  font-size: 28px;
 }
 
 footer div .instagram:hover {

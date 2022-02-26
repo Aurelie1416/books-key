@@ -31,15 +31,20 @@ const routes = [
     component: () => import('../views/Books.vue')
   },
   {
+    path: 'admin/books',
+    name: 'booksAdmin',
+    component: () => import('../views/AdminBooks.vue')
+  },
+  {
     path: '/creation-article',
     name: 'Creation-article',
     component: () => import('../views/CreationArticle.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/modification-article/:bookId',
+    name: 'Modification-article',
+    component: () => import('../views/ModificationArticle.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',

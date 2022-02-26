@@ -70,7 +70,7 @@
           }
         },
       created: function(){
-        this.$store.dispatch('ajaxBooks');
+        this.$store.dispatch('ajaxCart');
       },
       methods: {
           deleteBook(book) {

@@ -1,6 +1,6 @@
 <template>
-    <div id="creationArticle">
-                <section>
+    <div id="ModificationArticle">
+        <section>
 
             <h2>Ajouter un livre</h2>
             <form v-on:submit.prevent="handleSubmit" method="post" enctype="multipart/form-data">
@@ -136,22 +136,28 @@
 </template>
 
 <script>
+  import store from '../store/index'
+//this.$route.params.id
   export default {
     name: 'creation-article',
+    store: store,
     data: function(){
       return{
-          title: null,
-          writer: null,
-          publication_date: null,
-          edition: null,
-          format: [],
-          page_number: null,
-          quantity: null,
-          price: null,
-          summary: null,
-          image: {},
-          imageName: null
+          title: this.$store.state.books[this.$route.params.bookId].title,
+          writer: this.$store.state.books[this.$route.params.bookId].writer,
+          publication_date: this.$store.state.books[this.$route.params.bookId].publication_date,
+          edition: this.$store.state.books[this.$route.params.bookId].edition,
+          format: [this.$store.state.books[this.$route.params.bookId].format],
+          page_number: this.$store.state.books[this.$route.params.bookId].page_number,
+          quantity: this.$store.state.books[this.$route.params.bookId].quantity,
+          price: this.$store.state.books[this.$route.params.bookId].price,
+          summary: this.$store.state.books[this.$route.params.bookId].summary,
+          image: null,
+          imageName: this.$store.state.books[this.$route.params.bookId].image
       }
+    },
+    created: function(){
+        this.$store.dispatch('ajaxBooks');
     },
     methods: {
       handleSubmit(event){
@@ -185,6 +191,7 @@ console.log('handlesubmit', event, event.target.action)
         }
       },
       changeNumber(attribute, number, modificator){
+          console.log(this.title)
         if(number == null){
           number = 1;
         }

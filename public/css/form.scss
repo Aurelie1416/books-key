@@ -25,6 +25,12 @@ form {
 
     input, textarea{
         width: 100%;
+        border: solid 1px #645E4E;
+        border-radius: 1px;
+    }
+
+    input[type='radio']{
+        border: none;
     }
 
     input {
@@ -100,12 +106,19 @@ form {
 
     .info_creation{
         flex-wrap: wrap;
+
+        .date_form{
+            .check, .nocheck{
+                right: 30px;
+            }
+        }
     }
 
     .option {
         justify-content: space-around;
         min-width: 70px;
         flex-wrap: wrap;
+        
 
         .payment_option, .format_form{
             width: 50%;
@@ -126,8 +139,9 @@ form {
             }
         }
 
-        .infi_sup, .radio{
+        .info_supp, .radio{
             width: 100%;
+            flex-wrap: wrap;
 
             label{
                 margin-right: 5px;
@@ -256,18 +270,16 @@ form {
         div:nth-child(2){
             width: 100%;
             height: 30px;
-            border-radius: 5px 2px 2px 5px;
-            border: solid #645E4E 1px;
-            div{
-                border:none
-            }
+            border-radius: 0 2px 2px 0;
             .img_label{
                 width: fit-content;
                 min-width: initial;
                 height: 30px;
                 padding: 0 5px;
                 border-radius: 5px 0 0 5px;
-                border-right: solid #645E4E 1px;
+                border-left: solid #645E4E 1px;
+                border-top: solid #645E4E 1px;
+                border-bottom: solid #645E4E 1px;
                 background-color: #f9f5eb;
             }
             .img_input{
@@ -339,7 +351,8 @@ form {
             }
 
             .info_supp, .radio{
-                width: 50%;
+                width: 100%;
+                justify-content: space-between;
             }
         }
     }

@@ -1,5 +1,7 @@
 <template>
     <section>
+        <p v-if="numberBook > 0">count article :({{numberBook}})</p>
+        <router-link :to="{ name: 'booksAdmin'}">Passer en mode admin</router-link>
         <div id="list_article">
             <article  v-for="book in books" :key="book.id">
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
@@ -9,41 +11,33 @@
                     <p>{{book.writer}}</p>
                     <p>{{book.price}}&euro;</p>
                 </a>
-                <button class="button_hover">
+                </router-link>
+                <button v-on:click="numberBook++" class="button_hover">
                     <div class="add_cart">
                         <i class="fas fa-cart-plus"></i>
                         <p>Ajouter Au panier</p>  
                     </div> 
                 </button>
-                </router-link>
+                
             </article>
         </div>
     </section>
 </template>
 
 <script>
+  import store from '../store/index'
 
   export default{
         name: 'my-section',
+        store: store,
         data: function(){
             return{
-                books: []
+                books: this.$store.state.books,
+                numberBook: 0
             }
         },
-        beforeCreate: function(){
-        fetch("json/cart.json")
-            .then(response => response.json())
-            .then(result => {
-                for(let i = 0; i < result.books.length; i++){
-                    let book = { id:result.books[i].id, image:result.books[i].image, title:result.books[i].title, writer:result.books[i].writer, price:result.books[i].price }
-                    this.books.push(book);  
-                }
-            });
+        created: function(){
+        this.$store.dispatch('ajaxBooks');
         },
-        method: {
-            changeUrl(idBook){
-                this.$router.push({path:'/book', params:{bookId: idBook}})
-            }
-        }
     }
 </script>

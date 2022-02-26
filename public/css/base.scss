@@ -427,6 +427,10 @@ main {
             appearance: none;
         }
 
+        input:focus-visible, textarea:focus-visible{
+            outline: solid 2px #645E4E;
+        }
+
         input[type="radio"]:before{
             width: 15px;
             height: 15px;
@@ -451,6 +455,49 @@ main {
             color: #009176;
             transition: all 0.2s ease;
             box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em;   
+        }
+
+        .isValid{
+            border: solid 3px green;
+        }
+
+        .isInvalid{
+            border: solid 3px red;
+        }
+
+        .isNeutral{
+            border: solid 1px #645E4E;
+            border-radius: 1px;
+        }
+
+        .input_tooltip {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            min-width: unset;
+            width: fit-content;
+            cursor: help;
+            margin: 0;
+            
+        }
+
+        small, label{
+            color: transparent;
+        }
+
+        .inputWrong{
+            color: red;
+            font-weight: bold;
+        }
+
+        .inputNeutral{
+            color: #645E4E;
+        }
+
+        .inputValid{
+            color: green;
+            font-weight: bold;
         }
 
         .delivered {
@@ -504,34 +551,51 @@ main {
         }
     }
 
-    .more_less{
-        position: relative;
-
-        .quantity{
-            height: 40px; 
+    form{
+        .more_less{
+            position: relative;
             width: 50px;
-        }
-
-        .button_more_less{
-            position: absolute; 
-            right: 0; 
-            top: 0;                
-            width: 11px;
-
-            .more, .less{
-                padding: 5px; 
-                height: 11px; 
-                border: 1px solid black; 
-                background-color: #f2f2f2; 
-                display: flex; 
-                align-items: center;
-                cursor: pointer;
-
-                p{
-                    margin: 0;
+            min-width: auto;
+    
+            input{
+                padding: 0 5px 0 5px;
+            }
+    
+            // .quantity{
+            //     height: 40px; 
+            //     width: 50px;
+            // }
+    
+            #price, #page_number, #quantity{
+                height: 40px;
+                width: 150px;
+            }
+    
+            .button_more_less{
+                position: absolute; 
+                right: -130px; 
+                top: 2;                
+                min-width: auto;
+                display: initial;
+    
+                .more, .less{
+                    padding: 5px; 
+                    height: 9px; 
+                    width: 30px;
+                    border: 1px solid black; 
+                    background-color: #f2f2f2; 
+                    display: flex; 
+                    align-items: center;
+                    justify-content: center;
+                    min-width: auto;
+                    cursor: pointer;
+    
+                    p{
+                        margin: 0;
+                    }
                 }
             }
-        }
+        }   
     }
 
     #menu_and_go_back{
@@ -633,6 +697,7 @@ footer {
                 opacity: 1;
                 transition: 1s ease-out;
                 z-index: 1;
+                font-size: 28px;
             }
     
             .instagram_color {
@@ -646,6 +711,8 @@ footer {
                 opacity: 0;
                 transition: 1s ease-out;
                 z-index: -1;
+                font-size: medium;
+                font-size: 28px;
             }
         }
 
