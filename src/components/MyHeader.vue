@@ -8,6 +8,7 @@
             <router-link :to="{name: 'creation-Article'}">Création d'article</router-link> |
             <router-link :to="{name: 'inscription'}">Inscription</router-link> |
             <router-link :to="{name: 'connexion'}">Connexion</router-link> |
+            <router-link :to="{name: 'dashboard'}">Dashboard</router-link> |
             <router-link :to="{name: 'books'}">books</router-link>
           </div>
         </header>

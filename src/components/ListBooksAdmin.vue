@@ -12,14 +12,14 @@
                 <tbody>
                     <tr v-for="book in books" :key="book.id" >
                         <td>
-                            <router-link :to="{ name: 'book', params:{bookId: book.id}}">
+                            <router-link :to="{ name: 'book-Admin', params:{bookId: book.id}}">
                                 <div class="link">
                                     <a href="#"><img :src="book.image" alt="cover"></a>
                                 </div>
                             </router-link>
                         </td>
                         <td data-label="Titre">
-                            <router-link :to="{ name: 'book', params:{bookId: book.id}}">
+                            <router-link :to="{ name: 'book-Admin', params:{bookId: book.id}}">
                                 <div>{{book.title}}</div>
                             </router-link>
                         </td>

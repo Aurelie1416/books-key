@@ -21,6 +21,11 @@ const routes = [
     component: () => import('../views/PageBook.vue')
   },
   {
+    path: '/book/:bookId',
+    name: 'book-Admin',
+    component: () => import('../views/PageAdminBook.vue')
+  },
+  {
     path: '/cart',
     name: 'cart',
     component: () => import('../views/PageCart.vue')
@@ -31,7 +36,7 @@ const routes = [
     component: () => import('../views/PageBooks.vue')
   },
   {
-    path: 'admin/books',
+    path: '/admin/books',
     name: 'books-Admin',
     component: () => import('../views/PageAdminBooks.vue')
   },
@@ -55,11 +60,11 @@ const routes = [
     name: 'connexion',
     component: () => import('../views/PageConnexion.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/PageDashboard.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',
