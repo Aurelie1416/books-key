@@ -1,0 +1,101 @@
+{
+    "customer": [
+        {
+            "id": 1,
+            "last_name": "Brouette",
+            "first_name": "Jasper",
+            "email": "jasper.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "Dans le placard sous l'escalier",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "01/01/2022"
+        },
+        {
+            "id": 2,
+            "last_name": "Brouette",
+            "first_name": "Toto",
+            "email": "toto.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "Dans le placard sous l'escalier",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "02/01/2022"
+        },
+        {
+            "id": 3,
+            "last_name": "Brouette",
+            "first_name": "Prosper",
+            "email": "prosper.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "01/02/2022"
+        },
+        {
+            "id": 4,
+            "last_name": "Brouette",
+            "first_name": "Gertrude",
+            "email": "gertrude.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "Dans le placard sous l'escalier",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "02/02/2022"
+
+        },
+        {
+            "id": 5,
+            "last_name": "Brouette",
+            "first_name": "Marie-Josette",
+            "email": "mj.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "28/01/2022"
+        },
+        {
+            "id": 6,
+            "last_name": "Brouette",
+            "first_name": "Pépito",
+            "email": "pepite.brouette@gmail.com",
+            "phone": "06 00 00 00 00",
+            "address": {
+                "street_1": "4 avenue de la Brouette",
+                "street_2": "Dans le placard sous l'escalier",
+                "postal_code": "12345",
+                "city": "BrouetteCity",
+                "country": "France"
+            },
+            "inscription_date": "12/12/2021",
+            "last_order_date": "28/02/2022"
+        }
+    ]
+}

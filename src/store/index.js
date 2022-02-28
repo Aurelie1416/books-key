@@ -22,8 +22,24 @@ export default new Vuex.Store({
       'Modifier', 
       'Supprimer'
     ],
+    columnCustomers: [
+      '',
+      'Nom',
+      'Prénom',
+      "Date d'inscription",
+      'Date de la dernière commande',
+      'Désinscrire'
+    ],
+    columnCustomer: [
+      'Nom',
+      'Prénom',
+      'Email',
+      'Adresse',
+      'Téléphone'
+    ],
     cart: [],
-    books: []
+    books: [], 
+    customers: []
   },
   mutations: {
     ajax_book(state, books){
@@ -31,6 +47,9 @@ export default new Vuex.Store({
     },
     ajax_cart(state, cart){
       state.cart = cart;
+    },
+    ajax_customer(state, customers){
+      state.customers = customers
     }
   },
   actions: {
@@ -53,7 +72,7 @@ export default new Vuex.Store({
             
       let listBooks = [];
 
-      fetch("/json/cart.json")
+      fetch("/json/books.json")
       .then(response => response.json())
       .then(result => {
           for(let i = 0; i < result.books.length; i++){
@@ -62,6 +81,20 @@ export default new Vuex.Store({
           }
 
           store.commit('ajax_book', listBooks);
+      })
+    },
+    ajaxCustomers(store) {    
+            
+      let listCustomers = [];
+
+      fetch("/json/customers.json")
+      .then(response => response.json())
+      .then(result => {
+          for(let i = 0; i < result.customer.length; i++){
+              let customer = { id:result.customer[i].id, last_name:result.customer[i].last_name, first_name:result.customer[i].first_name, email:result.customer[i].email, phone:result.customer[i].phone, address:result.customer[i].address, inscription_date:result.customer[i].inscription_date, last_order_date:result.customer[i].last_order_date }
+              listCustomers.push(customer);
+          }
+          store.commit('ajax_customer', listCustomers);
       })
     }
   }

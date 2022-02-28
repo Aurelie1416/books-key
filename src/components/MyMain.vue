@@ -16,7 +16,7 @@
       }
     },
     beforeCreate: function(){
-      fetch("/json/cart.json")
+      fetch("/json/books.json")
       .then(response => response.json())
       .then(result => {
           this.book = { bookId:result.books[0].id }

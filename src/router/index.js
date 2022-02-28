@@ -65,21 +65,21 @@ const routes = [
     name: 'dashboard',
     component: () => import('../views/PageDashboard.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/customers',
+    name: 'customers',
+    component: () => import('../views/PageCustomers.vue')
+  },
+  {
+    path: '/my-account/:customerId',
+    name: 'customer',
+    component: () => import('../views/PageCustomer.vue')
+  },
+  {
+    path: '/modify-my-account/:customerId',
+    name: 'modify-Customer',
+    component: () => import('../views/PageModifyCustomer.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',
