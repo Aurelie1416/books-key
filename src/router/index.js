@@ -50,11 +50,11 @@ const routes = [
     name: 'inscription',
     component: () => import('../views/PageInscription.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/connexion',
+    name: 'connexion',
+    component: () => import('../views/PageConnexion.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',

@@ -91,7 +91,7 @@
                 </div>
                 <button>Je m'inscrit !</button>
             </form>
-            <a href="#">Déjà inscrit ?</a>
+            <router-link :to="{ name: 'connexion'}">Déjà inscrit ?</router-link>
         </section>
     </div>
 </template>
