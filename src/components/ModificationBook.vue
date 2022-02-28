@@ -137,7 +137,6 @@
 
 <script>
   import store from '../store/index'
-//this.$route.params.id
   export default {
     name: 'creation-article',
     store: store,
@@ -147,7 +146,7 @@
           writer: this.$store.state.books[this.$route.params.bookId].writer,
           publication_date: this.$store.state.books[this.$route.params.bookId].publication_date,
           edition: this.$store.state.books[this.$route.params.bookId].edition,
-          format: [this.$store.state.books[this.$route.params.bookId].format],
+          format: this.$store.state.books[this.$route.params.bookId].format,
           page_number: this.$store.state.books[this.$route.params.bookId].page_number,
           quantity: this.$store.state.books[this.$route.params.bookId].quantity,
           price: this.$store.state.books[this.$route.params.bookId].price,

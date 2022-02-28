@@ -6,7 +6,7 @@
 import MyCartToOrder from '../components/MyCartToOrder.vue'
 
 export default {
-  name: 'my-section',
+  name: 'page-cart',
   components: {
     MyCartToOrder
   }

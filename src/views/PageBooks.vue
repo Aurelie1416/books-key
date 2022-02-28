@@ -6,7 +6,7 @@
 import ListBooks from '../components/ListBooks.vue'
 
 export default {
-  name: 'my-section',
+  name: 'page-list-books',
   components: {
     ListBooks
   }

@@ -30,7 +30,7 @@
                             <div>{{book.price}}&euro;</div>
                         </td>
                         <td data-label="Modifier">
-                            <router-link :to="{ name: 'Modification-article', params:{bookId: book.id}}">
+                            <router-link :to="{ name: 'modification-Article', params:{bookId: book.id}}">
                                 <i class="fas fa-edit"></i>
                             </router-link>
                         </td>
@@ -45,7 +45,7 @@
   import store from '../store/index'
 
   export default{
-        name: 'my-section',
+        name: 'list-books-admin',
         store: store,
         data: function(){
             return{

@@ -551,7 +551,7 @@ main {
         }
     }
 
-    form{
+    form, table {
         .more_less{
             position: relative;
             width: 50px;
@@ -561,10 +561,10 @@ main {
                 padding: 0 5px 0 5px;
             }
     
-            // .quantity{
-            //     height: 40px; 
-            //     width: 50px;
-            // }
+            .quantity{
+                height: 40px; 
+                width: 50px;
+            }
     
             #price, #page_number, #quantity{
                 height: 40px;
@@ -573,15 +573,15 @@ main {
     
             .button_more_less{
                 position: absolute; 
-                right: -130px; 
-                top: 2;                
+                right: 0; 
+                top: 0;                
                 min-width: auto;
                 display: initial;
     
                 .more, .less{
                     padding: 5px; 
                     height: 9px; 
-                    width: 30px;
+                    width: 20px;
                     border: 1px solid black; 
                     background-color: #f2f2f2; 
                     display: flex; 

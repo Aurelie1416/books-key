@@ -1,7 +1,7 @@
 <template>
     <section>
         <p v-if="numberBook > 0">count article :({{numberBook}})</p>
-        <router-link :to="{ name: 'booksAdmin'}">Passer en mode admin</router-link>
+        <router-link :to="{ name: 'books-Admin'}">Passer en mode admin</router-link>
         <div id="list_article">
             <article  v-for="book in books" :key="book.id">
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
@@ -28,7 +28,7 @@
   import store from '../store/index'
 
   export default{
-        name: 'my-section',
+        name: 'list-books',
         store: store,
         data: function(){
             return{

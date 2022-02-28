@@ -226,12 +226,16 @@ section{
                     display: inline-block;
                 }
 
-                .menu_synopsis{
+                .menu_selected{
 
                     border-radius: 5px 5px 0 0;
                     border-top: solid #009176 1px;
                     border-left: solid #009176 1px;
                     border-right: solid #009176 1px;
+                }
+
+                .menu_unselected{
+                    border: none;
                 }
 
                 hr{

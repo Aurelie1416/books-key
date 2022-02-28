@@ -18,38 +18,38 @@ const routes = [
   {
     path: '/book/:bookId',
     name: 'book',
-    component: () => import('../views/Book.vue')
+    component: () => import('../views/PageBook.vue')
   },
   {
     path: '/cart',
     name: 'cart',
-    component: () => import('../views/Cart.vue')
+    component: () => import('../views/PageCart.vue')
   },
   {
     path: '/books',
     name: 'books',
-    component: () => import('../views/Books.vue')
+    component: () => import('../views/PageBooks.vue')
   },
   {
     path: 'admin/books',
-    name: 'booksAdmin',
-    component: () => import('../views/AdminBooks.vue')
+    name: 'books-Admin',
+    component: () => import('../views/PageAdminBooks.vue')
   },
   {
     path: '/creation-article',
-    name: 'Creation-article',
-    component: () => import('../views/CreationArticle.vue')
+    name: 'creation-Article',
+    component: () => import('../views/PageCreationArticle.vue')
   },
   {
     path: '/modification-article/:bookId',
-    name: 'Modification-article',
-    component: () => import('../views/ModificationArticle.vue')
+    name: 'modification-Article',
+    component: () => import('../views/PageModificationArticle.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/inscription',
+    name: 'inscription',
+    component: () => import('../views/PageInscription.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',

@@ -6,7 +6,7 @@
 import ListBooksAdmin from '../components/ListBooksAdmin.vue'
 
 export default {
-  name: 'my-section',
+  name: 'page-list-books-admin',
   components: {
     ListBooksAdmin
   }

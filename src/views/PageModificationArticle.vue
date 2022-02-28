@@ -6,7 +6,7 @@
 import ModificationBook from '../components/ModificationBook.vue'
 
 export default{
-    name: 'my-section',
+    name: 'page-creation-article',
     components: {
       ModificationBook
     },
@@ -15,11 +15,11 @@ export default{
         return this.$route.params.bookId
       }
     },
-    methods: {
-      goBack() {
-        window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
-      }
-    }
+    // methods: {
+    //   goBack() {
+    //     window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+    //   }
+    // }
   }
 
 </script>

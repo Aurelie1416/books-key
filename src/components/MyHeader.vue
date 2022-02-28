@@ -5,7 +5,8 @@
             <router-link :to="{name: 'Home'}">Home</router-link> |
             <router-link :to="{name: 'About'}">About</router-link> |
             <router-link :to="{name: 'cart'}">cart</router-link> |
-            <router-link :to="{name: 'Creation-article'}">Création d'article</router-link> |
+            <router-link :to="{name: 'creation-Article'}">Création d'article</router-link> |
+            <router-link :to="{name: 'inscription'}">Inscription</router-link> |
             <router-link :to="{name: 'books'}">books</router-link>
           </div>
         </header>
