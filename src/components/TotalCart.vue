@@ -50,7 +50,7 @@
 export default{
       name:'total-cart',
       props: {
-        books: Array
+        books: Array 
       },
       data: function(){
         return{

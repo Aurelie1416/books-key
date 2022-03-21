@@ -1,0 +1,136 @@
+{
+    "orders": [
+        {
+            "id": 1,
+            "creation_date": "01/01/2022",
+            "sending_date": "01/01/2022",
+            "delivery_date": "02/01/2022",
+            "number_order": "000000001",
+            "status": "en cours",
+            "id_customer": 1,
+            "id_articles": [1, 2, 3],
+            "bill": 60
+        },
+        {
+            "id": 2,
+            "creation_date": "02/01/2022",
+            "sending_date": "02/01/2022",
+            "delivery_date": "03/01/2022",
+            "number_order": "000000002",
+            "status": "livré",
+            "id_customer": 1,
+            "id_articles": [4, 5, 6],
+            "bill": 60
+        },
+        {
+            "id": 3,
+            "creation_date": "03/01/2022",
+            "sending_date": "03/01/2022",
+            "delivery_date": "04/01/2022",
+            "number_order": "000000003",
+            "status": "en cours",
+            "id_customer": 2,
+            "id_articles": [7, 8],
+            "bill": 40
+        },
+        {
+            "id": 4,
+            "creation_date": "04/01/2022",
+            "sending_date": "04/01/2022",
+            "delivery_date": "05/01/2022",
+            "number_order": "000000004",
+            "status": "livré",
+            "id_customer": 2,
+            "id_articles": [9, 10, 11, 12],
+            "bill": 80
+        },
+        {
+            "id": 5,
+            "creation_date": "05/01/2022",
+            "sending_date": "05/01/2022",
+            "delivery_date": "06/01/2022",
+            "number_order": "000000005",
+            "status": "livré",
+            "id_customer": 3,
+            "id_articles": [1],
+            "bill": 20
+        },
+        {
+            "id": 6,
+            "creation_date": "06/01/2022",
+            "sending_date": "06/01/2022",
+            "delivery_date": "07/01/2022",
+            "number_order": "000000006",
+            "status": "annulé",
+            "id_customer": 3,
+            "id_articles": [2, 3],
+            "bill": 40
+        },
+        {
+            "id": 7,
+            "creation_date": "07/01/2022",
+            "sending_date": "07/01/2022",
+            "delivery_date": "08/01/2022",
+            "number_order": "000000007",
+            "status": "en cours",
+            "id_customer": 4,
+            "id_articles": [4, 5, 6],
+            "bill": 60
+        },
+        {
+            "id": 8,
+            "creation_date": "08/01/2022",
+            "sending_date": "08/01/2022",
+            "delivery_date": "09/01/2022",
+            "number_order": "000000008",
+            "status": "livré",
+            "id_customer": 4,
+            "id_articles": [7, 8, 9, 10, 11, 12],
+            "bill": 120
+        },
+        {
+            "id": 9,
+            "creation_date": "09/01/2022",
+            "sending_date": "09/01/2022",
+            "delivery_date": "10/01/2022",
+            "number_order": "000000009",
+            "status": "livré",
+            "id_customer": 6,
+            "id_articles": [1, 2],
+            "bill": 40
+        },
+        {
+            "id": 10,
+            "creation_date": "10/01/2022",
+            "sending_date": "10/01/2022",
+            "delivery_date": "11/01/2022",
+            "number_order": "000000010",
+            "status": "livré",
+            "id_customer": 6,
+            "id_articles": [3, 4, 5],
+            "bill": 60
+        },
+        {
+            "id": 11,
+            "creation_date": "11/01/2022",
+            "sending_date": "11/01/2022",
+            "delivery_date": "12/01/2022",
+            "number_order": "000000011",
+            "status": "livré",
+            "id_customer": 6,
+            "id_articles": [6, 7, 8, 9, 10],
+            "bill": 100
+        },
+        {
+            "id": 12,
+            "creation_date": "12/01/2022",
+            "sending_date": "12/01/2022",
+            "delivery_date": "13/01/2022",
+            "number_order": "000000012",
+            "status": "livré",
+            "id_customer": 6,
+            "id_articles": [11, 12],
+            "bill": 40
+        }
+    ]
+}

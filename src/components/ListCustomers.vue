@@ -24,7 +24,11 @@
                             </div>
                         </td>
                         <td data-label="Prénom">
-                            <div>{{customer.first_name}}</div> 
+                            <div>
+                                <router-link :to="{ name: 'customer-admin', params:{customerId: customer.id - 1}}">
+                                {{customer.first_name}}
+                                </router-link>
+                            </div> 
                         </td>
                         <td data-label="Date d'inscription">
                             <div>{{customer.inscription_date}}</div> 

@@ -37,9 +37,39 @@ export default new Vuex.Store({
       'Adresse',
       'Téléphone'
     ],
+    columnCustomerAdmin: [
+      'Email',
+      'Adresse',
+      'Téléphone'
+    ],
+    columnOrdersAdmin: [
+      'Date',
+      'Numéro de commande',
+      'Recette',
+      'Client',
+      'Status'
+    ],
+    columnOrder: [
+      'Date',
+      'Numéro de commande',
+      'Status'
+    ],
+    columnOrderFollowing: [
+      'status',
+      'Date de commande',
+      "Date d'envoi",
+      'Date de livraison'
+    ],
+    columnOrderCustomer: [
+      'Client',
+      'Adresse de livraison',
+      'Email',
+      'Téléphone'
+    ],
     cart: [],
     books: [], 
-    customers: []
+    customers: [],
+    orders: []
   },
   mutations: {
     ajax_book(state, books){
@@ -50,6 +80,9 @@ export default new Vuex.Store({
     },
     ajax_customer(state, customers){
       state.customers = customers
+    },
+    ajax_order(state, orders){
+      state.orders = orders
     }
   },
   actions: {
@@ -95,6 +128,20 @@ export default new Vuex.Store({
               listCustomers.push(customer);
           }
           store.commit('ajax_customer', listCustomers);
+      })
+    },
+    ajaxOrders(store) {    
+            
+      let listOrders = [];
+
+      fetch("/json/orders.json")
+      .then(response => response.json())
+      .then(result => {
+          for(let i = 0; i < result.orders.length; i++){
+              let order = { id:result.orders[i].id, creation_date:result.orders[i].creation_date, sending_date:result.orders[i].sending_date, delivery_date:result.orders[i].delivery_date, status:result.orders[i].status, number_order:result.orders[i].number_order, customer:result.orders[i].id_customer, articles:result.orders[i].id_articles, bill:result.orders[i].bill }
+              listOrders.push(order);
+          }
+          store.commit('ajax_order', listOrders);
       })
     }
   }

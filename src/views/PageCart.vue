@@ -1,20 +1,17 @@
 <template>
-<div id="complete_cart">
-    <my-cart-to-order></my-cart-to-order>
-    <shipping-form-cart></shipping-form-cart>
+<div id="my_cart_to_order">
+    <my-cart></my-cart>
+    <validation-order></validation-order>
 </div>
 </template>
 <script>
-
-import MyCartToOrder from '../components/MyCartToOrder.vue'
-import ShippingFormCart from '../components/ShippingFormCart.vue'
-
-export default {
-  name: 'page-cart',
-  components: {
-    MyCartToOrder,
-    ShippingFormCart
+  import MyCart from '../components/MyCart.vue'
+  import ValidationOrder from '../components/ValidationOrder.vue'
+  export default {
+    name: 'my-cart-to-order',
+    components: {
+      MyCart,
+      ValidationOrder    
+    }
   }
-}
-
 </script>

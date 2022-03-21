@@ -80,21 +80,26 @@ const routes = [
     name: 'modify-Customer',
     component: () => import('../views/PageModifyCustomer.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
+  {
+    path: '/customer/:customerId',
+    name: 'customer-admin',
+    component: () => import('../views/PageCustomerAdmin.vue')
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: () => import('../views/PageOrders.vue')
+  },
+  {
+    path: '/archives',
+    name: 'archives',
+    component: () => import('../views/PageArchives.vue')
+  },
+  {
+    path: '/order/:orderId',
+    name: 'order-admin',
+    component: () => import('../views/PageOrderAdmin.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',
