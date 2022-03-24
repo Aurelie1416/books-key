@@ -1,12 +1,66 @@
 form {
     width: 100%;
     margin: auto;
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    .totalinput{
+        position: relative;
+        .input{
+            display: flex;
+            flex-direction: row;
+            label{
+                i {
+                    border-top: solid #645E4E 1px;
+                    border-bottom: solid #645E4E 1px;
+                    border-left: solid #645E4E 1px;
+                    border-radius: 5px 0 0 5px;
+                    padding: 6px;
+                    margin: 5px 0;
+                }
+            }
+            input:focus-visible, textarea:focus-visible{
+                outline: solid 2px #645E4E;
+            }
+        }
+        .inputPlaceHolder{
+            position: absolute;
+            top: 50%;
+            left: 35px;
+            transform: translateY(-50%);
+            transition: 300ms;
+            color: #645E4E;
+        }
+        .active{
+            top: 0%;
+            transition: 300ms;
+        }
+    }
+
+    p{
+        margin: 0;
+        color: transparent;
+    }
+
+    input:focus-visible, textarea:focus-visible{
+        outline: solid 2px #645E4E;
+    }
+
+    .inputMessageValid{
+        color: green;
+    }
+    .inputMessageError{
+        color: red;
+    }
+
+    .inputValid{
+        border: solid 3px green;
+    }
+    .inputError{
+        border: solid 3px red;
+    }
 
     .emailPhone{
         visibility: hidden;
@@ -51,10 +105,8 @@ form {
     }
 
     div {
-        display: flex;
-        flex-direction: row;
+
         margin: 0;
-        position: relative;
         align-items: center;
         min-width: 130px;
         width: 100%;

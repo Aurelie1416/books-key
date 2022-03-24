@@ -566,7 +566,7 @@ main section .input_tooltip {
   margin: 0;
 }
 
-main section small, main section label {
+main section small {
   color: transparent;
 }
 

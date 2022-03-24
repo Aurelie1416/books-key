@@ -100,6 +100,11 @@ const routes = [
     name: 'order-admin',
     component: () => import('../views/PageOrderAdmin.vue')
   },
+  {
+    path: '/order/:orderId',
+    name: 'order',
+    component: () => import('../views/PageOrder.vue')
+  }
   // {
   //   path: '/about',
   //   name: 'About',

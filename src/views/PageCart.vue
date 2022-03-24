@@ -8,7 +8,7 @@
   import MyCart from '../components/MyCart.vue'
   import ValidationOrder from '../components/ValidationOrder.vue'
   export default {
-    name: 'my-cart-to-order',
+    name: 'page-cart',
     components: {
       MyCart,
       ValidationOrder    
