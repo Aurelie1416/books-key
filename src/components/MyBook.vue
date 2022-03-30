@@ -1,24 +1,22 @@
 <template>
-    <section>
-        <h2 v-on:click="changeSynopsis">Bilbo le Hobbit</h2>
+    <section v-if="book">
+        <h2>{{book.title}}</h2>
             <div class="book_info">
                 <div class="cover">
-                    <img :src="image" alt="book cover">
+                    <img :src="book.image" alt="book cover">
                     <div class="menu">
-                        <h3 v-on:click="changeSynopsis" class="menu_synopsis">synopsis</h3>
-                        <h3 v-on:click="changeInfo" class="menu_info">Information</h3>
                         <hr>
                     </div>
                 </div>
-                <div class="info" v-if="!versionMobil || info">
-                    <p class="price">Prix : {{price}}&euro;</p>
-                    <p>Auteur : {{writer}}</p>
-                    <p>Publié le {{publication}}</p>
-                    <p>Edition : {{edition}}</p>
-                    <p>{{format}}</p>
-                    <p>Nombre de page : {{page}}</p>
+                <div class="info">
+                    <p class="price">Prix : {{book.price}}&euro;</p>
+                    <p>Auteur : {{book.writer}}</p>
+                    <p>Publié le {{book.publication_date}}</p>
+                    <p>Edition : {{book.edition}}</p>
+                    <p>{{book.format}}</p>
+                    <p>Nombre de page : {{book.page_number}}</p>
                 </div>
-                <p class="synopsis" v-if="!versionMobil || synopsis">{{summary}}</p>
+                <p class="synopsis">{{book.summary}}</p>
             </div>
             
             <button class="button_hover">
@@ -35,41 +33,16 @@ import store from '../store/index'
         store: store,
         data: function(){
             return{
-                title: this.$store.state.books[this.$route.params.bookId].title,
-                writer: this.$store.state.books[this.$route.params.bookId].writer,
-                publication: this.$store.state.books[this.$route.params.bookId].publication_date,
-                edition: this.$store.state.books[this.$route.params.bookId].edition,
-                format: [this.$store.state.books[this.$route.params.bookId].format],
-                page: this.$store.state.books[this.$route.params.bookId].page_number,
-                quantity: this.$store.state.books[this.$route.params.bookId].quantity,
-                price: this.$store.state.books[this.$route.params.bookId].price,
-                summary: this.$store.state.books[this.$route.params.bookId].summary,
-                image: this.$store.state.books[this.$route.params.bookId].image,
                 synopsys: true,
                 info: false
             }
         },
-        created: function(){
+        beforeCreate: function(){
             this.$store.dispatch('ajaxBooks');
         },
         computed: {
-            versionMobil: function(){
-                return ""
-            }
-        },
-        methods: {
-            changeSynopsis(){
-                console.log("menu", document.querySelector(".menu"))
-                if (this.versionMobil){
-                    this.synopsys = true
-                    this.info = false
-                }
-            },
-            changeInfo(){
-                if (this.versionMobil){
-                    this.synopsys = false
-                    this.info = true
-                }
+            book(){
+                return this.$store.state.books[this.$route.params.bookId]
             }
         }
     }

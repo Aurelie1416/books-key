@@ -58,7 +58,7 @@ const routes = [
   {
     path: '/connexion',
     name: 'connexion',
-    component: () => import('../views/PageConnexion.vue')
+    component: () => import('../views/PageLogin.vue')
   },
   {
     path: '/dashboard',

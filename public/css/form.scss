@@ -5,9 +5,12 @@ form {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
+    button{
+        margin: 10px 0;
+    }
     .totalinput{
         position: relative;
+        margin-top: 10px;
         .input{
             display: flex;
             flex-direction: row;
@@ -21,22 +24,38 @@ form {
                     margin: 5px 0;
                 }
             }
+            input{
+                font-size: 16px;
+            }
+            #password{
+                padding-right: 40px;
+            }
             input:focus-visible, textarea:focus-visible{
                 outline: solid 2px #645E4E;
             }
+
         }
         .inputPlaceHolder{
             position: absolute;
             top: 50%;
             left: 35px;
             transform: translateY(-50%);
-            transition: 300ms;
-            color: #645E4E;
+            transition: 100ms;
+            z-index: -1;
         }
         .active{
             top: 0%;
-            transition: 300ms;
+            transition: 500ms;
+            color: #645E4E;
+            z-index: 1;
         }
+         #checkPassword, #nocheckPassword{
+            right: 30px;
+        }
+    }
+
+    .infoPassword{
+        color: #645E4E;   
     }
 
     p{
@@ -45,7 +64,7 @@ form {
     }
 
     input:focus-visible, textarea:focus-visible{
-        outline: solid 2px #645E4E;
+        outline: solid 1px #645E4E;
     }
 
     .inputMessageValid{
@@ -132,14 +151,14 @@ form {
             padding-right: 30px;
         }
 
-        .eye, .eye_close, .publication, .check, .nocheck {
+        .eye, .eyeSlash, .eye_close, .publication, .check, .nocheck {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             right: 10px;
         }
 
-        .check, .nocheck, .eye_close{
+        .eye_close{
             display: none;
         }
 

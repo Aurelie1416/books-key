@@ -12,8 +12,13 @@ form {
   flex-wrap: wrap;
 }
 
+form button {
+  margin: 10px 0;
+}
+
 form .totalinput {
   position: relative;
+  margin-top: 10px;
 }
 
 form .totalinput .input {
@@ -35,6 +40,14 @@ form .totalinput .input label i {
   margin: 5px 0;
 }
 
+form .totalinput .input input {
+  font-size: 16px;
+}
+
+form .totalinput .input #password {
+  padding-right: 40px;
+}
+
 form .totalinput .input input:focus-visible, form .totalinput .input textarea:focus-visible {
   outline: solid 2px #645E4E;
 }
@@ -45,15 +58,25 @@ form .totalinput .inputPlaceHolder {
   left: 35px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-transition: 300ms;
-  transition: 300ms;
-  color: #645E4E;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  z-index: -1;
 }
 
 form .totalinput .active {
   top: 0%;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  color: #645E4E;
+  z-index: 1;
+}
+
+form .totalinput #checkPassword, form .totalinput #nocheckPassword {
+  right: 30px;
+}
+
+form .infoPassword {
+  color: #645E4E;
 }
 
 form p {
@@ -62,7 +85,7 @@ form p {
 }
 
 form input:focus-visible, form textarea:focus-visible {
-  outline: solid 2px #645E4E;
+  outline: solid 1px #645E4E;
 }
 
 form .inputMessageValid {
@@ -156,7 +179,7 @@ form div #password, form div #password_bis {
   padding-right: 30px;
 }
 
-form div .eye, form div .eye_close, form div .publication, form div .check, form div .nocheck {
+form div .eye, form div .eyeSlash, form div .eye_close, form div .publication, form div .check, form div .nocheck {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -164,7 +187,7 @@ form div .eye, form div .eye_close, form div .publication, form div .check, form
   right: 10px;
 }
 
-form div .check, form div .nocheck, form div .eye_close {
+form div .eye_close {
   display: none;
 }
 

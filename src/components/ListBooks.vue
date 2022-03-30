@@ -1,6 +1,5 @@
 <template>
     <section>
-        <p v-if="numberBook > 0">count article :({{numberBook}})</p>
         <router-link :to="{ name: 'books-Admin'}">Passer en mode admin</router-link>
         <div id="list_article">
             <article  v-for="book in books" :key="book.id">
@@ -30,14 +29,13 @@
   export default{
         name: 'list-books',
         store: store,
-        data: function(){
-            return{
-                books: this.$store.state.books,
-                numberBook: 0
-            }
-        },
         created: function(){
         this.$store.dispatch('ajaxBooks');
         },
+        computed: {
+            books(){
+                return this.$store.state.books;
+            }
+        }
     }
 </script>

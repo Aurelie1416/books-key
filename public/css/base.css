@@ -80,27 +80,27 @@ body {
   }
 }
 
-.body, nav {
+.body, nav, input {
   color: #645E4E;
   font-family: 'Itim', cursive;
 }
 
-.body h1, .body h2, .body h3, .body th, .body caption, nav h1, nav h2, nav h3, nav th, nav caption {
+.body h1, .body h2, .body h3, .body th, .body caption, nav h1, nav h2, nav h3, nav th, nav caption, input h1, input h2, input h3, input th, input caption {
   font-family: 'Architects Daughter', cursive;
   color: #009176;
   font-weight: bold;
 }
 
-.body a, .body .menu_info, .body .menu_synopsis, .body button, .body .connect, nav a, nav .menu_info, nav .menu_synopsis, nav button, nav .connect {
+.body a, .body .menu_info, .body .menu_synopsis, .body button, .body .connect, nav a, nav .menu_info, nav .menu_synopsis, nav button, nav .connect, input a, input .menu_info, input .menu_synopsis, input button, input .connect {
   cursor: pointer;
 }
 
-.body a, .body .menu, nav a, nav .menu {
+.body a, .body .menu, nav a, nav .menu, input a, input .menu {
   text-decoration: none;
   color: #645E4E;
 }
 
-.body a:hover, .body .menu:hover, .body .connect:hover, nav a:hover, nav .menu:hover, nav .connect:hover {
+.body a:hover, .body .menu:hover, .body .connect:hover, nav a:hover, nav .menu:hover, nav .connect:hover, input a:hover, input .menu:hover, input .connect:hover {
   color: #009176;
 }
 
@@ -462,30 +462,30 @@ main section button:not(.menu):after {
   z-index: -1;
 }
 
-main section .button_hover {
+main section .buttonActive {
   cursor: pointer;
 }
 
-main section .button_hover:hover {
+main section .buttonActive:hover {
   color: #f9f5eb;
   cursor: pointer;
 }
 
-main section .button_hover:hover a {
+main section .buttonActive:hover a {
   color: #f9f5eb !important;
 }
 
-main section .button_hover:hover a:hover {
+main section .buttonActive:hover a:hover {
   color: #f9f5eb !important;
 }
 
-main section .button_hover:hover:after {
+main section .buttonActive:hover:after {
   width: 100%;
   height: calc(100% - 3px);
   border: solid #009176 2px;
 }
 
-main section .button_hover:active:after {
+main section .buttonActive:active:after {
   height: 100%;
   -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
           box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7);
