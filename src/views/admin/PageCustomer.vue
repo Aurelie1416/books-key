@@ -1,17 +1,17 @@
 <template>
     <div>
-        <customer-admin></customer-admin>
+        <information-customer></information-customer>
         <customer-order-list-admin></customer-order-list-admin>
     </div>
 </template>
 <script>
 
-import CustomerAdmin from '../components/CustomerAdmin.vue'
-import CustomerOrderListAdmin from '../components/CustomerOrderListAdmin.vue'
+import CustomerInformation from '../../components/customer/CustomerInformation.vue'
+import CustomerOrderListAdmin from '../../components/CustomerOrderListAdmin.vue'
 export default{
     name: 'page-customer-admin',
     components: {
-      CustomerAdmin,
+      CustomerInformation,
       CustomerOrderListAdmin
     },
     computeds: {

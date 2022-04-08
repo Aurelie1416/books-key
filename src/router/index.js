@@ -83,7 +83,7 @@ const routes = [
   {
     path: '/customer/:customerId',
     name: 'customer-admin',
-    component: () => import('../views/PageCustomerAdmin.vue')
+    component: () => import('../views/admin/PageCustomer.vue')
   },
   {
     path: '/orders',

@@ -12,20 +12,20 @@
                 <tbody>
                     <tr v-for="customer in customers" :key="customer.id" >
                         <td>
-                            <router-link :to="{ name: 'customer', params:{customerId: customer.id - 1}}">
+                            <router-link :to="{ name: 'customer', params:{customerId: customer.id}}">
                                 <i class="fas fa-user-circle avatar_img"></i>
                             </router-link>
                         </td>
                         <td data-label="Nom">
                             <div>
-                                <router-link :to="{ name: 'customer', params:{customerId: customer.id - 1}}">
+                                <router-link :to="{ name: 'customer', params:{customerId: customer.id}}">
                                     {{customer.last_name}}
                                 </router-link>
                             </div>
                         </td>
                         <td data-label="Prénom">
                             <div>
-                                <router-link :to="{ name: 'customer-admin', params:{customerId: customer.id - 1}}">
+                                <router-link :to="{ name: 'customer-admin', params:{customerId: customer.id}}">
                                 {{customer.first_name}}
                                 </router-link>
                             </div> 

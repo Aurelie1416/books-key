@@ -24,11 +24,9 @@
 </template>
 
 <script>
-  import store from '../store/index'
 
   export default{
         name: 'list-books',
-        store: store,
         created: function(){
             this.$store.dispatch('ajaxBooks');
         },

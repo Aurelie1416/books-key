@@ -1,6 +1,6 @@
 <template>
     <section>
-        <table cellspacing="0">
+        <!-- <table cellspacing="0">
             <caption>Liste des commandes</caption>
             <thead>
                 <tr>
@@ -16,24 +16,22 @@
                     <td v-if="order.customer == customer_id" data-label="Status" class="ongoing">{{order.status}}</td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
     </section>
 </template>
 
 <script>
-import store from '../store/index'
   export default {
         name: 'customer-order-list-admin',
-        store: store,
-        data: function(){
-            return{
-                columns: this.$store.state.columnOrder,
-                orders: this.$store.state.orders,
-                customer_id: this.$route.params.customerId + 1
-            }
-        },
-        created: function(){
-            this.$store.dispatch('ajaxOrders');
-        },
+        // data: function(){
+        //     return{
+        //         columns: this.$store.state.columnOrder,
+        //         orders: this.$store.state.orders,
+        //         customer_id: this.$route.params.customerId + 1
+        //     }
+        // },
+        // created: function(){
+        //     this.$store.dispatch('ajaxOrders');
+        // },
     }
 </script>

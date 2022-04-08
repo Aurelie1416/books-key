@@ -37,11 +37,6 @@ export default new Vuex.Store({
       'Adresse',
       'Téléphone'
     ],
-    columnCustomerAdmin: [
-      'Email',
-      'Adresse',
-      'Téléphone'
-    ],
     columnOrdersAdmin: [
       'Date',
       'Numéro de commande',
