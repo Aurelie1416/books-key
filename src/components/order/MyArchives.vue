@@ -46,7 +46,7 @@ export default {
   created: function () {
     this.$store.dispatch("ajaxOrders");
     this.$store.dispatch("ajaxCustomers");
-  },
+  }, 
   computed: {
     orders() {
       let orders = [];

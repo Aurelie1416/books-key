@@ -2,14 +2,14 @@
 <div id="complete_dashboard">
     <h2>{{ dateOfTheDay() }}</h2>
     <dashboard-review-sales></dashboard-review-sales>
-    <dashboard-sales-by-customer></dashboard-sales-by-customer>
     <dashboard-chart></dashboard-chart>
+    <dashboard-sales-by-customer></dashboard-sales-by-customer>
 </div>
 </template>
 <script>
-import DashboardChart from '../components/DashboardChart.vue';
-import DashboardReviewSales from '../components/DashboardReviewSales.vue';
-import DashboardSalesByCustomer from '../components/DashboardSalesByCustomer.vue';
+import DashboardChart from '../components/dashboard/DashboardChart.vue';
+import DashboardReviewSales from '../components/dashboard/DashboardReviewSales.vue';
+import DashboardSalesByCustomer from '../components/dashboard/DashboardSalesByCustomer.vue';
 
 
 
@@ -20,7 +20,7 @@ export default {
     DashboardSalesByCustomer,
     DashboardChart
 
-  },
+  }, 
   methods: {
       dateOfTheDay() {
         const date = new Date();

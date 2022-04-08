@@ -89,6 +89,7 @@ body {
   font-family: 'Architects Daughter', cursive;
   color: #009176;
   font-weight: bold;
+  text-align: center;
 }
 
 .body a, .body .menu_info, .body .menu_synopsis, .body button, .body .connect, nav a, nav .menu_info, nav .menu_synopsis, nav button, nav .connect, input a, input .menu_info, input .menu_synopsis, input button, input .connect {
