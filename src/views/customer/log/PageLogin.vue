@@ -2,7 +2,7 @@
     <my-login></my-login>
 </template>
 <script>
-import MyLogin from '../../../components/MyLogin.vue'
+import MyLogin from '../../../components/log/MyLogin.vue'
 export default {
   name: 'page-connexion',
   components: {

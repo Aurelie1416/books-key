@@ -55,32 +55,32 @@
 </template>
 <script>
   import TotalCart from './TotalCart.vue'
-  import store from '../store/index'
 
   export default {
       name: 'my-cart',
       components: {
         TotalCart
       },
-      store: store,
-      data: function(){
-          return{
-              books: this.$store.state.cart,
-              columns: this.$store.state.columnCart
-          }
-        },
       created: function(){
         this.$store.dispatch('ajaxCart');
       },
       methods: {
           deleteBook(book) {
-              this.books.splice(this.books.indexOf(book), 1);
+              this.$store.commit('deleteCartBook', book);
           },
           changeQuantity(book, modificator){
             if(modificator > 0 || (modificator < 0 && book.quantity > 1)){
                 book.quantity = parseInt(book.quantity) + modificator;
             }
           }
+      },
+      computed: {
+        books(){
+            return this.$store.state.cartBooks;
+        },
+       columns(){
+           return this.$store.state.columnCart;
+        }
       },
       watch: {
           shippingChoice: function(value){

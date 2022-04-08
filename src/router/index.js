@@ -41,9 +41,9 @@ const routes = [
     component: () => import('../views/PageAdminBooks.vue')
   },
   {
-    path: '/creation-article',
-    name: 'creation-Article',
-    component: () => import('../views/PageCreationArticle.vue')
+    path: '/creation-book',
+    name: 'creation-Book',
+    component: () => import('../views/PageCreationBook.vue')
   },
   {
     path: '/modification-article/:bookId',
@@ -58,7 +58,7 @@ const routes = [
   {
     path: '/connexion',
     name: 'connexion',
-    component: () => import('../views/PageLogin.vue')
+    component: () => import('../views/customer/log/PageLogin.vue')
   },
   {
     path: '/dashboard',

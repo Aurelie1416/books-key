@@ -5,16 +5,20 @@ form {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    button{
+
+    button {
         margin: 10px 0;
     }
-    .totalinput{
+
+    .totalInput {
         position: relative;
         margin-top: 10px;
-        .input{
+
+        .input {
             display: flex;
             flex-direction: row;
-            label{
+
+            label {
                 i {
                     border-top: solid #645E4E 1px;
                     border-bottom: solid #645E4E 1px;
@@ -24,18 +28,23 @@ form {
                     margin: 5px 0;
                 }
             }
-            input{
+
+            input {
                 font-size: 16px;
             }
-            #password{
+
+            #password {
                 padding-right: 40px;
             }
-            input:focus-visible, textarea:focus-visible{
+
+            input:focus-visible,
+            textarea:focus-visible {
                 outline: solid 2px #645E4E;
             }
 
         }
-        .inputPlaceHolder{
+
+        .inputPlaceHolder {
             position: absolute;
             top: 50%;
             left: 35px;
@@ -43,52 +52,58 @@ form {
             transition: 100ms;
             z-index: -1;
         }
-        .active{
+
+        .active {
             top: 0%;
             transition: 500ms;
             color: #645E4E;
             z-index: 1;
         }
-         #checkPassword, #nocheckPassword{
+
+        #checkPassword,
+        #nocheckPassword {
             right: 30px;
         }
     }
 
-    .infoPassword{
-        color: #645E4E;   
+    .infoPassword {
+        color: #645E4E;
     }
 
-    p{
+    p {
         margin: 0;
         color: transparent;
     }
 
-    input:focus-visible, textarea:focus-visible{
+    input:focus-visible,
+    textarea:focus-visible {
         outline: solid 1px #645E4E;
     }
 
-    .inputMessageValid{
+    .inputMessageValid {
         color: green;
     }
-    .inputMessageError{
+
+    .inputMessageError {
         color: red;
     }
 
-    .inputValid{
+    .inputValid {
         border: solid 3px green;
     }
-    .inputError{
+
+    .inputError {
         border: solid 3px red;
     }
 
-    .emailPhone{
+    .emailPhone {
         visibility: hidden;
     }
 
-    h3{
+    h3 {
         border-bottom: solid #009176 1px;
 
-        i{
+        i {
             border: solid #009176 1px;
             border-bottom: none;
             border-radius: 5px 5px 0 0;
@@ -96,14 +111,16 @@ form {
         }
     }
 
-    input, textarea{
+    input,
+    textarea {
         width: 100%;
         border: solid 1px #645E4E;
         border-radius: 1px;
     }
 
-    input[type='radio']{
+    input[type='radio'] {
         border: none;
+        margin-left: 5px;
     }
 
     input {
@@ -130,68 +147,104 @@ form {
         min-width: 130px;
         width: 100%;
 
-        .name_form, .password_form{
+        .name_form,
+        .password_form {
             flex-wrap: wrap;
-            div{
+
+            div {
                 margin-right: 5px;
                 width: 100%;
                 flex-wrap: nowrap;
             }
         }
 
-        .name, .password_double_check{
+        .name,
+        .password_double_check {
             width: 100%;
         }
 
-        #postcode{
+        #postcode {
             max-width: max-content;
         }
 
-        #password, #password_bis{
+        #password,
+        #password_bis {
             padding-right: 30px;
         }
 
-        .eye, .eyeSlash, .eye_close, .publication, .check, .nocheck {
+        .eye,
+        .eyeSlash,
+        .eye_close,
+        .publication,
+        .check,
+        .nocheck {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             right: 10px;
         }
 
-        .eye_close{
+        .eye_close {
             display: none;
         }
 
-        .check{
+        .check {
             color: green;
         }
 
-        .nocheck{
+        .nocheck {
             color: red;
         }
 
-        #publication_date{
-            padding-right: 30px;
+        #publicationDate {
+            padding-right: 40px;
         }
     }
 
-    .info_creation{
+    .twoInput {
         flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
 
-        .date_form{
-            .check, .nocheck{
-                right: 30px;
-            }
+        .labelPublish {
+            border: solid 1px;
+            border-radius: 5px 0 0 5px;
+            padding: 4px;
+            border-right: 0;
         }
+
+        .totalInput {
+            margin-top: 0;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+
+        .input {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .check,
+        .nocheck {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+        }
+
     }
 
     .option {
         justify-content: space-around;
         min-width: 70px;
         flex-wrap: wrap;
-        
 
-        .payment_option, .format_form{
+
+        .payment_option,
+        .format_form {
             width: 50%;
             height: 100px;
             display: flex;
@@ -200,8 +253,8 @@ form {
             align-items: center;
             flex-wrap: nowrap;
             justify-content: left;
-            
-            input{
+
+            input {
                 width: initial;
             }
 
@@ -210,31 +263,32 @@ form {
             }
         }
 
-        .info_supp, .radio{
+        .info_supp,
+        .radio {
             width: 100%;
             flex-wrap: wrap;
 
-            label{
+            label {
                 margin-right: 5px;
             }
         }
 
-        .radio{
+        .radio {
             text-align: left;
         }
     }
 
-    .help{
+    .help {
         justify-content: flex-start;
         margin-top: 2%;
         flex-wrap: wrap;
 
-        div{
+        div {
             flex-direction: column;
             width: fit-content;
             margin: 0 20px;
 
-            small{
+            small {
                 text-align: left;
             }
 
@@ -243,15 +297,16 @@ form {
                 width: 160px;
                 margin: 2% 10px 2% 0;
 
-                .check, .nocheck{
+                .check,
+                .nocheck {
                     right: 20px;
                 }
-    
-                input{
+
+                input {
                     max-width: 150px;
                     padding-right: 25px;
                 }
-    
+
                 .input_tooltip {
                     position: absolute;
                     top: 50%;
@@ -262,10 +317,12 @@ form {
                     cursor: help;
                     margin: 0;
                 }
-    
-                .info_help, .expiration_date, .date_form {
+
+                .info_help,
+                .expiration_date,
+                .date_form {
                     position: relative;
-        
+
                     .tooltip {
                         visibility: hidden;
                         width: 125px;
@@ -283,7 +340,7 @@ form {
                         transform: translateX(50%);
                         margin-left: -60px;
                     }
-        
+
                     .tooltip::after {
                         content: "";
                         position: absolute;
@@ -295,13 +352,14 @@ form {
                         border-color: transparent transparent #645E4E transparent;
                     }
                 }
+
                 .info_help:hover {
                     .tooltip {
                         visibility: visible;
                         opacity: 1;
                     }
                 }
-            
+
                 .expiration_date:hover {
                     .tooltip {
                         visibility: visible;
@@ -311,23 +369,26 @@ form {
             }
         }
     }
-    
-    .name, .password_double_check, .locate{
+
+    .name,
+    .password_double_check,
+    .locate {
         flex-wrap: wrap;
     }
 
-    .locate{
-        .postcode_form{
+    .locate {
+        .postcode_form {
             width: fit-content;
         }
     }
 
-    .date_form{
+    .date_form {
         width: 66%;
-        input{
+
+        input {
             margin-left: 10px;
         }
-    } 
+    }
 
     .img {
         background-color: #ffffff;
@@ -338,11 +399,12 @@ form {
         cursor: pointer;
         margin: 2% 5px 2% 0;
 
-        div:nth-child(2){
+        div:nth-child(2) {
             width: 100%;
             height: 30px;
             border-radius: 0 2px 2px 0;
-            .img_label{
+
+            .img_label {
                 width: fit-content;
                 min-width: initial;
                 height: 30px;
@@ -353,8 +415,9 @@ form {
                 border-bottom: solid #645E4E 1px;
                 background-color: #f9f5eb;
             }
-            .img_input{
-                p{
+
+            .img_input {
+                p {
                     padding-left: 5px;
                     font-weight: lighter;
                 }
@@ -381,14 +444,15 @@ form {
         bottom: 100%;
     }
 }
-@media screen and(min-width: 450px) {
+
+@media screen and(min-width: 550px) {
     form {
 
-        .info_creation{
+        .twoInput {
             justify-content: right;
             flex-wrap: nowrap;
 
-            .writer_form{
+            .totalInput {
                 width: 50%;
             }
         }
@@ -399,12 +463,14 @@ form {
     form {
         width: 75%;
 
-        div{
-            .name_form, .password_form{
+        div {
+
+            .name_form,
+            .password_form {
                 width: 50%;
             }
         }
-    
+
         .locate_form {
             width: 33%;
         }
@@ -412,20 +478,21 @@ form {
 }
 
 @media screen and(min-width: 1000px) {
-    
+
     form {
 
         .option {
 
-            .payment_option{
+            .payment_option {
                 width: 25%;
             }
 
-            .info_supp, .radio{
+            .info_supp,
+            .radio {
                 width: 100%;
                 justify-content: space-between;
             }
         }
     }
-    
+
 }

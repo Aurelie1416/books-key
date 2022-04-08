@@ -16,12 +16,12 @@ form button {
   margin: 10px 0;
 }
 
-form .totalinput {
+form .totalInput {
   position: relative;
   margin-top: 10px;
 }
 
-form .totalinput .input {
+form .totalInput .input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +31,7 @@ form .totalinput .input {
           flex-direction: row;
 }
 
-form .totalinput .input label i {
+form .totalInput .input label i {
   border-top: solid #645E4E 1px;
   border-bottom: solid #645E4E 1px;
   border-left: solid #645E4E 1px;
@@ -40,19 +40,20 @@ form .totalinput .input label i {
   margin: 5px 0;
 }
 
-form .totalinput .input input {
+form .totalInput .input input {
   font-size: 16px;
 }
 
-form .totalinput .input #password {
+form .totalInput .input #password {
   padding-right: 40px;
 }
 
-form .totalinput .input input:focus-visible, form .totalinput .input textarea:focus-visible {
+form .totalInput .input input:focus-visible,
+form .totalInput .input textarea:focus-visible {
   outline: solid 2px #645E4E;
 }
 
-form .totalinput .inputPlaceHolder {
+form .totalInput .inputPlaceHolder {
   position: absolute;
   top: 50%;
   left: 35px;
@@ -63,7 +64,7 @@ form .totalinput .inputPlaceHolder {
   z-index: -1;
 }
 
-form .totalinput .active {
+form .totalInput .active {
   top: 0%;
   -webkit-transition: 500ms;
   transition: 500ms;
@@ -71,7 +72,8 @@ form .totalinput .active {
   z-index: 1;
 }
 
-form .totalinput #checkPassword, form .totalinput #nocheckPassword {
+form .totalInput #checkPassword,
+form .totalInput #nocheckPassword {
   right: 30px;
 }
 
@@ -84,7 +86,8 @@ form p {
   color: transparent;
 }
 
-form input:focus-visible, form textarea:focus-visible {
+form input:focus-visible,
+form textarea:focus-visible {
   outline: solid 1px #645E4E;
 }
 
@@ -119,7 +122,8 @@ form h3 i {
   padding: 5px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   border: solid 1px #645E4E;
   border-radius: 1px;
@@ -127,6 +131,7 @@ form input, form textarea {
 
 form input[type='radio'] {
   border: none;
+  margin-left: 5px;
 }
 
 form input {
@@ -153,19 +158,22 @@ form div {
   width: 100%;
 }
 
-form div .name_form, form div .password_form {
+form div .name_form,
+form div .password_form {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-form div .name_form div, form div .password_form div {
+form div .name_form div,
+form div .password_form div {
   margin-right: 5px;
   width: 100%;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
 
-form div .name, form div .password_double_check {
+form div .name,
+form div .password_double_check {
   width: 100%;
 }
 
@@ -175,11 +183,17 @@ form div #postcode {
   max-width: max-content;
 }
 
-form div #password, form div #password_bis {
+form div #password,
+form div #password_bis {
   padding-right: 30px;
 }
 
-form div .eye, form div .eyeSlash, form div .eye_close, form div .publication, form div .check, form div .nocheck {
+form div .eye,
+form div .eyeSlash,
+form div .eye_close,
+form div .publication,
+form div .check,
+form div .nocheck {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -199,17 +213,54 @@ form div .nocheck {
   color: red;
 }
 
-form div #publication_date {
-  padding-right: 30px;
+form div #publicationDate {
+  padding-right: 40px;
 }
 
-form .info_creation {
+form .twoInput {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
 }
 
-form .info_creation .date_form .check, form .info_creation .date_form .nocheck {
+form .twoInput .labelPublish {
+  border: solid 1px;
+  border-radius: 5px 0 0 5px;
+  padding: 4px;
+  border-right: 0;
+}
+
+form .twoInput .totalInput {
+  margin-top: 0;
+}
+
+form .twoInput label {
+  white-space: nowrap;
+}
+
+form .twoInput .input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+form .twoInput .check,
+form .twoInput .nocheck {
+  position: absolute;
   right: 30px;
+  top: 50%;
 }
 
 form .option {
@@ -220,7 +271,8 @@ form .option {
       flex-wrap: wrap;
 }
 
-form .option .payment_option, form .option .format_form {
+form .option .payment_option,
+form .option .format_form {
   width: 50%;
   height: 100px;
   display: -webkit-box;
@@ -241,21 +293,25 @@ form .option .payment_option, form .option .format_form {
           justify-content: left;
 }
 
-form .option .payment_option input, form .option .format_form input {
+form .option .payment_option input,
+form .option .format_form input {
   width: initial;
 }
 
-form .option .payment_option img, form .option .format_form img {
+form .option .payment_option img,
+form .option .format_form img {
   height: 40px;
 }
 
-form .option .info_supp, form .option .radio {
+form .option .info_supp,
+form .option .radio {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-form .option .info_supp label, form .option .radio label {
+form .option .info_supp label,
+form .option .radio label {
   margin-right: 5px;
 }
 
@@ -293,7 +349,8 @@ form .help div .help_input {
   margin: 2% 10px 2% 0;
 }
 
-form .help div .help_input .check, form .help div .help_input .nocheck {
+form .help div .help_input .check,
+form .help div .help_input .nocheck {
   right: 20px;
 }
 
@@ -316,11 +373,15 @@ form .help div .help_input .input_tooltip {
   margin: 0;
 }
 
-form .help div .help_input .info_help, form .help div .help_input .expiration_date, form .help div .help_input .date_form {
+form .help div .help_input .info_help,
+form .help div .help_input .expiration_date,
+form .help div .help_input .date_form {
   position: relative;
 }
 
-form .help div .help_input .info_help .tooltip, form .help div .help_input .expiration_date .tooltip, form .help div .help_input .date_form .tooltip {
+form .help div .help_input .info_help .tooltip,
+form .help div .help_input .expiration_date .tooltip,
+form .help div .help_input .date_form .tooltip {
   visibility: hidden;
   width: 125px;
   background-color: #645E4E;
@@ -340,7 +401,9 @@ form .help div .help_input .info_help .tooltip, form .help div .help_input .expi
   margin-left: -60px;
 }
 
-form .help div .help_input .info_help .tooltip::after, form .help div .help_input .expiration_date .tooltip::after, form .help div .help_input .date_form .tooltip::after {
+form .help div .help_input .info_help .tooltip::after,
+form .help div .help_input .expiration_date .tooltip::after,
+form .help div .help_input .date_form .tooltip::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -361,7 +424,9 @@ form .help div .help_input .expiration_date:hover .tooltip {
   opacity: 1;
 }
 
-form .name, form .password_double_check, form .locate {
+form .name,
+form .password_double_check,
+form .locate {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -434,15 +499,15 @@ form input[type="file"] {
   bottom: 100%;
 }
 
-@media screen and (min-width: 450px) {
-  form .info_creation {
+@media screen and (min-width: 550px) {
+  form .twoInput {
     -webkit-box-pack: right;
         -ms-flex-pack: right;
             justify-content: right;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  form .info_creation .writer_form {
+  form .twoInput .totalInput {
     width: 50%;
   }
 }
@@ -451,7 +516,8 @@ form input[type="file"] {
   form {
     width: 75%;
   }
-  form div .name_form, form div .password_form {
+  form div .name_form,
+  form div .password_form {
     width: 50%;
   }
   form .locate_form {
@@ -463,7 +529,8 @@ form input[type="file"] {
   form .option .payment_option {
     width: 25%;
   }
-  form .option .info_supp, form .option .radio {
+  form .option .info_supp,
+  form .option .radio {
     width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;

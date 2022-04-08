@@ -2,7 +2,7 @@
     <section>
         <router-link :to="{ name: 'books-Admin'}">Passer en mode admin</router-link>
         <div id="list_article">
-            <article  v-for="book in books" :key="book.id">
+            <article  v-for="book in this.$store.state.books" :key="book.id">
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
                 <a href="#" class="book">
                     <img :src="book.image" alt="book cover">
@@ -30,7 +30,7 @@
         name: 'list-books',
         store: store,
         created: function(){
-        this.$store.dispatch('ajaxBooks');
+            this.$store.dispatch('ajaxBooks');
         },
         computed: {
             books(){

@@ -570,20 +570,6 @@ main section small {
   color: transparent;
 }
 
-main section .inputWrong {
-  color: red;
-  font-weight: bold;
-}
-
-main section .inputNeutral {
-  color: #645E4E;
-}
-
-main section .inputValid {
-  color: green;
-  font-weight: bold;
-}
-
 main section .delivered {
   color: green;
 }
