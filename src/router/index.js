@@ -83,7 +83,7 @@ const routes = [
   {
     path: '/customer/:customerId',
     name: 'customer-admin',
-    component: () => import('../views/admin/PageCustomer.vue')
+    component: () => import('../views/admin/customer/PageCustomer.vue')
   },
   {
     path: '/orders',
@@ -91,9 +91,9 @@ const routes = [
     component: () => import('../views/PageOrders.vue')
   },
   {
-    path: '/archives',
+    path: '/:customerId/archives',
     name: 'archives',
-    component: () => import('../views/PageArchives.vue')
+    component: () => import('../views/customer/order/PageArchives.vue')
   },
   {
     path: '/order/:orderId',

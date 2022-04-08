@@ -44,11 +44,6 @@ export default new Vuex.Store({
       'Client',
       'Status'
     ],
-    columnOrder: [
-      'Date',
-      'Numéro de commande',
-      'Status'
-    ],
     columnOrderFollowing: [
       'status',
       'Date de commande',

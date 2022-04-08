@@ -27,7 +27,7 @@
 
   export default{
         name: 'list-books',
-        created: function(){
+        created: function(){ 
             this.$store.dispatch('ajaxBooks');
         },
         computed: {
