@@ -37,7 +37,7 @@
 <script>
 export default {
   name: "dashboard-review-sales",
-  created: function () {
+  beforeCreate: function () {
     this.$store.dispatch("ajaxOrders");
     this.$store.dispatch("ajaxCustomers");
     this.$store.dispatch("ajaxBooks");
@@ -48,7 +48,7 @@ export default {
     },
     orders() {
       return this.$store.state.orders; 
-    },
+    }, 
     customers() {
       return this.$store.state.customers;
     },

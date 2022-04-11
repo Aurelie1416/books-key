@@ -32,7 +32,7 @@
         },
         computed: {
             books(){
-                return this.$store.state.books;
+                return this.$store.state.books; 
             }
         }
     }

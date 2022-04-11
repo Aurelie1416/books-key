@@ -54,7 +54,7 @@
 <script>
 export default {
   name: "dashboard-sales-by-customer",
-  created: function () {
+  beforeCreate: function () {
     this.$store.dispatch("ajaxOrders");
     this.$store.dispatch("ajaxCustomers");
   },

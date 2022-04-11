@@ -82,17 +82,17 @@ export default new Vuex.Store({
   actions: {
     ajaxCart(store) {       
       if(store.state.cartBooks.length === 0){
-        let cart_books = [];
+        let cartBooks = [];
 
         fetch("/json/cart.json")
         .then(response => response.json())
         .then(result => {
             for(let i = 0; i < result.cart.length; i++){
                 let book = { id:result.cart[i].id, image:result.cart[i].image, title:result.cart[i].title, writer:result.cart[i].writer, price:result.cart[i].price, quantity:result.cart[i].quantity, publication_date:result.cart[i].publication_date, edition:result.cart[i].edition, format:result.cart[i].format, page_number:result.cart[i].page_number, summary:result.cart[i].summary }
-                cart_books.push(book);
+                cartBooks.push(book);
             }
   
-            store.commit('ajax_cart', cart_books);
+            store.commit('ajax_cart', cartBooks);
         })
       }
       
@@ -120,7 +120,7 @@ export default new Vuex.Store({
       .then(response => response.json())
       .then(result => {
           for(let i = 0; i < result.customer.length; i++){
-              let customer = { id:result.customer[i].id, last_name:result.customer[i].last_name, first_name:result.customer[i].first_name, email:result.customer[i].email, phone:result.customer[i].phone, address:result.customer[i].address, inscription_date:result.customer[i].inscription_date, last_order_date:result.customer[i].last_order_date }
+              let customer = { id:result.customer[i].id, image:result.customer[i].image, last_name:result.customer[i].last_name, first_name:result.customer[i].first_name, email:result.customer[i].email, phone:result.customer[i].phone, address:result.customer[i].address, inscription_date:result.customer[i].inscription_date, last_order_date:result.customer[i].last_order_date }
               listCustomers.push(customer);
           }
           store.commit('ajax_customers', listCustomers);

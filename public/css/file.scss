@@ -271,11 +271,14 @@ section{
         }
     }
 
-    .avatar_img{
+    .avatarLogo{
         text-align: center;
         display: block;
         font-size: 5em;
         color: #009176;
+        border-radius: 50%;
+        margin: auto;
+        max-width: 100px;
     }
 }
 

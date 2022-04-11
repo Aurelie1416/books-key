@@ -2,14 +2,14 @@
   <section>
     <table cellspacing="0" v-if="orders.length > 0">
       <caption>
-        Archive des commandes
+        Archive de mes commandes
       </caption>
       <thead>
         <tr>
-          <th>Date</th>
+          <th>Date de création</th>
           <th>Numéro de commande</th>
           <th>Prix</th>
-          <th>Status</th>
+          <th>Statut</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +29,7 @@
               { cancelled: cancelled(order.status) },
               { delivered: delivered(order.status) }
             ]"
-            data-label="Status"
+            data-label="Statut"
           >
             {{ order.status }}
           </td>
@@ -43,7 +43,7 @@
 <script>
 export default {
   name: "my-archives",
-  created: function () {
+  beforeCreate: function () {
     this.$store.dispatch("ajaxOrders");
     this.$store.dispatch("ajaxCustomers");
   }, 
@@ -58,13 +58,13 @@ export default {
       return orders;
     }
   },
-  methods: {
+  methods: { 
       delivered(value){
         if(value == "livrée"){
             return true
         }
       },
-      cancelled(value){
+      cancelled(value){ 
           if(value == "annulée"){
             return true
         }

@@ -21,7 +21,7 @@
                     </td>
                     <td data-label="Adresse :">
                         <div>
-                            <p>{{street_1}}</p>
+                            <p>{{street_1}}</p> 
                             <p>{{street_2}}</p>
                             <p>{{postal_code}} {{city}} ({{country}})</p>
                         </div>

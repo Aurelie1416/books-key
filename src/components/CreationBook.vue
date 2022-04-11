@@ -153,7 +153,7 @@
           ]"
           >Ce champ est obligatoire</small
         >
-        <div class="twoInput">
+        <div class="twoInput" id="radio">
           <div class="input">
             <label class="inputNeutral" for="big">Grand format</label>
             <input
@@ -177,114 +177,181 @@
             />
           </div>
         </div>
-        <div class="totalInput">
-          <div class="input">
-            <label for="numberPage">
-              <i class="fas fa-copy"></i>
-            </label>
-            <input
-              ref="numberPage"
-              placeholder="Nombre de page"
-              v-model="number_page"
-              v-on:change="NumberPageIsNumeric(number_page)"
-              type="number"
-              id="numberPage"
-              name="numberPage"
-              v-bind:class="[
-                {
-                  inputValid:
-                    number_page > 4 &&
-                    number_page_is_numeric &&
-                    number_page_is_numeric != null,
-                },
-                {
-                  inputError:
-                    (number_page > 0 && number_page < 5) ||
-                    (!number_page_is_numeric && number_page_is_numeric != null),
-                },
-              ]"
-            />
-            <i v-if="number_page > 4 &&
-                    number_page_is_numeric &&
-                    number_page_is_numeric != null" class="far fa-check-circle check"></i>
-            <i
-              v-if="(number_page > 0 && number_page < 5) ||
-                    (!number_page_is_numeric && number_page_is_numeric != null)"
-              class="far fa-times-circle nocheck"
-            ></i>
-            <div class="button_more_less">
+        <div class="threeInput">
+          <div class="totalInput">
+            <div class="input">
+              <label for="numberPage">
+                <i class="fas fa-copy iconLabel"></i>
+              </label>
+              <input
+                ref="numberPage"
+                placeholder="Nombre de page"
+                v-model="number_page"
+                v-on:input="NumberPageIsNumeric(number_page)"
+                type="number"
+                id="numberPage"
+                name="numberPage"
+                v-bind:class="[
+                  {
+                    inputValid:
+                      number_page > 4 &&
+                      number_page_is_numeric &&
+                      number_page_is_numeric != null,
+                  },
+                  {
+                    inputError:
+                      (number_page > 0 && number_page < 5) ||
+                      (!number_page_is_numeric &&
+                        number_page_is_numeric != null),
+                  },
+                ]"
+              />
+              <i
+                v-if="
+                  number_page > 4 &&
+                  number_page_is_numeric &&
+                  number_page_is_numeric != null
+                "
+                class="far fa-check-circle check"
+              ></i>
+              <i
+                v-if="
+                  (number_page > 0 && number_page < 5) ||
+                  (!number_page_is_numeric && number_page_is_numeric != null)
+                "
+                class="far fa-times-circle nocheck"
+              ></i>
+              <div class="buttonMoreLess">
                 <div
                   class="more"
-                  v-on:click="changeNumber('page_number', page_number, 1)"
+                  v-on:click="changeNumber('number_page', number_page, 1)"
                 >
                   <p>+</p>
                 </div>
                 <div
                   class="less"
-                  v-on:click="changeNumber('page_number', page_number, -1)"
-                >
-                  <p>-</p>
-                </div>
-              </div>
-          </div>
-          <p
-            class="inputPlaceHolder"
-            v-bind:class="[{ active: number_page > 0 }]"
-          >
-            Nombre de page
-          </p>
-        </div>
-        <div>
-          <small
-            v-bind:class="[
-              { inputMessageError: number_page > 0 && number_page < 5 },
-            ]"
-            >Veuillez rentrer au moins 5 pages</small
-          >
-        </div>
-        <div>
-          <small v-bind:class="[{ inputMessageError: !number_page_is_numeric && number_page_is_numeric != null}]"
-            >Veuillez rentrer un chiffre valide</small
-          >
-        </div>
-
-        <div class="option">
-          <div class="info_supp">
-            <div class="more_less">
-              <div class="button_more_less">
-                <div
-                  class="more"
-                  v-on:click="changeNumber('page_number', page_number, 1)"
-                >
-                  <p>+</p>
-                </div>
-                <div
-                  class="less"
-                  v-on:click="changeNumber('page_number', page_number, -1)"
+                  v-on:click="changeNumber('number_page', number_page, -1)"
                 >
                   <p>-</p>
                 </div>
               </div>
             </div>
-            <div class="more_less">
-              <label
-                v-bind:class="[{ inputNeutral: !quantituNeutral }]"
-                for="quantity"
-                >Quantité en stock</label
-              >
+            <p
+              class="inputPlaceHolder"
+              v-bind:class="[{ active: number_page > 0 }]"
+            >
+              Nombre de page
+            </p>
+          </div>
+          <div class="totalInput">
+            <div class="input">
+              <label for="price">
+                <i class="fas fa-money-bill-wave iconLabel"></i>
+              </label>
               <input
-                pattern="[0-9]"
-                v-bind:class="[
-                  { isValid: quantityValid },
-                  { isInvalid: !quantityValid && !quantituNeutral },
-                ]"
+                ref="price"
+                placeholder="Prix unitaire"
+                v-model="price"
+                v-on:change="NumberPageIsNumeric(number_page)"
                 type="number"
-                name="quantity"
-                v-model="quantity"
-                placeholder="quantité en stock"
-                id="quantity"
+                id="price"
+                name="price"
+                v-bind:class="[
+                  {
+                    inputValid:
+                      number_page > 4 &&
+                      number_page_is_numeric &&
+                      number_page_is_numeric != null,
+                  },
+                  {
+                    inputError:
+                      (number_page > 0 && number_page < 5) ||
+                      (!number_page_is_numeric &&
+                        number_page_is_numeric != null),
+                  },
+                ]"
               />
-              <div class="button_more_less">
+              <i
+                v-if="
+                  number_page > 4 &&
+                  number_page_is_numeric &&
+                  number_page_is_numeric != null
+                "
+                class="far fa-check-circle check"
+              ></i>
+              <i
+                v-if="
+                  (number_page > 0 && number_page < 5) ||
+                  (!number_page_is_numeric && number_page_is_numeric != null)
+                "
+                class="far fa-times-circle nocheck"
+              ></i>
+              <div class="buttonMoreLess">
+                <div
+                  class="more"
+                  v-on:click="changeNumber('price', price, 1)"
+                >
+                  <p>+</p>
+                </div>
+                <div
+                  class="less"
+                  v-on:click="changeNumber('price', price, -1)"
+                >
+                  <p>-</p>
+                </div>
+              </div>
+            </div>
+            <p
+              class="inputPlaceHolder"
+              v-bind:class="[{ active: number_page > 0 }]"
+            >
+              Prix unitaire (en euros)
+            </p>
+          </div>
+          <div class="totalInput">
+            <div class="input">
+              <label for="quantity">
+                <i class="fas fa-copy iconLabel"></i>
+              </label>
+              <input
+                ref="quantity"
+                placeholder="Quantité"
+                v-model="quantity"
+                v-on:change="NumberPageIsNumeric(number_page)"
+                type="number"
+                id="quantity"
+                name="quantity"
+                v-bind:class="[
+                  {
+                    inputValid:
+                      number_page > 4 &&
+                      number_page_is_numeric &&
+                      number_page_is_numeric != null,
+                  },
+                  {
+                    inputError:
+                      (number_page > 0 && number_page < 5) ||
+                      (!number_page_is_numeric &&
+                        number_page_is_numeric != null),
+                  },
+                ]"
+              />
+              <i
+                v-if="
+                  number_page > 4 &&
+                  number_page_is_numeric &&
+                  number_page_is_numeric != null
+                "
+                class="far fa-check-circle check"
+              ></i>
+              <i
+                v-if="
+                  (number_page > 0 && number_page < 5) ||
+                  (!number_page_is_numeric && number_page_is_numeric != null)
+                "
+                class="far fa-times-circle nocheck"
+              ></i>
+              <div class="buttonMoreLess">
                 <div
                   class="more"
                   v-on:click="changeNumber('quantity', quantity, 1)"
@@ -299,34 +366,33 @@
                 </div>
               </div>
             </div>
-
-            <div class="more_less">
-              <label
-                v-bind:class="[{ inputNeutral: !priceNeutral }]"
-                for="price"
-                >Prix (en euro)</label
-              >
-              <input
-                v-bind:class="[
-                  { isValid: priceValid },
-                  { isInvalid: !priceValid && !priceNeutral },
-                ]"
-                type="number"
-                v-model="price"
-                name="price"
-                placeholder="Prix (en euro)"
-                id="price"
-              />
-              <div class="button_more_less">
-                <div class="more" v-on:click="changeNumber('price', price, 1)">
-                  <p>+</p>
-                </div>
-                <div class="less" v-on:click="changeNumber('price', price, -1)">
-                  <p>-</p>
-                </div>
-              </div>
-            </div>
+            <p
+              class="inputPlaceHolder"
+              v-bind:class="[{ active: number_page > 0 }]"
+            >
+              Quantité
+            </p>
           </div>
+        </div>
+
+        <div>
+          <small
+            v-bind:class="[
+              { inputMessageError: number_page > 0 && number_page < 5 },
+            ]"
+            >Veuillez rentrer au moins 5 pages</small
+          >
+        </div>
+        <div>
+          <small
+            v-bind:class="[
+              {
+                inputMessageError:
+                  !number_page_is_numeric && number_page_is_numeric != null,
+              },
+            ]"
+            >Veuillez rentrer un chiffre valide</small
+          >
         </div>
         <div class="img">
           <input
@@ -421,7 +487,7 @@ export default {
       publication_date: null,
       edition: "",
       format: [],
-      number_page: "",
+      number_page: null,
       number_page_is_numeric: null,
       quantity: null,
       price: null,
@@ -471,7 +537,7 @@ export default {
       }
     },
     changeNumber(attribute, number, modificator) {
-      if (number == null) {
+      if (number == null || number == "") {
         number = 1;
       } else if (modificator > 0 || (modificator < 0 && parseInt(number) > 1)) {
         number = parseInt(number) + modificator;

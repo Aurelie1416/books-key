@@ -16,19 +16,25 @@ form button {
   margin: 10px 0;
 }
 
+form #numberPage, form #quantity, form #price {
+  height: 40px;
+}
+
 form .totalInput {
   position: relative;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 form .totalInput .input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 24px;
 }
 
 form .totalInput .input label i {
@@ -65,7 +71,7 @@ form .totalInput .inputPlaceHolder {
 }
 
 form .totalInput .active {
-  top: 0%;
+  top: -15px;
   -webkit-transition: 500ms;
   transition: 500ms;
   color: #645E4E;
@@ -138,6 +144,10 @@ form input {
   height: 25px;
   margin: 2% 5px 2% 0;
   padding-right: 30px;
+}
+
+form input[type="number"] {
+  padding-right: 0;
 }
 
 form label i {
@@ -217,7 +227,11 @@ form div #publicationDate {
   padding-right: 40px;
 }
 
-form .twoInput {
+form #radio {
+  margin-top: 10px;
+}
+
+form .twoInput, form .threeInput {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   display: -webkit-box;
@@ -227,25 +241,25 @@ form .twoInput {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
-form .twoInput .labelPublish {
+form .twoInput .labelPublish, form .threeInput .labelPublish {
   border: solid 1px;
   border-radius: 5px 0 0 5px;
   padding: 4px;
   border-right: 0;
 }
 
-form .twoInput .totalInput {
+form .twoInput .totalInput, form .threeInput .totalInput {
   margin-top: 0;
 }
 
-form .twoInput label {
+form .twoInput label, form .threeInput label {
   white-space: nowrap;
 }
 
-form .twoInput .input {
+form .twoInput .input, form .threeInput .input {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -256,11 +270,34 @@ form .twoInput .input {
           flex-direction: row;
 }
 
+form .twoInput .input .iconLabel, form .threeInput .input .iconLabel {
+  padding: 13px 5px;
+}
+
 form .twoInput .check,
 form .twoInput .nocheck {
   position: absolute;
   right: 30px;
   top: 50%;
+}
+
+form .threeInput .check,
+form .threeInput .nocheck {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+}
+
+form .threeInput .totalInput {
+  margin-bottom: 20px;
+}
+
+form .threeInput .totalInput .input {
+  height: 44px;
+}
+
+form .threeInput .inputPlaceHolder {
+  top: -5px;
 }
 
 form .option {
@@ -509,6 +546,16 @@ form input[type="file"] {
   }
   form .twoInput .totalInput {
     width: 50%;
+  }
+  form .threeInput {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  form .threeInput .totalInput {
+    width: 33%;
   }
 }
 

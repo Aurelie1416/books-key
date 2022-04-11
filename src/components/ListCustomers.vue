@@ -1,7 +1,7 @@
 <template>
     <section>
         <table cellspacing="0">
-                <caption>Liste des livres</caption>
+                <caption>Liste des clients</caption>
                 <thead>
                     <tr>
                         <th v-for="column in columns" :key="column">

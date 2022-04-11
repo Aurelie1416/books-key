@@ -623,39 +623,23 @@ main section .delete:hover i {
   color: #f9f5eb;
 }
 
-main form .more_less, main table .more_less {
-  position: relative;
-  width: 50px;
-  min-width: auto;
-}
-
-main form .more_less input, main table .more_less input {
-  padding: 0 5px 0 5px;
-}
-
-main form .more_less .quantity, main table .more_less .quantity {
-  height: 40px;
-  width: 50px;
-}
-
-main form .more_less #price, main form .more_less #page_number, main form .more_less #quantity, main table .more_less #price, main table .more_less #page_number, main table .more_less #quantity {
-  height: 40px;
-  width: 150px;
-}
-
-main form .more_less .button_more_less, main table .more_less .button_more_less {
+main .buttonMoreLess {
   position: absolute;
-  right: 0;
+  right: 5px;
   top: 0;
-  min-width: auto;
-  display: initial;
+  width: 40px;
+  z-index: 10;
+  display: block;
+  min-width: 40px;
+  height: 40px;
 }
 
-main form .more_less .button_more_less .more, main form .more_less .button_more_less .less, main table .more_less .button_more_less .more, main table .more_less .button_more_less .less {
-  padding: 5px;
-  height: 9px;
-  width: 20px;
+main .buttonMoreLess .more, main .buttonMoreLess .less {
+  height: 20px;
+  width: 40px;
   border: 1px solid black;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
   background-color: #f2f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -670,7 +654,8 @@ main form .more_less .button_more_less .more, main form .more_less .button_more_
   cursor: pointer;
 }
 
-main form .more_less .button_more_less .more p, main form .more_less .button_more_less .less p, main table .more_less .button_more_less .more p, main table .more_less .button_more_less .less p {
+main .buttonMoreLess .more p, main .buttonMoreLess .less p {
+  color: #645E4E;
   margin: 0;
 }
 

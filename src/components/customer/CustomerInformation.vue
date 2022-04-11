@@ -1,10 +1,13 @@
 <template>
     <section>
-        <i class="fas fa-user-circle avatar_img"></i>
+        <img v-if="customer.image" :src="customer.image" alt="customer avatar" class="avatarLogo">
+        <i v-else class="fas fa-user-circle avatarLogo"></i>
         <h2>{{customer.first_name}} {{customer.last_name}}</h2>
         <table cellspacing="0">
-            <thead>
+            <thead> 
                 <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
                     <th scope="col">Email</th>
                     <th scope="col">Adresse</th>
                     <th scope="col">Téléphone</th>
@@ -12,6 +15,12 @@
             </thead>
             <tbody>
                 <tr>
+                    <td data-label="Nom :">
+                        <div>{{customer.last_name}}</div>
+                    </td>
+                    <td data-label="Prénom :">
+                        <div>{{customer.first_name}}</div>
+                    </td>
                     <td data-label="email :">
                         <div>{{customer.email}}</div>
                     </td>
@@ -34,7 +43,7 @@
 <script>
   export default {
         name: 'information-customer',
-        created: function(){
+        beforeCreate: function(){
             this.$store.dispatch('ajaxCustomers');
         },
         computed: {

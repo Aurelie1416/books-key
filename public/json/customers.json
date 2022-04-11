@@ -4,6 +4,7 @@
             "id": 1,
             "last_name": "Brouette",
             "first_name": "Jasper",
+            "image": null,
             "email": "jasper.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {
@@ -20,6 +21,7 @@
             "id": 2,
             "last_name": "Brouette",
             "first_name": "Toto",
+            "image": null,
             "email": "toto.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {
@@ -36,6 +38,7 @@
             "id": 3,
             "last_name": "Brouette",
             "first_name": "Prosper",
+            "image": null,
             "email": "prosper.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {
@@ -52,6 +55,7 @@
             "id": 4,
             "last_name": "Brouette",
             "first_name": "Gertrude",
+            "image": "/image/cherrydrop.png",
             "email": "gertrude.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {
@@ -69,6 +73,7 @@
             "id": 5,
             "last_name": "Brouette",
             "first_name": "Marie-Josette",
+            "image": "/image/cherrydrop.png",
             "email": "mj.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {
@@ -85,6 +90,7 @@
             "id": 6,
             "last_name": "Brouette",
             "first_name": "Pépito",
+            "image": null,
             "email": "pepite.brouette@gmail.com",
             "phone": "06 00 00 00 00",
             "address": {

@@ -64,7 +64,7 @@
       created: function(){
         this.$store.dispatch('ajaxCart');
       },
-      methods: {
+      methods: { 
           deleteBook(book) {
               this.$store.commit('deleteCartBook', book);
           },

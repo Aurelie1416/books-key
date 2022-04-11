@@ -10,13 +10,19 @@ form {
         margin: 10px 0;
     }
 
+    #numberPage, #quantity, #price {
+        height: 40px;
+    }
+
     .totalInput {
         position: relative;
-        margin-top: 10px;
+        margin-top: 30px;
 
         .input {
             display: flex;
+            position: relative;
             flex-direction: row;
+            height: 24px;
 
             label {
                 i {
@@ -54,7 +60,7 @@ form {
         }
 
         .active {
-            top: 0%;
+            top: -15px;
             transition: 500ms;
             color: #645E4E;
             z-index: 1;
@@ -129,6 +135,10 @@ form {
         padding-right: 30px;
     }
 
+    input[type="number"]{
+        padding-right: 0;
+    }
+
     label {
         i {
             border-top: solid #645E4E 1px;
@@ -201,11 +211,15 @@ form {
         }
     }
 
-    .twoInput {
+    #radio{
+        margin-top: 10px;
+    }
+
+    .twoInput, .threeInput {
         flex-wrap: wrap;
         display: flex;
         flex-direction: row;
-        margin-top: 10px;
+        margin-top: 30px;
 
         .labelPublish {
             border: solid 1px;
@@ -226,17 +240,40 @@ form {
             position: relative;
             display: flex;
             flex-direction: row;
-        }
 
+            .iconLabel {
+                padding: 13px 5px;
+            }
+        }
+    }
+
+    .twoInput{
         .check,
         .nocheck {
             position: absolute;
             right: 30px;
             top: 50%;
         }
-
     }
+    .threeInput{
+        .check,
+        .nocheck {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+        }
 
+        .totalInput{
+            margin-bottom: 20px;
+            .input{
+                height: 44px;
+            }
+        }
+
+        .inputPlaceHolder{
+            top: -5px;
+        }
+    }
     .option {
         justify-content: space-around;
         min-width: 70px;
@@ -454,6 +491,15 @@ form {
 
             .totalInput {
                 width: 50%;
+            }
+        }
+
+        .threeInput {
+            justify-content: right;
+            flex-wrap: nowrap;
+
+            .totalInput {
+                width: 33%;
             }
         }
     }
