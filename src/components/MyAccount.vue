@@ -1,6 +1,6 @@
 <template>
     <section>
-        <i class="fas fa-user-circle avatar_img"></i>
+        <i class="fas fa-user-circle avatarLogo"></i>
         <h2>Mon profil</h2>
         <table cellspacing="0">
             <thead>

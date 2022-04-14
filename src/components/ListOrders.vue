@@ -2,47 +2,36 @@
   <section>
     <table cellspacing="0">
       <caption>
-        Listes des commandes 
-      </caption> 
+        Liste des commandes
+      </caption>
       <thead>
         <tr>
-          <th>Date de création</th>
-          <th>Numéro de commande</th>
-          <th>Recette</th>
-          <th>Client</th>
-          <th>Statut</th>
+          <th scope="col" v-for="column in columns" :key="column">
+            {{ column }}
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="order in orders" :key="order.id">
-          <td data-label="Date">{{ order.creation_date }}</td>
-          <td data-label="Numéro de commande">
-            <router-link
-              :to="{ name: 'order-admin', params: { orderId: order.id } }"
-            >
-              {{ order.number_order }}
-            </router-link>
+          <td v-if="order.customer == customer_id" data-label="Date">
+            {{ order.creation_date }}
           </td>
-          <td data-label="Recette">{{ order.bill }}&euro;</td>
-          <td data-label="Client">
-            <div v-for="customer in customers" :key="customer.id">
-              <router-link
-              v-if="customer.id == order.customer"
-                :to="{
-                  name: 'customer',
-                  params: { customerId: order.customer },
-                }"
-              >
-                {{ customer.first_name }}
-                {{ customer.last_name }}
-              </router-link>
-            </div>
+          <td
+            v-if="order.customer == customer_id"
+            data-label="Numéro de Commande"
+          >
+            <a href="order_admin.html">{{ order.number_order }}</a>
           </td>
-          <td data-label="Statut" v-bind:class="[
+          <td
+            data-label="Statut"
+            v-bind:class="[
               { ongoing: ongoing(order.status) },
               { cancelled: cancelled(order.status) },
               { delivered: delivered(order.status) }
-            ]">{{ order.status }}</td>
+            ]"
+          >
+            {{ order.status }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -51,19 +40,21 @@
 
 <script>
 export default {
-  name: "list-orders",
-
+  name: "list-order",
   beforeCreate: function () {
     this.$store.dispatch("ajaxOrders");
     this.$store.dispatch("ajaxCustomers");
   },
   computed: {
     orders() {
-      return this.$store.state.orders
+      let orders = [];
+      for (const order_indiviual of this.$store.state.orders) {
+        if (order_indiviual.customer == this.$route.params.customerId) {
+          orders.push(order_indiviual);
+        }
+      }
+      return orders;
     },
-    customers() {
-      return this.$store.state.customers
-    }
   },
   methods: { 
       delivered(value){

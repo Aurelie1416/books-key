@@ -10,17 +10,5 @@
 
   export default {
     name: 'my-main',
-    data: function(){
-      return{
-        book: null
-      }
-    },
-    beforeCreate: function(){
-      fetch("/json/books.json")
-      .then(response => response.json())
-      .then(result => {
-          this.book = { bookId:result.books[0].id }
-      });
-    }
   }
 </script>

@@ -1,14 +1,13 @@
 <template>
-    <list-orders></list-orders>
+    <archives-admin></archives-admin>
 </template>
 <script>
-
-import ListOrders from '../components/ListOrders.vue'
+import ArchivesAdmin from '../components/ArchivesAdmin.vue'
 
 export default {
   name: 'page-list-orders',
   components: {
-    ListOrders
+    ArchivesAdmin
   }
 }
 
