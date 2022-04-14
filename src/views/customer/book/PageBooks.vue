@@ -3,7 +3,7 @@
 </template>
 <script>
 
-import ListBooks from '../components/ListBooks.vue'
+import ListBooks from '../../../components/book/ListBooks.vue'
 
 export default {
   name: 'page-list-books',

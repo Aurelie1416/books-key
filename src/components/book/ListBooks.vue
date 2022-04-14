@@ -1,6 +1,7 @@
 <template>
     <section>
         <router-link :to="{ name: 'books-Admin'}">Passer en mode admin</router-link>
+        <p>Quantité de livres dans mon panier : {{numberBooksInCart}}</p>
         <div id="list_article">
             <article  v-for="book in this.$store.state.books" :key="book.id">
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
@@ -11,7 +12,7 @@
                     <p>{{book.price}}&euro;</p>
                 </a>
                 </router-link>
-                <button v-on:click="numberBook++" class="button_hover">
+                <button v-on:click="addBookInCart(book)" class="buttonActive">
                     <div class="add_cart">
                         <i class="fas fa-cart-plus"></i>
                         <p>Ajouter Au panier</p>  
@@ -29,10 +30,26 @@
         name: 'list-books',
         created: function(){ 
             this.$store.dispatch('ajaxBooks');
+            this.$store.dispatch('ajaxCart');
         },
         computed: {
             books(){
                 return this.$store.state.books; 
+            },
+            cartBooks(){
+                return this.$store.state.cartBooks;
+            },
+            numberBooksInCart(){
+                let numberBooks = 0;
+                for(const book of this.cartBooks){
+                    numberBooks += parseFloat(book.quantity ) 
+                }
+                return numberBooks
+            }
+        },
+        methods: {
+            addBookInCart(book){
+                this.$store.commit('addBookInCart', book)
             }
         }
     }

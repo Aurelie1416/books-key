@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/books',
     name: 'books',
-    component: () => import('../views/PageBooks.vue')
+    component: () => import('../views/customer/book/PageBooks.vue')
   },
   {
     path: '/admin/books',

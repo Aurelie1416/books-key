@@ -75,9 +75,25 @@ export default new Vuex.Store({
       state.orders = orders
     },
     
-    deleteCartBook(state, cart_book) {
-      state.cartBooks.splice(state.cartBooks.indexOf(cart_book), 1);
+    deleteCartBook(state, cartBook) {
+      state.cartBooks.splice(state.cartBooks.indexOf(cartBook), 1);
   },
+  numberBooksInCart(state){
+    let numberBooks = 0;
+    for(const cartBook of state.cartBooks){
+      numberBooks += cartBook.quantity
+    } 
+    return numberBooks
+  },
+  addBookInCart(state, newBook){
+    for(const cartBook of state.cartBooks){
+      if(newBook.id === cartBook.id){
+        cartBook.quantity++
+        return
+      }
+    }
+    state.cartBooks.push(newBook)
+  }
   },
   actions: {
     ajaxCart(store) {       
@@ -139,6 +155,9 @@ export default new Vuex.Store({
           }
           store.commit('ajax_orders', listOrders);
       })
+    },
+    numberBooksInCart(store){
+      store.commit('numberBooksInCart');
     }
   }
 })
