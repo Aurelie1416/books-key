@@ -57,6 +57,7 @@ table:not(#chart) tr td::before {
 
 table:not(#chart) tr .link {
   text-align: center;
+  margin: auto;
 }
 
 table:not(#chart) .add {

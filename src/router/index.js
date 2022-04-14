@@ -36,9 +36,9 @@ const routes = [
     component: () => import('../views/customer/book/PageBooks.vue')
   },
   {
-    path: '/admin/books',
+    path: '/books',
     name: 'books-Admin',
-    component: () => import('../views/PageAdminBooks.vue')
+    component: () => import('../views/admin/book/PageBooks.vue')
   },
   {
     path: '/creation-book',
