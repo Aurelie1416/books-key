@@ -14,31 +14,12 @@ export default new Vuex.Store({
       'Prix (total)', 
       'Supprimer'
     ],
-    columnCustomer: [
-      'Nom',
-      'Prénom',
-      'Email',
-      'Adresse',
-      'Téléphone'
-    ],
     columnOrdersAdmin: [
       'Date',
       'Numéro de commande',
       'Recette',
       'Client',
       'Status'
-    ],
-    columnOrderFollowing: [
-      'status',
-      'Date de commande',
-      "Date d'envoi",
-      'Date de livraison'
-    ],
-    columnOrderCustomer: [
-      'Client',
-      'Adresse de livraison',
-      'Email',
-      'Téléphone'
     ],
     cartBooks: [],
     books: [], 
@@ -140,7 +121,7 @@ export default new Vuex.Store({
       .then(response => response.json())
       .then(result => {
           for(let i = 0; i < result.orders.length; i++){
-              let order = { id:result.orders[i].id, creation_date:result.orders[i].creation_date, sending_date:result.orders[i].sending_date, delivery_date:result.orders[i].delivery_date, status:result.orders[i].status, number_order:result.orders[i].number_order, customer:result.orders[i].id_customer, articles:result.orders[i].id_articles, bill:result.orders[i].bill }
+              let order = { id:result.orders[i].id, creation_date:result.orders[i].creation_date, sending_date:result.orders[i].sending_date, delivery_date:result.orders[i].delivery_date, status:result.orders[i].status, number_order:result.orders[i].number_order, customer:result.orders[i].id_customer, books:result.orders[i].id_books, bill:result.orders[i].bill }
               listOrders.push(order);
           }
           store.commit('ajax_orders', listOrders);
