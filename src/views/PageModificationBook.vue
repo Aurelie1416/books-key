@@ -6,7 +6,7 @@
 import ModificationBook from '../components/ModificationBook.vue'
 
 export default{
-    name: 'page-creation-article',
+    name: 'page-modification-article',
     components: {
       ModificationBook
     },

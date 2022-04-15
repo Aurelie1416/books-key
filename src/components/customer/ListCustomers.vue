@@ -106,7 +106,7 @@ export default {
     },
     orders() {
         
-                return this.$store.state.orders;
+      return this.$store.state.orders;
     },
   },
   methods: {
@@ -116,7 +116,7 @@ export default {
     lastOrderCustomer(customerId){
         let lastOrderCustomer = [];
         for(const order of this.orders){
-            if(order.customer == customerId){
+            if(order.customer == customerId){ 
                 lastOrderCustomer.push(order)
             }
         }

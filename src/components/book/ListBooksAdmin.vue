@@ -45,7 +45,7 @@
           <td data-label="Modifier">
             <router-link
               :to="{
-                name: 'modification-Article',
+                name: 'modification-book',
                 params: { bookId: book.id },
               }"
             >

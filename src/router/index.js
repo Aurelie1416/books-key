@@ -51,9 +51,9 @@ const routes = [
     component: () => import('../views/PageModificationCustomer.vue')
   },
   {
-    path: '/modification-article/:bookId',
-    name: 'modification-Article',
-    component: () => import('../views/PageModificationArticle.vue')
+    path: '/modification-book/:bookId',
+    name: 'modification-book',
+    component: () => import('../views/PageModificationBook.vue')
   },
   {
     path: '/inscription',

@@ -13,15 +13,15 @@
               <i class="fas fa-book"></i>
             </label>
             <input
+            :value="book.title"
               ref="title"
               placeholder="Titre"
-              v-model="book.title"
               type="text"
               id="title"
               name="title"
               v-bind:class="[
-                { inputValid: title.length > 2 },
-                { inputError: title.length > 0 && book.title.length < 3 },
+                { inputValid: book.title.length > 2 },
+                { inputError: book.title.length > 0 && book.title.length < 3 },
               ]"
             />
             <i v-if="book.title.length > 2" class="far fa-check-circle check"></i>
@@ -50,10 +50,10 @@
                 <i class="fas fa-pen-fancy"></i>
               </label>
               <input
+              :value="book.writer"
                 ref="writer"
                 placeholder="Auteur"
-                v-model="book.writer"
-                type="writer"
+                type="text"
                 id="writer"
                 name="writer"
                 v-bind:class="[
@@ -123,9 +123,9 @@
               <i class="fas fa-home"></i>
             </label>
             <input
+            :value="book.edition"
               ref="edition"
               placeholder="Maison d'édition"
-              v-model="book.edition"
               type="text"
               id="edition"
               name="edition"
@@ -184,23 +184,23 @@
                 <i class="fas fa-copy iconLabel"></i>
               </label>
               <input
+              :value="book.number_page"
                 ref="numberPage"
                 placeholder="Nombre de page"
-                v-model="book.page_number"
-                v-on:input="NumberPageIsNumeric(book.page_number)"
+                v-on:input="NumberPageIsNumeric(book.number_page)"
                 type="number"
                 id="numberPage"
                 name="numberPage"
                 v-bind:class="[
                   {
                     inputValid:
-                      book.page_number > 4 &&
+                      book.number_page > 4 &&
                       number_page_is_numeric &&
                       number_page_is_numeric != null,
                   },
                   {
                     inputError:
-                      (book.page_number > 0 && book.page_number < 5) ||
+                      (number_page > 0 && number_page < 5) ||
                       (!number_page_is_numeric &&
                         number_page_is_numeric != null),
                   },
@@ -208,7 +208,7 @@
               />
               <i
                 v-if="
-                  book.page_number > 4 &&
+                  book.number_page > 4 &&
                   number_page_is_numeric &&
                   number_page_is_numeric != null
                 "
@@ -216,7 +216,7 @@
               ></i>
               <i
                 v-if="
-                  (book.page_number > 0 && book.page_number < 5) ||
+                  (book.number_page > 0 && book.number_page < 5) ||
                   (!number_page_is_numeric && number_page_is_numeric != null)
                 "
                 class="far fa-times-circle nocheck"
@@ -224,13 +224,13 @@
               <div class="buttonMoreLess">
                 <div
                   class="more"
-                  v-on:click="changeNumber('number_page', book.page_number, 1)"
+                  v-on:click="changeNumber('number_page', book.number_page, 1)"
                 >
                   <p>+</p>
                 </div>
                 <div
                   class="less"
-                  v-on:click="changeNumber('number_page', book.page_number, -1)"
+                  v-on:click="changeNumber('number_page', book.number_page, -1)"
                 >
                   <p>-</p>
                 </div>
@@ -238,7 +238,7 @@
             </div>
             <p
               class="inputPlaceHolder"
-              v-bind:class="[{ active: book.page_number > 0 }]"
+              v-bind:class="[{ active: book.number_page > 0 }]"
             >
               Nombre de page
             </p>
@@ -249,8 +249,8 @@
                 <i class="fas fa-money-bill-wave iconLabel"></i>
               </label>
               <input
+              :value="book.price"
                 placeholder="Prix unitaire"
-                v-model="book.price"
                 v-on:input="PriceIsNumeric(book.price)"
                 type="number"
                 id="price"
@@ -297,8 +297,8 @@
                 <i class="fas fa-copy iconLabel"></i>
               </label>
               <input
+              :value="book.quantity"
                 placeholder="Quantité"
-                v-model="book.quantity"
                 v-on:input="QuantityIsNumeric(book.quantity)"
                 type="number"
                 id="quantity"
@@ -357,7 +357,7 @@
             <div>
               <small
                 v-bind:class="[
-                  { inputMessageError: book.page_number > 0 && book.page_number < 5 },
+                  { inputMessageError: book.number_page > 0 && book.number_page < 5 },
                 ]"
                 >Veuillez rentrer au moins 5 pages</small
               >
@@ -425,59 +425,58 @@
               accept="image/jpeg, image/png, image/jpg"
               type="file"
               name="img"
-              placeholder="Image (facultatif)"
+              placeholder="Première de couverture"
             />
           </div>
           <div
             class="imageInput"
             v-bind:class="[
               {
-                inputValid: book.image,
+                inputValid: imageIsValid,
               },
               {
-                inputError: !book.image,
+                inputError: !imageIsValid && imageName !== null,
               },
             ]"
           >
-            <p>{{ book.image }}</p>
+            <p>{{ imageName }}</p>
           </div>
           <p
             class="inputImagePlaceHolder"
-            v-bind:class="[{ active: book.image }]"
+            v-bind:class="[{ active: imageName }]"
           >
             Première de couverture
           </p>
           <i
-            v-if="book.image"
+            v-if="imageIsValid"
             class="far fa-check-circle check"
             id="check_card"
           ></i>
           <i
-            v-if="!book.image"
+            v-if="!imageIsValid && imageName"
             class="far fa-times-circle nocheck"
             id="nocheck_card"
           ></i>
         </div>
-        <small
-          class="imageSmall"
-          v-bind:class="[{ inputWrong: !book.image }]"
+        <small class="smallVisible"
+          v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
           >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
         >
 
         <textarea
           v-bind:class="[
             { inputValid: summaryIsValid },
-            { inputError: !summaryIsValid && book.summary },
+            { inputError: !summaryIsValid && summary },
           ]"
           type="text"
-          v-model="book.summary"
+          v-model="summary"
           name="summary"
           placeholder="Synopsis"
           rows="10"
         ></textarea>
         <div>
           <small
-            v-bind:class="[{ inputMessageError: !summaryIsValid && book.summary }]"
+            v-bind:class="[{ inputMessageError: !summaryIsValid && summary }]"
             >Ce champ est obligatoire</small
           >
         </div>
@@ -495,17 +494,26 @@
 <script>
 export default {
   name: "modification-book",
-  beforeCreate: function(){
-            this.$store.dispatch('ajaxBooks');
-        },
   data: function () {
     return {
+      // title: "",
+      // writer: "",
+      publication_date: null,
+      // edition: "",
+      format: [],
+      // number_page: null,
       number_page_is_numeric: null,
+      // quantity: null,
       quantity_is_numeric: null,
+      // price: null,
       price_is_numeric: null,
-      publication_date: null, 
-      format: []
+      summary: null,
+      image: {},
+      imageName: null,
     };
+  },
+  beforeCreate: function () {
+    this.$store.dispatch("ajaxBooks");
   },
   methods: {
     formSubmit(event) {
@@ -556,7 +564,7 @@ export default {
     addImage(event) {
       console.log(event.target.files, event.target.files[0].name);
       try {
-        this.book.image = event.target.files[0].name;
+        this.imageName = event.target.files[0].name;
       } catch (error) {
         console.error(error);
       }
@@ -571,15 +579,15 @@ export default {
     },
   },
   computed: {
-    book(){
-                let book = {};
-                for(const book_indiviual of this.$store.state.books){
-                    if(book_indiviual.id == this.$route.params.bookId){
-                        book =  book_indiviual;
-                    }
-                }
-                return book;
-            },
+    book: function(){
+      let book = {}
+      for(const book_individual of this.$store.state.books){
+        if(book_individual.id == this.$route.params.bookId){
+          book = book_individual
+        }
+      }
+      return book;
+    },
     dateIsValid: function () {
       if (this.publication_date != null) {
         return (
@@ -590,6 +598,13 @@ export default {
         return false;
       }
     },
+
+    imageIsValid: function () {
+      if (this.imageName != null) {
+        return this.imageName.match(/[/.](gif|jpg|jpeg|png)$/i);
+      }
+      return false;
+    },
     summaryIsValid: function () {
       if (this.summary != null) {
         return this.summary.trim().split(/\s+/).length >= 3;
@@ -598,26 +613,25 @@ export default {
     },
     formIsValid: function () {
       return (
-        this.title.length > 2 &&
-        this.writer.length > 2 &&
-        this.dateIsValid &&
-        this.publication_date !== null &&
-        this.edition.length > 2 &&
-        this.format &&
-        this.number_page > 4 &&
-        this.number_page_is_numeric &&
-        this.number_page_is_numeric != null &&
-        this.price > 0 &&
-        this.price_is_numeric &&
-        this.price_is_numeric != null &&
-        this.quantity > 0 &&
-        this.quantity_is_numeric &&
-        this.quantity_is_numeric != null &&
-        this.imageIsValid &&
+        // this.book.title.length > 2 &&
+        // this.book.writer.length > 2 &&
+        // this.dateIsValid &&
+        // this.publication_date !== null &&
+        // this.book.edition.length > 2 &&
+        // this.format &&
+        // this.book.number_page > 4 &&
+        // this.number_page_is_numeric &&
+        // this.number_page_is_numeric != null &&
+        // this.book.price > 0 &&
+        // this.price_is_numeric &&
+        // this.price_is_numeric != null &&
+        // this.book.quantity > 0 &&
+        // this.quantity_is_numeric &&
+        // this.quantity_is_numeric != null &&
+        // this.imageIsValid &&
         this.summaryIsValid
-      );
-    },
+      )
+    }
   },
-  watch: {},
 };
 </script>
