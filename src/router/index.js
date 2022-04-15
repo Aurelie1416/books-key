@@ -58,7 +58,7 @@ const routes = [
   {
     path: '/inscription',
     name: 'inscription',
-    component: () => import('../views/PageInscription.vue')
+    component: () => import('../views/customer/log/PageInscription.vue')
   },
   {
     path: '/connexion',

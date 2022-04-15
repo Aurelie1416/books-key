@@ -53,7 +53,7 @@
                 ref="writer"
                 placeholder="Auteur"
                 v-model="writer"
-                type="writer"
+                type="text"
                 id="writer"
                 name="writer"
                 v-bind:class="[
@@ -425,7 +425,7 @@
               accept="image/jpeg, image/png, image/jpg"
               type="file"
               name="img"
-              placeholder="Image (facultatif)"
+              placeholder="Première de couverture"
             />
           </div>
           <div
@@ -458,8 +458,7 @@
             id="nocheck_card"
           ></i>
         </div>
-        <small
-          class="imageSmall"
+        <small class="smallVisible"
           v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
           >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
         >
@@ -619,9 +618,8 @@ export default {
         this.quantity_is_numeric != null &&
         this.imageIsValid &&
         this.summaryIsValid
-      );
-    },
+      )
+    }
   },
-  watch: {},
 };
 </script>
