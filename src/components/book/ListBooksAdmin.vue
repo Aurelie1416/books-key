@@ -64,16 +64,9 @@
 </template>
 
 <script>
-import store from "../../store/index";
 
 export default {
   name: "list-books-admin",
-  store: store,
-  data: function () {
-    return {
-      columns: this.$store.state.columnBook,
-    };
-  },
   beforeCreate: function () {
     this.$store.dispatch("ajaxBooks");
   },

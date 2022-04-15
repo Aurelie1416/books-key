@@ -46,6 +46,11 @@ const routes = [
     component: () => import('../views/admin/book/PageCreationBook.vue')
   },
   {
+    path: '/modification-account/:customerId',
+    name: 'modification-customer-admin',
+    component: () => import('../views/PageModificationCustomer.vue')
+  },
+  {
     path: '/modification-article/:bookId',
     name: 'modification-Article',
     component: () => import('../views/PageModificationArticle.vue')
@@ -68,7 +73,7 @@ const routes = [
   {
     path: '/customers',
     name: 'customers',
-    component: () => import('../views/PageCustomers.vue')
+    component: () => import('../views/admin/customer/PageCustomers.vue')
   },
   {
     path: '/my-account/:customerId',

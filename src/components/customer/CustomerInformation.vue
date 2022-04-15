@@ -38,7 +38,7 @@
             </tbody>
         </table>
     </section>
-</template>
+</template> 
 
 <script>
   export default {

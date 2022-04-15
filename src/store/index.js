@@ -14,14 +14,6 @@ export default new Vuex.Store({
       'Prix (total)', 
       'Supprimer'
     ],
-    columnCustomers: [
-      '',
-      'Nom',
-      'Prénom',
-      "Date d'inscription",
-      'Date de la dernière commande',
-      'Désinscrire'
-    ],
     columnCustomer: [
       'Nom',
       'Prénom',
@@ -72,7 +64,10 @@ export default new Vuex.Store({
   },
   deleteBook(state, book) {
     state.books.splice(state.books.indexOf(book), 1);
-},
+  },
+  deleteCustomer(state, customer) {
+    state.customers.splice(state.customers.indexOf(customer), 1);
+  },
   numberBooksInCart(state){
     let numberBooks = 0;
     for(const cartBook of state.cartBooks){
