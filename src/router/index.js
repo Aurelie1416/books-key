@@ -93,7 +93,7 @@ const routes = [
   {
     path: '/orders',
     name: 'orders',
-    component: () => import('../views/PageOrders.vue')
+    component: () => import('../views/admin/order/PageOrders.vue')
   },
   {
     path: '/:customerId/archives',

@@ -6,8 +6,8 @@
       </caption> 
       <thead>
         <tr>
-          <th>Date de création</th>
           <th>Numéro de commande</th>
+          <th>Date de commande</th>
           <th>Recette</th>
           <th>Client</th>
           <th>Statut</th>
@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr v-for="order in orders" :key="order.id">
-          <td data-label="Date">{{ order.creation_date }}</td>
+          
           <td data-label="Numéro de commande">
             <router-link
               :to="{ name: 'order-admin', params: { orderId: order.id } }"
@@ -23,13 +23,14 @@
               {{ order.number_order }}
             </router-link>
           </td>
+          <td data-label="Date de commande">{{ order.creation_date }}</td>
           <td data-label="Recette">{{ order.bill }}&euro;</td>
           <td data-label="Client">
             <div v-for="customer in customers" :key="customer.id">
               <router-link
               v-if="customer.id == order.customer"
                 :to="{
-                  name: 'customer',
+                  name: 'customer-admin',
                   params: { customerId: order.customer },
                 }"
               >
