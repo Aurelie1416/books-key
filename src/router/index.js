@@ -78,7 +78,7 @@ const routes = [
   {
     path: '/my-account/:customerId',
     name: 'customer',
-    component: () => import('../views/PageCustomer.vue')
+    component: () => import('../views/customer/account/PageCustomer.vue')
   },
   {
     path: '/modify-my-account/:customerId',
