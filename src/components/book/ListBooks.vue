@@ -3,7 +3,7 @@
         <router-link :to="{ name: 'books-Admin'}">Passer en mode admin</router-link>
         <p>Quantité de livres dans mon panier : {{numberBooksInCart}}</p>
         <div id="list_article">
-            <article  v-for="book in this.$store.state.books" :key="book.id">
+            <article  v-for="book in books" :key="book.id">
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
                 <a href="#" class="book">
                     <img :src="book.image" alt="book cover">
@@ -34,7 +34,13 @@
         },
         computed: {
             books(){
-                return this.$store.state.books; 
+                let books = []
+                for(const book of this.$store.state.books){
+                    if (parseFloat(book.quantity) > 0){
+                        books.push(book)
+                    }
+                }
+                return books; 
             },
             cartBooks(){
                 return this.$store.state.cartBooks;
