@@ -6,22 +6,22 @@
       </caption>
       <thead>
         <tr>
-          <th>Date de création</th>
           <th>Numéro de commande</th>
+          <th>Date de création</th>
           <th>Prix</th>
           <th>Statut</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="order in orders" :key="order.id">
-          <td data-label="Date">{{ order.creation_date }}</td>
           <td data-label="Numéro de commande">
             <router-link
-              :to="{ name: 'order-admin', params: { orderId: order.id } }"
+              :to="{ name: 'order', params: { orderId: order.id } }"
             >
               {{ order.number_order }}
             </router-link>
           </td>
+          <td data-label="Date">{{ order.creation_date }}</td>
           <td data-label="Recette">{{ order.bill }}&euro;</td>
           <td
             v-bind:class="[

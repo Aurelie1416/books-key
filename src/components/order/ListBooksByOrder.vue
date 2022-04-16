@@ -19,11 +19,9 @@
 </template>
 
 <script>
-import store from "../../store/index";
 
 export default {
-  name: "order-list-articles",
-  store: store,
+  name: "list-books-by-order",
   props: {
     order: Object,
   },

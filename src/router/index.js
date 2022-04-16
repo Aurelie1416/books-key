@@ -108,7 +108,7 @@ const routes = [
   {
     path: '/order/:orderId',
     name: 'order',
-    component: () => import('../views/PageOrder.vue')
+    component: () => import('../views/customer/order/PageOrder.vue')
   }
 ]
 

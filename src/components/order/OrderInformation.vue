@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: "order-admin",
+  name: "order-information",
   props: {
     order: Object,
   },

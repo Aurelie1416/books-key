@@ -20,7 +20,7 @@
         <tr v-for="customer in customers" :key="customer.id">
           <td>
             <router-link
-              :to="{ name: 'customer', params: { customerId: customer.id } }"
+              :to="{ name: 'customer-admin', params: { customerId: customer.id } }"
             >
               <img
                 v-if="customer.image"
@@ -34,7 +34,7 @@
           <td data-label="Nom">
             <div>
               <router-link
-                :to="{ name: 'customer', params: { customerId: customer.id } }"
+                :to="{ name: 'customer-admin', params: { customerId: customer.id } }"
               >
                 {{ customer.last_name }}
               </router-link>

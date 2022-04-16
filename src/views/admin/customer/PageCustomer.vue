@@ -1,18 +1,17 @@
 <template>
     <div>
         <customer-information></customer-information>
-        <!-- <archives-admin></archives-admin> -->
+        <list-orders-by-customer></list-orders-by-customer>
     </div>
 </template>
 <script>
-// import ArchivesAdmin from '../../../components/ArchivesAdmin.vue'
-
-import CustomerInformation from '../../../components/customer/CustomerInformation.vue'
+import CustomerInformation from  '../../../components/customer/CustomerInformation.vue'
+import ListOrdersByCustomer from '../../../components/order/ListOrdersByCustomer.vue'
 export default{
     name: 'page-customer-admin',
     components: {
       CustomerInformation,
-        // ArchivesAdmin
+      ListOrdersByCustomer
     },
     computeds: {
       customerId() {

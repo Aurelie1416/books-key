@@ -1,23 +1,20 @@
 <template>
 <div>
     <order-information :order="order"></order-information>
-    <order-customer :order="order"></order-customer>
     <list-books-by-order :order="order"></list-books-by-order>
 </div>
     
 </template>
 <script>
 
-import OrderCustomer from '../../../components/order/CustomerOrder.vue'
 import ListBooksByOrder from '../../../components/order/ListBooksByOrder.vue'
-import OrderInformation from '../../../components/order/OrderInformation.vue'
+import OrderInformation from '../../../components/order/OrderInformation.vue';
 
 
 export default {
-  name: 'page-order-admin',
+  name: 'page-order',
   components: {
-    OrderCustomer,
-    ListBooksByOrder,    
+    ListBooksByOrder,
     OrderInformation
   },
   beforeCreate: function () {

@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "order-customer-admin",
+  name: "order-customer",
   props: {
     order: Object,
   },
