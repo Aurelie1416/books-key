@@ -1,12 +1,15 @@
 <template>
 <div id="cart">
-  <table v-if="books.length > 0">
+  <table v-if="books.length > 0" cellspacing="0">
     <caption>Mon panier</caption>
     <thead>
       <tr>
-        <th v-for="column in columns" :key="column">
-          {{ column }}
-        </th>
+        <th></th>
+        <th>Titre</th>
+        <th>Prix (unitaire)</th>
+        <th>Quantité</th>
+        <th>Prix (total)</th>
+        <th>Supprimer</th>
       </tr>
     </thead>
     <tbody>
@@ -21,10 +24,8 @@
         <td data-label="Titre">
           <router-link :to="{ name: 'book', params:{bookId: book.id}}">
           <div>{{book.title}}</div>
+          <div>({{book.format}})</div>
           </router-link>
-        </td>
-        <td data-label="Auteur">
-          <div>{{book.writer}}</div>
         </td>
         <td data-label="Prix (unitaire)">
           <div>{{book.price}}&euro;</div>

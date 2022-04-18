@@ -5,22 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    columnCart: [
-      '', 
-      'Titre', 
-      'Auteur', 
-      'Prix (unitaire)', 
-      'Quantité', 
-      'Prix (total)', 
-      'Supprimer'
-    ],
-    columnOrdersAdmin: [
-      'Date',
-      'Numéro de commande',
-      'Recette',
-      'Client',
-      'Status'
-    ],
     cartBooks: [],
     books: [], 
     customers: [],

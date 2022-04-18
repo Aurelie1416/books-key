@@ -58,6 +58,32 @@ table:not(#chart){
         }
     }
 
+    .delete {
+        border: solid 2px red;
+        border-radius: 50%;
+        background-color: transparent;
+        height: 15px;
+        width: 15px;
+        padding: 3px;
+        transition: color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+        text-align: center;
+        line-height: 15px;
+
+        i {
+            color: red;
+        }
+    }
+
+    .delete:hover {
+        border-radius: 50%;
+        background-color: red;
+
+        i {
+            color: #f9f5eb;
+        }
+    }
+
     .add{
         border-bottom: none;
         text-align: center;

@@ -60,6 +60,34 @@ table:not(#chart) tr .link {
   margin: auto;
 }
 
+table:not(#chart) .delete {
+  border: solid 2px red;
+  border-radius: 50%;
+  background-color: transparent;
+  height: 15px;
+  width: 15px;
+  padding: 3px;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  line-height: 15px;
+}
+
+table:not(#chart) .delete i {
+  color: red;
+}
+
+table:not(#chart) .delete:hover {
+  border-radius: 50%;
+  background-color: red;
+}
+
+table:not(#chart) .delete:hover i {
+  color: #f9f5eb;
+}
+
 table:not(#chart) .add {
   border-bottom: none;
   text-align: center;
