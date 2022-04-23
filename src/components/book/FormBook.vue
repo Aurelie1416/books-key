@@ -493,7 +493,7 @@
 
 <script>
 export default {
-  name: "creation-book",
+  name: "form-book",
   data: function () {
     return {
       title: "",

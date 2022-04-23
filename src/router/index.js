@@ -42,7 +42,7 @@ const routes = [
   },
   {
     path: '/creation-book',
-    name: 'creation-Book',
+    name: 'creation-book',
     component: () => import('../views/admin/book/PageCreationBook.vue')
   },
   {
@@ -59,6 +59,11 @@ const routes = [
     path: '/inscription',
     name: 'inscription',
     component: () => import('../views/customer/log/PageInscription.vue')
+  },
+  {
+    path: '/creation-customer',
+    name: 'creation-customer',
+    component: () => import('../views/admin/customer/PageCreationCustomer.vue')
   },
   {
     path: '/connexion',

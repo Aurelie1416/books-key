@@ -1,12 +1,15 @@
 <template>
-    <inscription-customer></inscription-customer>
+<section>
+  <my-inscription></my-inscription>
+</section>
+    
 </template>
 <script>
-import InscriptionCustomer from '../../../components/log/InscriptionCustomer.vue'
+import MyInscription from '../../../components/log/MyInscription.vue'
 export default {
   name: 'page-inscription-customer',
   components: {
-    InscriptionCustomer
+    MyInscription
   }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
-    <creation-book></creation-book>
+    <form-book></form-book>
 </template>
 <script>
-import CreationBook from '../../../components/book/CreationBook.vue'
+import FormBook from '../../../components/book/FormBook.vue'
 export default {
   name: 'page-creation-book',
   components: {
-    CreationBook
+    FormBook
   }
 }
 </script>

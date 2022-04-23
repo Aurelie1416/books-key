@@ -189,6 +189,8 @@ header {
   top: 0%;
   padding: 0 2% !important;
   z-index: 2;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header hr {
@@ -383,6 +385,12 @@ header div nav:hover .menu_select {
 main {
   min-height: calc(100vh - 100px);
   margin-top: 100px !important;
+}
+
+main .link {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 
 main .form_order {

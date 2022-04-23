@@ -10,6 +10,9 @@ form {
       -ms-flex-align: center;
           align-items: center;
   flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 form button {

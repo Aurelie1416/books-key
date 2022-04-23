@@ -161,7 +161,7 @@ header {
     top: 0%;
     padding: 0 2% !important;
     z-index: 2;
-
+    flex-wrap: wrap;
     hr{
         margin: 0;
     }
@@ -169,6 +169,7 @@ header {
     div{
         display: flex;
         flex-direction: row;
+        
         align-items: center;
         justify-content: space-between;
 
@@ -314,6 +315,11 @@ header {
 
 main {
 
+    .link{
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
     .form_order{
         position: relative;
         background-color: transparent;

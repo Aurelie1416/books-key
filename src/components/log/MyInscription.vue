@@ -1,6 +1,5 @@
 <template>
   <div id="inscription">
-    <section>
       <h2>Inscrivez-vous !</h2>
        <form
         v-on:submit.prevent="formSubmit"
@@ -586,14 +585,13 @@
           Je m'inscrit !
         </button>
       </form>
-      <router-link :to="{ name: 'connexion' }">Déjà inscrit ?</router-link>
-    </section>
+      <p class="link"><router-link :to="{ name: 'connexion' }">Déjà inscrit ?</router-link></p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "inscription-customer",
+  name: "my-inscription",
   data: function () {
     return {
       email: "",
@@ -679,7 +677,7 @@ export default {
     },
     phoneIsValid() {
       if (
-        this.phone.match(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/) &&
+        this.phone.match(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/) &&
         this.phone.length <= 15
       ) {
         return true;
