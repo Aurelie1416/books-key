@@ -1,4 +1,4 @@
-table:not(#chart){
+.table{
     width: 100%;
     margin-bottom: 2%;
 
@@ -103,6 +103,34 @@ table:not(#chart){
     } 
 }
 
+.mx-table-date{
+    thead{
+        background-color: #e5dabe;
+    }
+
+    tr{
+        background-color: transparent;
+        border-bottom: solid #e5dabe 1px;
+
+        td{
+            border: none;
+            border-radius: 100%;
+        }
+
+        .disabled{
+            border-radius: 0;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    td:hover{
+        background-color: #e5dabe;
+    }
+}
+
 #chart_legend{
     display: flex;
     flex-direction: column-reverse;
@@ -148,7 +176,7 @@ table:not(#chart){
 
 @media screen and (min-width: 800px){
 
-    table:not(#chart){
+    .table:not(#chart){
 
         .more_less{
             .button_more_less{

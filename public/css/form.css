@@ -19,6 +19,16 @@ form button {
   margin: 10px 0;
 }
 
+form .mx-input {
+  border: #645E4E 1px solid !important;
+  border-radius: 0 4px 4px 0;
+  height: 30px;
+}
+
+form .mx-datepicker {
+  width: 100% !important;
+}
+
 form #numberPage,
 form #quantity,
 form #price {
@@ -50,13 +60,14 @@ form .totalInput .input label i {
   border-top: solid #645E4E 1px;
   border-bottom: solid #645E4E 1px;
   border-left: solid #645E4E 1px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 4px 0 0 4px;
   padding: 6px;
   margin: 5px 0;
 }
 
 form .totalInput .input input {
   font-size: 16px;
+  border-radius: 0 4px 4px 0;
 }
 
 form .totalInput .input #password {
@@ -66,6 +77,14 @@ form .totalInput .input #password {
 form .totalInput .input input:focus-visible,
 form .totalInput .input textarea:focus-visible {
   outline: solid 2px #645E4E;
+}
+
+form .totalInput .inputDateValid input {
+  border: solid 3px green !important;
+}
+
+form .totalInput .inputDateInvalid input {
+  border: solid 3px red !important;
 }
 
 form .totalInput .inputPlaceHolder, form .totalInput .inputImagePlaceHolder {
@@ -153,7 +172,7 @@ form input,
 form textarea {
   width: 100%;
   border: solid 1px #645E4E;
-  border-radius: 1px;
+  border-radius: 4px;
 }
 
 form input[type='radio'] {
@@ -175,7 +194,7 @@ form label i {
   border-top: solid #645E4E 1px;
   border-bottom: solid #645E4E 1px;
   border-left: solid #645E4E 1px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 4px 0 0 4px;
   padding: 6px;
   margin: 5px 0;
 }
@@ -244,10 +263,6 @@ form div .nocheck {
   color: red;
 }
 
-form div #publicationDate {
-  padding-right: 40px;
-}
-
 form #radio {
   margin-top: 10px;
 }
@@ -269,7 +284,7 @@ form .threeInput {
 form .twoInput .labelPublish,
 form .threeInput .labelPublish {
   border: solid 1px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 4px 0 0 4px;
   padding: 4px;
   border-right: 0;
 }
@@ -508,7 +523,7 @@ form .imageInput {
   position: absolute;
   top: -3px;
   right: 0;
-  border-radius: 0 1px 1px 0;
+  border-radius: 0 4px 4px 0;
   border: solid 1px #645E4E;
   display: -webkit-box;
   display: -ms-flexbox;

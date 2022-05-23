@@ -86,7 +86,7 @@
               <label class="labelPublish" for="publicationDate"
                 >Publié le</label
               >
-              <input
+              <!-- <input
                 type="date"
                 v-bind:class="[
                   { inputValid: dateIsValid && publication_date !== null },
@@ -96,8 +96,25 @@
                 name="publicationDate"
                 placeholder="Date de publication"
                 id="publicationDate"
-              />
-              <i class="far fa-calendar-alt publication"></i>
+              /> -->
+              <date-picker
+                :disabledDates="disabledDates" 
+                type="date"
+                v-model="publication_date"
+                valueType="format"
+                v-bind:class="[
+                  { inputDateValid: dateIsValid && publication_date !== null },
+                  {
+                    inputDateInvalid: !dateIsValid && publication_date !== null,
+                  },
+                ]"
+                name="publicationDate"
+                placeholder="Date de publication"
+                id="publicationDate"
+                :language="lang"
+                typeable="true"
+                format="DD/MM/YYYY"
+              ></date-picker>
               <i
                 v-if="dateIsValid && publication_date !== null"
                 class="far fa-check-circle check"
@@ -458,7 +475,8 @@
             id="nocheck_card"
           ></i>
         </div>
-        <small class="smallVisible"
+        <small
+          class="smallVisible"
           v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
           >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
         >
@@ -492,8 +510,12 @@
 </template>
 
 <script>
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
+import "vue2-datepicker/locale/fr";
 export default {
   name: "form-book",
+  components: { DatePicker },
   data: function () {
     return {
       title: "",
@@ -510,6 +532,12 @@ export default {
       summary: null,
       image: {},
       imageName: null,
+      lang: {
+        formatLocale: {
+          firstDayOfWeek: 1,
+        },
+      },
+      disabledDates: ['2022-02-03', '2022-02-04']
     };
   },
   methods: {
@@ -537,6 +565,9 @@ export default {
         body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
     },
+    //  disablePastDates(val) {
+    //    return val >= new Date()
+    // },
     NumberPageIsNumeric(value) {
       if (!isNaN(parseFloat(value)) && isFinite(parseFloat(value))) {
         this.number_page_is_numeric = true;
@@ -578,15 +609,18 @@ export default {
   computed: {
     dateIsValid: function () {
       if (this.publication_date != null) {
+        var date_components = this.publication_date.split("/");
+        var day = date_components[0];
+        var month = date_components[1];
+        var year = date_components[2];
         return (
-          new Date(this.publication_date) !== "Invalid Date" &&
-          !isNaN(new Date(this.publication_date))
+          new Date(year, month - 1, day) !== "Invalid Date" &&
+          !isNaN(new Date(year, month - 1, day))
         );
       } else {
         return false;
       }
     },
-
     imageIsValid: function () {
       if (this.imageName != null) {
         return this.imageName.match(/[/.](gif|jpg|jpeg|png)$/i);
@@ -618,8 +652,8 @@ export default {
         this.quantity_is_numeric != null &&
         this.imageIsValid &&
         this.summaryIsValid
-      )
-    }
+      );
+    },
   },
 };
 </script>

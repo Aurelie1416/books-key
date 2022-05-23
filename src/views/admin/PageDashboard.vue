@@ -7,9 +7,9 @@
 </div>
 </template>
 <script>
-import DashboardChart from '../../components/dashboard/DashboardReviewSales.vue';
-import DashboardReviewSales from '../../components/dashboard/DashboardReviewSales.vue';
-import DashboardSalesByCustomer from '../../components/dashboard/DashboardSalesByCustomer.vue';
+import DashboardChart from '../../components/DashboardReviewSales.vue';
+import DashboardReviewSales from '../../components/DashboardReviewSales.vue';
+import DashboardSalesByCustomer from '../../components/DashboardSalesByCustomer.vue';
 
 
 

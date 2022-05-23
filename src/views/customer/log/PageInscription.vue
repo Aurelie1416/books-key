@@ -5,7 +5,7 @@
     
 </template>
 <script>
-import MyInscription from '../../../components/log/MyInscription.vue'
+import MyInscription from '../../../components/MyInscription.vue'
 export default {
   name: 'page-inscription-customer',
   components: {

@@ -3,7 +3,7 @@
 </template>
 <script>
 
-import MyArchives from '../../../components/order/ArchivesCustomer.vue'
+import MyArchives from '../../../components/ArchivesCustomer.vue'
 
 export default {
   name: 'page-archives',

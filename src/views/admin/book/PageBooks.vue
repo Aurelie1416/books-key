@@ -3,7 +3,7 @@
 </template>
 <script>
 
-import ListBooksAdmin from '../../../components/book/ListBooksAdmin.vue'
+import ListBooksAdmin from '../../../components/ListBooksAdmin.vue'
 
 export default {
   name: 'page-list-books-admin',

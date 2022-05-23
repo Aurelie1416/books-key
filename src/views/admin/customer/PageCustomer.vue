@@ -5,8 +5,8 @@
     </div>
 </template>
 <script>
-import CustomerInformation from  '../../../components/customer/CustomerInformation.vue'
-import ListOrdersByCustomer from '../../../components/order/ListOrdersByCustomer.vue'
+import CustomerInformation from  '../../../components/CustomerInformation.vue'
+import ListOrdersByCustomer from '../../../components/ListOrdersByCustomer.vue'
 export default{
     name: 'page-customer-admin',
     components: {

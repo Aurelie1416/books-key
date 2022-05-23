@@ -1,18 +1,18 @@
-table:not(#chart) {
+.table {
   width: 100%;
   margin-bottom: 2%;
 }
 
-table:not(#chart) caption {
+.table caption {
   text-transform: uppercase;
   padding: 20px;
 }
 
-table:not(#chart) thead {
+.table thead {
   display: none;
 }
 
-table:not(#chart) tr {
+.table tr {
   border-bottom: solid #e5dabe 3px;
   display: block;
   background-color: #f2f2f2;
@@ -21,25 +21,25 @@ table:not(#chart) tr {
   margin-bottom: 20px;
 }
 
-table:not(#chart) tr td {
+.table tr td {
   border: solid #e5dabe 1px;
   display: block;
   text-align: right;
   position: relative;
 }
 
-table:not(#chart) tr td img {
+.table tr td img {
   height: 75px;
 }
 
-table:not(#chart) tr td div, table:not(#chart) tr td ul {
+.table tr td div, .table tr td ul {
   max-width: 50%;
   margin-right: 0;
   margin-left: auto;
   word-wrap: break-word;
 }
 
-table:not(#chart) tr td::before {
+.table tr td::before {
   content: attr(data-label);
   position: absolute;
   -webkit-transform: translateY(-50%);
@@ -55,12 +55,12 @@ table:not(#chart) tr td::before {
   font-family: 'Architects Daughter', cursive;
 }
 
-table:not(#chart) tr .link {
+.table tr .link {
   text-align: center;
   margin: auto;
 }
 
-table:not(#chart) .delete {
+.table .delete {
   border: solid 2px red;
   border-radius: 50%;
   background-color: transparent;
@@ -75,35 +75,61 @@ table:not(#chart) .delete {
   line-height: 15px;
 }
 
-table:not(#chart) .delete i {
+.table .delete i {
   color: red;
 }
 
-table:not(#chart) .delete:hover {
+.table .delete:hover {
   border-radius: 50%;
   background-color: red;
 }
 
-table:not(#chart) .delete:hover i {
+.table .delete:hover i {
   color: #f9f5eb;
 }
 
-table:not(#chart) .add {
+.table .add {
   border-bottom: none;
   text-align: center;
   background-color: initial;
 }
 
-table:not(#chart) .add td, table:not(#chart) .add th {
+.table .add td, .table .add th {
   display: inline;
   border: none;
 }
 
-table:not(#chart) #total {
+.table #total {
   padding: 20px;
   border-bottom: none;
   background-color: initial;
   border-top: solid #645E4E 3px;
+}
+
+.mx-table-date thead {
+  background-color: #e5dabe;
+}
+
+.mx-table-date tr {
+  background-color: transparent;
+  border-bottom: solid #e5dabe 1px;
+}
+
+.mx-table-date tr td {
+  border: none;
+  border-radius: 100%;
+}
+
+.mx-table-date tr .disabled {
+  border-radius: 0;
+}
+
+.mx-table-date tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mx-table-date td:hover {
+  background-color: #e5dabe;
 }
 
 #chart_legend {
@@ -157,57 +183,57 @@ table:not(#chart) #total {
 }
 
 @media screen and (min-width: 800px) {
-  table:not(#chart) .more_less .button_more_less {
+  .table:not(#chart) .more_less .button_more_less {
     right: calc(50% - (56px/2));
   }
-  table:not(#chart) thead {
+  .table:not(#chart) thead {
     display: table-header-group;
     background-color: #e5dabe;
     text-transform: uppercase;
   }
-  table:not(#chart) tr {
+  .table:not(#chart) tr {
     background-color: transparent;
     margin-bottom: 0;
     max-width: none;
     border-bottom: none;
     display: table-row;
   }
-  table:not(#chart) tr td {
+  .table:not(#chart) tr td {
     display: table-cell;
     text-align: center;
     border: none;
     border-bottom: solid #e5dabe 1px;
   }
-  table:not(#chart) tr td div, table:not(#chart) tr td ul {
+  .table:not(#chart) tr td div, .table:not(#chart) tr td ul {
     max-width: none;
     margin-right: auto;
     margin-left: auto;
   }
-  table:not(#chart) tr td:before {
+  .table:not(#chart) tr td:before {
     display: none;
   }
-  table:not(#chart) .add {
+  .table:not(#chart) .add {
     border-bottom: none;
     text-align: center;
     background-color: initial;
     display: table-row;
   }
-  table:not(#chart) .add td, table:not(#chart) .add th {
+  .table:not(#chart) .add td, .table:not(#chart) .add th {
     display: table-cell;
     border: none;
   }
-  table:not(#chart) #total {
+  .table:not(#chart) #total {
     padding: 20px;
     background-color: initial;
     border-top: solid #645E4E 3px;
   }
-  table:not(#chart) tr:nth-child(even) {
+  .table:not(#chart) tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  table:not(#chart) .add:nth-child(even) {
+  .table:not(#chart) .add:nth-child(even) {
     background-color: initial;
   }
-  table:not(#chart) tr:hover {
+  .table:not(#chart) tr:hover {
     background-color: #e5dabe;
   }
   #chart_legend {

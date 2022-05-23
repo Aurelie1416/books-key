@@ -8,7 +8,7 @@
 </template>
 <script>
 
-import CustomerInformation from '../../../components/customer/CustomerInformation.vue'
+import CustomerInformation from '../../../components/CustomerInformation.vue'
 export default{
     name: 'page-customer',
     components: {

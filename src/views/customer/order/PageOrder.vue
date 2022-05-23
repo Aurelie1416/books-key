@@ -7,8 +7,8 @@
 </template>
 <script>
 
-import ListBooksByOrder from '../../../components/order/ListBooksByOrder.vue'
-import OrderInformation from '../../../components/order/OrderInformation.vue';
+import ListBooksByOrder from '../../../components/ListBooksByOrder.vue'
+import OrderInformation from '../../../components/OrderInformation.vue';
 
 
 export default {
