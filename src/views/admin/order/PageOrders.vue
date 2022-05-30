@@ -2,7 +2,7 @@
     <archives-admin></archives-admin>
 </template>
 <script>
-import ArchivesAdmin from '../../../components/ArchivesAdmin.vue'
+import ArchivesAdmin from '../../../components/order/ArchivesAdmin.vue'
 
 export default {
   name: 'page-list-orders',
