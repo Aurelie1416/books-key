@@ -1,0 +1,24 @@
+{
+    "status_order": [
+        {
+            "id": 1,
+            "status": "en cours de préparation"
+        },
+        {
+            "id": 2,
+            "status":"en cours d'expédition"
+        },
+        {
+            "id": 3,
+            "status": "annulée"
+        },
+        {
+            "id": 4,
+            "status":"livrée"
+        },
+        {
+            "id": 5,
+            "status":"remboursée"
+        }
+    ]
+}

@@ -12,7 +12,7 @@
             <router-link :to="{name: 'dashboard'}">Dashboard</router-link> |
             <router-link :to="{name: 'customers'}">Liste des clients</router-link> |
             <router-link :to="{name: 'archives', params: { customerId: 6 }}">Mes archives</router-link> |
-            <router-link :to="{name: 'orders'}">Liste des commandes</router-link> |
+            <router-link :to="{name: 'orders-admin'}">Liste des commandes</router-link> |
             <router-link :to="{name: 'books'}">books</router-link>
           </div>
         </header>

@@ -28,6 +28,14 @@
   position: relative;
 }
 
+.table tr td .mx-datepicker {
+  width: 120px;
+}
+
+.table tr td .mx-input {
+  height: 20px;
+}
+
 .table tr td img {
   height: 75px;
 }

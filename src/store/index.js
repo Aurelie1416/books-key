@@ -8,7 +8,8 @@ export default new Vuex.Store({
     cartBooks: [],
     books: [], 
     customers: [],
-    orders: []
+    orders: [],
+    statusOrder: []
   },
   mutations: {
     ajax_books(state, books){
@@ -23,7 +24,9 @@ export default new Vuex.Store({
     ajax_orders(state, orders){
       state.orders = orders
     },
-    
+    ajax_status_order(state, statusOrder){
+      state.statusOrder = statusOrder
+    },
     deleteCartBook(state, cartBook) {
       state.cartBooks.splice(state.cartBooks.indexOf(cartBook), 1);
   },
@@ -66,7 +69,22 @@ export default new Vuex.Store({
             store.commit('ajax_cart', cartBooks);
         })
       }
-      
+    },
+    ajaxStatusOrder(store) {       
+      if(store.state.statusOrder.length === 0){
+        let statusOrder = [];
+
+        fetch("/json/statusOrder.json")
+        .then(response => response.json())
+        .then(result => {
+            for(let i = 0; i < result.status_order.length; i++){
+                let status = { id:result.status_order[i].id, status:result.status_order[i].status }
+                statusOrder.push(status);
+            }
+  
+            store.commit('ajax_status_order', statusOrder);
+        })
+      }
     },
     ajaxBooks(store) {    
             

@@ -97,7 +97,7 @@ const routes = [
   },
   {
     path: '/orders',
-    name: 'orders',
+    name: 'orders-admin',
     component: () => import('../views/admin/order/PageOrders.vue')
   },
   {

@@ -6,7 +6,7 @@
             "sending_date": "01/01/2022",
             "delivery_date": "02/01/2022",
             "number_order": "000000001",
-            "status": "en cours",
+            "status": 1,
             "id_customer": 1,
             "id_books": [1, 2, 3],
             "bill": 60
@@ -17,7 +17,7 @@
             "sending_date": "02/01/2022",
             "delivery_date": "03/01/2022",
             "number_order": "000000002",
-            "status": "livrée",
+            "status": 2,
             "id_customer": 1,
             "id_books": [4, 5, 6],
             "bill": 60
@@ -28,7 +28,7 @@
             "sending_date": "03/01/2022",
             "delivery_date": "04/01/2022",
             "number_order": "000000003",
-            "status": "en cours",
+            "status": 3,
             "id_customer": 2,
             "id_books": [7, 8],
             "bill": 40
@@ -39,7 +39,7 @@
             "sending_date": "04/01/2022",
             "delivery_date": "05/01/2022",
             "number_order": "000000004",
-            "status": "livrée",
+            "status": 4,
             "id_customer": 2,
             "id_books": [9, 10, 11, 12],
             "bill": 80
@@ -50,7 +50,7 @@
             "sending_date": "05/01/2022",
             "delivery_date": "06/01/2022",
             "number_order": "000000005",
-            "status": "livrée",
+            "status": 5,
             "id_customer": 3,
             "id_books": [1],
             "bill": 20
@@ -61,7 +61,7 @@
             "sending_date": "06/01/2022",
             "delivery_date": "07/01/2022",
             "number_order": "000000006",
-            "status": "annulée",
+            "status": 1,
             "id_customer": 3,
             "id_books": [2, 3],
             "bill": 0
@@ -72,7 +72,7 @@
             "sending_date": "07/01/2022",
             "delivery_date": "08/01/2022",
             "number_order": "000000007",
-            "status": "en cours",
+            "status": 2,
             "id_customer": 4,
             "id_books": [4, 5, 6],
             "bill": 60
@@ -83,7 +83,7 @@
             "sending_date": "08/01/2022",
             "delivery_date": "09/01/2022",
             "number_order": "000000008",
-            "status": "livrée",
+            "status": 3,
             "id_customer": 4,
             "id_books": [7, 8, 9, 10, 11, 12],
             "bill": 120
@@ -94,7 +94,7 @@
             "sending_date": "09/01/2022",
             "delivery_date": "10/01/2022",
             "number_order": "000000009",
-            "status": "en cours",
+            "status": 4,
             "id_customer": 6,
             "id_books": [1, 2],
             "bill": 40
@@ -105,7 +105,7 @@
             "sending_date": "10/01/2022",
             "delivery_date": "11/01/2022",
             "number_order": "000000010",
-            "status": "livrée",
+            "status": 5,
             "id_customer": 6,
             "id_books": [3, 4, 5],
             "bill": 60
@@ -116,7 +116,7 @@
             "sending_date": "11/01/2022",
             "delivery_date": "12/01/2022",
             "number_order": "000000011",
-            "status": "livrée",
+            "status": 1,
             "id_customer": 6,
             "id_books": [6, 7, 8, 9, 10],
             "bill": 100
@@ -127,7 +127,7 @@
             "sending_date": "12/01/2022",
             "delivery_date": "13/01/2022",
             "number_order": "000000012",
-            "status": "livrée",
+            "status": 2,
             "id_customer": 6,
             "id_books": [11, 12],
             "bill": 40
@@ -138,7 +138,7 @@
             "sending_date": "13/01/2022",
             "delivery_date": "14/01/2022",
             "number_order": "000000013",
-            "status": "annulée",
+            "status": 4,
             "id_customer": 6,
             "id_books": [4, 5, 6],
             "bill": 0
