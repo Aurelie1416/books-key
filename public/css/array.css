@@ -28,8 +28,17 @@
   position: relative;
 }
 
+.table tr td input:not(.mx-input) {
+  width: 80%;
+}
+
 .table tr td .mx-datepicker {
   width: 120px;
+  max-width: 100%;
+}
+
+.table tr td .mx-input-wrapper {
+  max-width: 100%;
 }
 
 .table tr td .mx-input {
@@ -61,6 +70,10 @@
   max-width: 50%;
   text-align: start;
   font-family: 'Architects Daughter', cursive;
+}
+
+.table tr .search {
+  text-align: center;
 }
 
 .table tr .link {
@@ -190,7 +203,7 @@
   color: #f9f5eb;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   .table:not(#chart) .more_less .button_more_less {
     right: calc(50% - (56px/2));
   }

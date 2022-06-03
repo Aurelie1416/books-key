@@ -141,7 +141,7 @@
             "status": 4,
             "id_customer": 6,
             "id_books": [4, 5, 6],
-            "bill": 0
+            "bill": 60
         }
     ]
 }

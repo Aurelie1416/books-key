@@ -5,6 +5,7 @@
 .menu_select{
     width: initial !important;
     margin-bottom: 80px !important;
+    flex-wrap: wrap;
     .boxArrow{
         border-bottom: 1px solid #645E4E;
         border-top: 1px solid #645E4E;
@@ -22,9 +23,7 @@
         }
     }
     label{
-        border-bottom: 1px solid #645E4E;
-        border-top: 1px solid #645E4E;
-        border-left: 1px solid #645E4E;
+        border: 1px solid #645E4E;
         border-radius: 2px 0 0 2px;
     }
     input{
@@ -329,7 +328,7 @@ header {
                     text-align: center;
                 }
 
-                .option_menu:nth-child(2){
+                .option_menu:nth-child(1){
                     border-radius: 5px 5px 0 0;
                 }
                 .option_menu:last-child{
@@ -362,6 +361,7 @@ main {
 
     input[type="checkbox"]{
         appearance: none;
+        width: 20px !important;
     }
 
     input[type="checkbox"]:before{
@@ -393,6 +393,12 @@ main {
 
     .menu_select{
 
+        .boxOption{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+
         border-bottom: solid 3px transparent;
         display: flex;
         flex-direction: row;
@@ -401,6 +407,8 @@ main {
         width: 150px;
         margin: auto;
         position: relative;
+
+
         
         cursor: pointer;
 
@@ -436,11 +444,12 @@ main {
             margin: auto;
             overflow: hidden;
             width: 130px;
-            top: 30px;
+            top: 20px;
+            left: 0%;
             text-align: center;
         }
 
-        .option_menu:nth-child(2){
+        .option_menu:nth-child(1){
             border-radius: 5px 5px 0 0;
         }
         .option_menu:last-child{
@@ -912,7 +921,7 @@ footer {
     }
 }
 
-@media screen and(min-width: 1100px) {
+@media screen and(min-width: 1125px) {
 
     .body {
         margin: 0 15%;

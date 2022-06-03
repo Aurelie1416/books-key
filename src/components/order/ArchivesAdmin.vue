@@ -1,21 +1,28 @@
 <template>
   <section>
     <div class="menu_select">
-      <label>Modifier le status</label>
-      <div>
-        <p v-for="status in statusOrder" :key="status.id" class="option_menu" v-on:click="optionSelect($event)">{{status.status}}</p>
+      <label v-bind:style="{ width: 125 + 'px' }">Modifier le status</label>
+      <div class="boxOption">
+        <input v-model="optionSelected" type="text" />
+        <div class="boxArrow">
+          <i class="fas fa-sort-down arrow" v-on:click="showMenuOption"></i>
+        </div>
+        <div>
+          <p
+            v-for="status in statusOrder"
+            :key="status.id"
+            class="option_menu"
+            v-on:click="optionSelect($event)"
+          >
+            {{ status.status }}
+          </p>
+        </div>
       </div>
-      <input v-model="optionSelected" type="text" />
-      <div class="boxArrow">
-        <i class="fas fa-sort-down arrow" v-on:click="showMenuOption"></i>
-      </div>
-      
-      <button
-        
-        v-on:click="modificationStatus"
-      >
-        Valider le changement
-      </button>
+
+      <button 
+        :disabled="!searchValid"
+          v-bind:class="[{ buttonActive: searchValid }]"
+      v-on:click="modificationStatus">Valider le changement</button>
     </div>
 
     <table cellspacing="0" class="table">
@@ -29,23 +36,28 @@
           <th>Recette</th>
           <th>Client</th>
           <th>Statut</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>
-            <input type="text" />
+          <td data-label="Numéro de commande">
+            <div><input type="text" /></div>
           </td>
-          <td>
-            de <date-picker
+          <td data-label="Date de commande">
+            <div>
+              de
+              <date-picker
                 v-model="from_date"
                 type="date"
                 valueType="format"
                 :language="lang"
                 typeable="true"
                 format="DD/MM/YYYY"
-              ></date-picker> <br />
-            à <date-picker
+              ></date-picker>
+              <br />
+              à
+              <date-picker
                 v-model="to_date"
                 type="date"
                 valueType="format"
@@ -53,16 +65,22 @@
                 typeable="true"
                 format="DD/MM/YYYY"
               ></date-picker>
+            </div>
           </td>
-          <td>
-            de <input v-bind:style="{width: 120 + 'px'}" type="number" /> <br />
-            à <input v-bind:style="{width: 120 + 'px'}" type="number" />
+          <td data-label="Recette">
+            <div>
+              de <input type="number" />
+              <br />
+              à <input type="number" />
+            </div>
           </td>
-          <td>
-            <input type="text" />
+          <td data-label="Client">
+            <div><input type="text" /></div>
           </td>
-          <td>
-            <input type="text" />
+          <td data-label="Status">
+            <div><input type="text" /></div>
+          </td>
+          <td class="search">
             <button class="buttonActive"><i class="fas fa-search"></i></button>
           </td>
         </tr>
@@ -91,6 +109,7 @@
             </div>
           </td>
           <td
+            colspan="2"
             data-label="Statut"
             v-bind:class="[
               { ongoing: ongoing(order.status) },
@@ -98,8 +117,17 @@
               { delivered: delivered(order.status) },
             ]"
           >
-            <div v-bind:style="[displayStyle, justifyContentStyle]" v-for="status in statusOrder" :key="status.id">
-              <p v-bind:style="{margin: '5px 5px'}" v-if="status.id == order.status">{{ status.status }}</p>
+            <div
+              v-bind:style="[displayStyle, justifyContentStyle]"
+              v-for="status in statusOrder"
+              :key="status.id"
+            >
+              <p
+                v-bind:style="{ margin: '5px 5px' }"
+                v-if="status.id == order.status"
+              >
+                {{ status.status }}
+              </p>
               <input
                 v-bind:value="order.id"
                 v-if="!cancelled(order.status) && status.id == order.status"
@@ -139,12 +167,12 @@ export default {
           firstDayOfWeek: 1,
         },
       },
-      displayStyle:{
-        display: "flex"
+      displayStyle: {
+        display: "flex",
       },
-      justifyContentStyle:{
-        justifyContent: "center"
-      }
+      justifyContentStyle: {
+        justifyContent: "right",
+      },
     };
   },
   computed: {
@@ -154,9 +182,19 @@ export default {
     customers() {
       return this.$store.state.customers;
     },
-    statusOrder(){
+    statusOrder() {
       return this.$store.state.statusOrder;
-    }
+    },
+    searchValid(){
+      var arrayStatus = []
+      for(const status of this.statusOrder){
+        arrayStatus.push(status.status)
+      }
+      if(this.checkedStatus.length > 0 && arrayStatus.includes(this.optionSelected)){
+return true
+      }
+      return false
+    },
   },
   methods: {
     delivered(value) {
@@ -178,17 +216,16 @@ export default {
       this.optionSelected = event.target.innerText;
     },
     modificationStatus() {
-      console.log(this.optionSelected)
+      console.log(this.optionSelected);
       if (this.checkedStatus.length > 0) {
         for (const order of this.orders) {
           for (const checked of this.checkedStatus) {
             if (order.id == checked) {
-              for(const status of this.statusOrder){
-                if(this.optionSelected == status.status){
+              for (const status of this.statusOrder) {
+                if (this.optionSelected == status.status) {
                   order.status = status.id;
                 }
               }
-              
             }
           }
         }
@@ -208,7 +245,7 @@ export default {
           option.style.height = "0px";
           option.style.transition =
             "height 200ms linear 450ms, top 500ms linear, border-bottom 0ms linear 700ms";
-          option.style.top = "30px";
+          option.style.top = "20px";
           number = 1;
           option.style.borderBottom = "solid 1px transparent";
         }
@@ -218,7 +255,7 @@ export default {
         for (const option of options) {
           option.style.display = "flex";
           option.style.height = "30px";
-          option.style.top = number * (30 + 1) + "px";
+          option.style.top = number * (20 + 1) + "px";
           option.style.transition =
             "all 500ms ease-in-out, background-color 0s";
           option.style.zIndex = 100 + zIndex;
