@@ -1,90 +1,91 @@
 <template>
   <div id="inscription">
-      <h2>Création d'un client</h2>
-       <form
-        v-on:submit.prevent="formSubmit"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <div class="twoInput">
-          <div class="totalInput">
-            <div class="input">
-              <label for="lastName">
-                <i class="fas fa-pen-fancy"></i>
-              </label>
-              <input
-                ref="lastName"
-                placeholder="Nom"
-                v-model="last_name"
-                type="text"
-                id="lastName"
-                name="lastName"
-                v-bind:class="[
-                  { inputValid: lastNameIsValid },
-                  { inputError: last_name.length > 0 && !lastNameIsValid },
-                ]"
-              />
-              <i v-if="lastNameIsValid" class="far fa-check-circle check"></i>
-              <i
-                v-if="last_name.length > 0 && !lastNameIsValid"
-                class="far fa-times-circle nocheck"
-              ></i>
-            </div>
-            <p
-              class="inputPlaceHolder"
-              v-bind:class="[{ active: last_name.length > 0 }]"
-            >
-              Nom
-            </p>
-            <small
+    <h2>Création d'un client</h2>
+    <form
+      v-on:submit.prevent="formSubmit"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="twoInput">
+        <div class="totalInput">
+          <div class="input">
+            <label for="lastName">
+              <i class="fas fa-pen-fancy"></i>
+            </label>
+            <input
+              ref="lastName"
+              placeholder="Nom"
+              v-model="last_name"
+              type="text"
+              id="lastName"
+              name="lastName"
               v-bind:class="[
-                { inputMessageError: last_name.length > 0 && !lastNameIsValid },
+                { inputValid: lastNameIsValid },
+                { inputError: last_name.length > 0 && !lastNameIsValid },
               ]"
-              >Veuillez rentrer un nom valide</small
-            >
+            />
+            <i v-if="lastNameIsValid" class="far fa-check-circle check"></i>
+            <i
+              v-if="last_name.length > 0 && !lastNameIsValid"
+              class="far fa-times-circle nocheck"
+            ></i>
           </div>
-
-          <div class="totalInput">
-            <div class="input">
-              <label for="firstName">
-                <i class="fas fa-pen-fancy"></i>
-              </label>
-              <input
-                ref="firstName"
-                placeholder="Prénom"
-                v-model="first_name"
-                type="text"
-                id="firstName"
-                name="firstName"
-                v-bind:class="[
-                  { inputValid: firstNameIsValid },
-                  { inputError: first_name.length > 0 && !firstNameIsValid },
-                ]"
-              />
-              <i v-if="firstNameIsValid" class="far fa-check-circle check"></i>
-              <i
-                v-if="first_name.length > 0 && !firstNameIsValid"
-                class="far fa-times-circle nocheck"
-              ></i>
-            </div>
-            <p
-              class="inputPlaceHolder"
-              v-bind:class="[{ active: first_name.length > 0 }]"
-            >
-              Prénom
-            </p>
-            <small
-              v-bind:class="[
-                {
-                  inputMessageError: first_name.length > 0 && !firstNameIsValid,
-                },
-              ]"
-              >Veuillez rentrer un prénom valide</small
-            >
-          </div>
+          <p
+            class="inputPlaceHolder"
+            v-bind:class="[{ active: last_name.length > 0 }]"
+          >
+            Nom
+          </p>
+          <small
+            v-bind:class="[
+              { inputMessageError: last_name.length > 0 && !lastNameIsValid },
+            ]"
+            >Veuillez rentrer un nom valide</small
+          >
         </div>
-        <div class="twoInput">
-          <div class="totalInput">
+
+        <div class="totalInput">
+          <div class="input">
+            <label for="firstName">
+              <i class="fas fa-pen-fancy"></i>
+            </label>
+            <input
+              ref="firstName"
+              placeholder="Prénom"
+              v-model="first_name"
+              type="text"
+              id="firstName"
+              name="firstName"
+              v-bind:class="[
+                { inputValid: firstNameIsValid },
+                { inputError: first_name.length > 0 && !firstNameIsValid },
+              ]"
+            />
+            <i v-if="firstNameIsValid" class="far fa-check-circle check"></i>
+            <i
+              v-if="first_name.length > 0 && !firstNameIsValid"
+              class="far fa-times-circle nocheck"
+            ></i>
+          </div>
+          <p
+            class="inputPlaceHolder"
+            v-bind:class="[{ active: first_name.length > 0 }]"
+          >
+            Prénom
+          </p>
+          <small
+            v-bind:class="[
+              {
+                inputMessageError: first_name.length > 0 && !firstNameIsValid,
+              },
+            ]"
+            >Veuillez rentrer un prénom valide</small
+          >
+        </div>
+      </div>
+      <div class="twoInput">
+        <div class="totalInput">
+          <div>
             <div class="input">
               <label for="password">
                 <i class="fas fa-lock"></i>
@@ -129,67 +130,6 @@
               Mot de passe
             </p>
           </div>
-          <div class="totalInput">
-            <div class="input">
-              <label for="passwordVerification">
-                <i class="fas fa-check-double"></i>
-              </label>
-              <input
-                ref="passwordVerification"
-                type="password"
-                v-model="password_verification"
-                id="passwordVerification"
-                name="passwordVerification"
-                placeholder="Confirmez votre mot de passe"
-                v-bind:class="[
-                  {
-                    inputValid:
-                      passwordVerificationIsValid &&
-                      password_verification.length > 0,
-                  },
-                  {
-                    inputError:
-                      !passwordVerificationIsValid &&
-                      password_verification.length > 0,
-                  },
-                ]"
-              />
-              <i
-                class="fas fa-eye eye"
-                v-if="hide"
-                v-on:click="showPassword"
-              ></i>
-              <i
-                class="fas fa-eye-slash eyeSlash"
-                v-if="!hide"
-                v-on:click="hidePassword"
-              ></i>
-              <i
-                v-if="
-                  passwordVerificationIsValid &&
-                  password_verification.length > 0
-                "
-                class="far fa-check-circle check"
-                id="checkPassword"
-              ></i>
-              <i
-                v-if="
-                  !passwordVerificationIsValid &&
-                  password_verification.length > 0
-                "
-                class="far fa-times-circle nocheck"
-                id="nocheckPassword"
-              ></i>
-            </div>
-            <p
-              class="inputPlaceHolder"
-              v-bind:class="[{ active: password_verification.length > 0 }]"
-            >
-              Confirmez votre mot de passe
-            </p>
-          </div>
-        </div>
-        <div class="twoInput" v-bind:style="{ marginTop: '0' }">
           <div>
             <small class="smallVisible">
               Votre mot de passe doit contenir au moins :
@@ -250,6 +190,67 @@
               >
             </small>
           </div>
+        </div>
+        <div class="totalInput">
+          <div>
+            <div class="input">
+              <label for="passwordVerification">
+                <i class="fas fa-check-double"></i>
+              </label>
+              <input
+                ref="passwordVerification"
+                type="password"
+                v-model="password_verification"
+                id="passwordVerification"
+                name="passwordVerification"
+                placeholder="Confirmez votre mot de passe"
+                v-bind:class="[
+                  {
+                    inputValid:
+                      passwordVerificationIsValid &&
+                      password_verification.length > 0,
+                  },
+                  {
+                    inputError:
+                      !passwordVerificationIsValid &&
+                      password_verification.length > 0,
+                  },
+                ]"
+              />
+              <i
+                class="fas fa-eye eye"
+                v-if="hide"
+                v-on:click="showPassword"
+              ></i>
+              <i
+                class="fas fa-eye-slash eyeSlash"
+                v-if="!hide"
+                v-on:click="hidePassword"
+              ></i>
+              <i
+                v-if="
+                  passwordVerificationIsValid &&
+                  password_verification.length > 0
+                "
+                class="far fa-check-circle check"
+                id="checkPassword"
+              ></i>
+              <i
+                v-if="
+                  !passwordVerificationIsValid &&
+                  password_verification.length > 0
+                "
+                class="far fa-times-circle nocheck"
+                id="nocheckPassword"
+              ></i>
+            </div>
+            <p
+              class="inputPlaceHolder"
+              v-bind:class="[{ active: password_verification.length > 0 }]"
+            >
+              Confirmez votre mot de passe
+            </p>
+          </div>
           <div>
             <small
               v-bind:class="[
@@ -263,140 +264,142 @@
             >
           </div>
         </div>
-        <div class="totalInput">
-          <div class="input">
-            <label for="email">
-              <i class="fas fa-at"></i>
-            </label>
-            <input
-              ref="email"
-              placeholder="Email"
-              v-model="email"
-              type="email"
-              id="email"
-              name="email"
-              v-bind:class="[
-                { inputValid: emailIsValid && email.length > 0 },
-                { inputError: !emailIsValid && email.length > 0 },
-              ]"
-            />
-            <i
-              v-if="emailIsValid && email.length > 0"
-              class="far fa-check-circle check"
-            ></i>
-            <i
-              v-if="!emailIsValid && email.length > 0"
-              class="far fa-times-circle nocheck"
-            ></i>
-          </div>
-          <p
-            class="inputPlaceHolder"
-            v-bind:class="[{ active: email.length > 0 }]"
-          >
-            Email
-          </p>
+      </div>
+      <div class="totalInput">
+        <div class="input">
+          <label for="email">
+            <i class="fas fa-at"></i>
+          </label>
+          <input
+            ref="email"
+            placeholder="Email"
+            v-model="email"
+            type="email"
+            id="email"
+            name="email"
+            v-bind:class="[
+              { inputValid: emailIsValid && email.length > 0 },
+              { inputError: !emailIsValid && email.length > 0 },
+            ]"
+          />
+          <i
+            v-if="emailIsValid && email.length > 0"
+            class="far fa-check-circle check"
+          ></i>
+          <i
+            v-if="!emailIsValid && email.length > 0"
+            class="far fa-times-circle nocheck"
+          ></i>
         </div>
-        <small
-          v-bind:class="[
-            { inputMessageError: !emailIsValid && email.length > 0 },
-          ]"
-          >Veuillez rentrer une adresse mail valide</small
+        <p
+          class="inputPlaceHolder"
+          v-bind:class="[{ active: email.length > 0 }]"
         >
-        <div class="totalInput">
-          <div class="input">
-            <label for="phone">
-              <i class="fas fa-phone-alt"></i>
-            </label>
-            <input
-              ref="phone"
-              placeholder="Téléphone"
-              v-model="phone"
-              type="text"
-              id="phone"
-              name="phone"
-              v-bind:class="[
-                { inputValid: phoneIsValid },
-                { inputError: phone.length > 0 && !phoneIsValid },
-              ]"
-            />
-            <i v-if="phoneIsValid" class="far fa-check-circle check"></i>
-            <i
-              v-if="phone.length > 0 && !phoneIsValid"
-              class="far fa-times-circle nocheck"
-            ></i>
-          </div>
-          <p
-            class="inputPlaceHolder"
-            v-bind:class="[{ active: phone.length > 0 }]"
-          >
-            Téléphone
-          </p>
+          Email
+        </p>
+      </div>
+      <small
+        v-bind:class="[
+          { inputMessageError: !emailIsValid && email.length > 0 },
+        ]"
+        >Veuillez rentrer une adresse mail valide</small
+      >
+      <div class="totalInput">
+        <div class="input">
+          <label for="phone">
+            <i class="fas fa-phone-alt"></i>
+          </label>
+          <input
+            ref="phone"
+            placeholder="Téléphone"
+            v-model="phone"
+            type="text"
+            id="phone"
+            name="phone"
+            v-bind:class="[
+              { inputValid: phoneIsValid },
+              { inputError: phone.length > 0 && !phoneIsValid },
+            ]"
+          />
+          <i v-if="phoneIsValid" class="far fa-check-circle check"></i>
+          <i
+            v-if="phone.length > 0 && !phoneIsValid"
+            class="far fa-times-circle nocheck"
+          ></i>
         </div>
-        <small
-          v-bind:class="[
-            { inputMessageError: phone.length > 0 && !phoneIsValid },
-          ]"
-          >Veuillez rentrer un numéro de téléphone valide</small
+        <p
+          class="inputPlaceHolder"
+          v-bind:class="[{ active: phone.length > 0 }]"
         >
-        <div class="totalInput">
-          <div class="input">
-            <label for="address">
-              <i class="fas fa-map-marker-alt"></i>
-            </label>
-            <input
-              ref="address"
-              placeholder="Numéro et libellé de la voie"
-              v-model="address"
-              type="text"
-              id="address"
-              name="adress"
-              v-bind:class="[
-                { inputValid: address.length > 4 },
-                { inputError: address.length > 0 && address.length <= 4 },
-              ]"
-            />
-            <i v-if="address.length > 4" class="far fa-check-circle check"></i>
-            <i
-              v-if="address.length > 0 && address.length <= 4"
-              class="far fa-times-circle nocheck"
-            ></i>
-          </div>
-          <p
-            class="inputPlaceHolder"
-            v-bind:class="[{ active: address.length > 0 }]"
-          >
-            Numéro et libellé de la voie
-          </p>
+          Téléphone
+        </p>
+      </div>
+      <small
+        v-bind:class="[
+          { inputMessageError: phone.length > 0 && !phoneIsValid },
+        ]"
+        >Veuillez rentrer un numéro de téléphone valide</small
+      >
+      <div class="totalInput">
+        <div class="input">
+          <label for="address">
+            <i class="fas fa-map-marker-alt"></i>
+          </label>
+          <input
+            ref="address"
+            placeholder="Numéro et libellé de la voie"
+            v-model="address"
+            type="text"
+            id="address"
+            name="adress"
+            v-bind:class="[
+              { inputValid: address.length > 4 },
+              { inputError: address.length > 0 && address.length <= 4 },
+            ]"
+          />
+          <i v-if="address.length > 4" class="far fa-check-circle check"></i>
+          <i
+            v-if="address.length > 0 && address.length <= 4"
+            class="far fa-times-circle nocheck"
+          ></i>
         </div>
-        <small
-          v-bind:class="[
-            { inputMessageError: address.length > 0 && address.length <= 4 },
-          ]"
-          >Veuillez rentrer une addresse valide</small
+        <p
+          class="inputPlaceHolder"
+          v-bind:class="[{ active: address.length > 0 }]"
         >
-        <div class="totalInput">
-          <div class="input">
-            <label for="addressBis">
-              <i class="fas fa-map-marker-alt"></i>
-            </label>
-            <input
-              ref="addressBis"
-              placeholder="Complément d'adresse"
-              v-model="address_bis"
-              type="text"
-              id="addressBis"
-              name="addressBis"
-            />
-          </div>
-          <p
-            class="inputPlaceHolder"
-            v-bind:class="[{ active: address_bis.length > 0 }]"
-          >
-            Complément d'adresse
-          </p>
+          Numéro et libellé de la voie
+        </p>
+      </div>
+      <small
+        v-bind:class="[
+          { inputMessageError: address.length > 0 && address.length <= 4 },
+        ]"
+        >Veuillez rentrer une addresse valide</small
+      >
+      <div class="totalInput">
+        <div class="input">
+          <label for="addressBis">
+            <i class="fas fa-map-marker-alt"></i>
+          </label>
+          <input
+            ref="addressBis"
+            placeholder="Complément d'adresse"
+            v-model="address_bis"
+            type="text"
+            id="addressBis"
+            name="addressBis"
+          />
         </div>
-        <div class="threeInput">
-          <div class="totalInput">
+        <p
+          class="inputPlaceHolder"
+          v-bind:class="[{ active: address_bis.length > 0 }]"
+        >
+          Complément d'adresse
+        </p>
+      </div>
+      <div class="threeInput">
+        <div class="totalInput">
+          <div>
             <div class="input">
               <label for="postcode">
                 <i class="far fa-envelope"></i>
@@ -431,7 +434,17 @@
               Code postal
             </p>
           </div>
-          <div class="totalInput">
+          <div>
+            <small
+              v-bind:class="[
+                { inputMessageError: postcode.length > 0 && !postcodeIsValid },
+              ]"
+              >Veuillez rentrer un code postal valide</small
+            >
+          </div>
+        </div>
+        <div class="totalInput">
+          <div>
             <div class="input">
               <label for="city">
                 <i class="fas fa-city"></i>
@@ -466,7 +479,17 @@
               Ville
             </p>
           </div>
-          <div class="totalInput">
+          <div>
+            <small
+              v-bind:class="[
+                { inputMessageError: city.length > 0 && !cityIsValid },
+              ]"
+              >Veuillez rentrer nom de ville valide</small
+            >
+          </div>
+        </div>
+        <div class="totalInput">
+          <div>
             <div class="input">
               <label for="country">
                 <i class="fas fa-globe-europe"></i>
@@ -501,24 +524,6 @@
               Pays
             </p>
           </div>
-        </div>
-        <div class="threeInput" v-bind:style="{ marginTop: '0' }">
-          <div>
-            <small
-              v-bind:class="[
-                { inputMessageError: postcode.length > 0 && !postcodeIsValid },
-              ]"
-              >Veuillez rentrer un code postal valide</small
-            >
-          </div>
-          <div>
-            <small
-              v-bind:class="[
-                { inputMessageError: city.length > 0 && !cityIsValid },
-              ]"
-              >Veuillez rentrer nom de ville valide</small
-            >
-          </div>
           <div>
             <small
               v-bind:class="[
@@ -528,63 +533,61 @@
             >
           </div>
         </div>
-        <div class="totalInput" v-bind:style="[{ marginTop: '10px' }]">
-          <div class="input">
-            <label for="img"><i class="fas fa-image"></i></label>
-            <input
-              v-on:change="addImage"
-              id="img"
-              ref="upload"
-              accept="image/jpeg, image/png, image/jpg"
-              type="file"
-              name="img"
-              placeholder="Avatar (facultatif)"
-            />
-          </div>
-          <div
-            class="imageInput"
-            v-bind:class="[
-              {
-                inputValid: imageIsValid,
-              },
-              {
-                inputError: !imageIsValid && imageName !== null,
-              },
-            ]"
-          >
-            <p>{{ imageName }}</p>
-          </div>
-          <p
-            class="inputImagePlaceHolder"
-            v-bind:class="[{ active: imageName }]"
-          >
-            Avatar (facultatif)
-          </p>
-          <i
-            v-if="imageIsValid"
-            class="far fa-check-circle check"
-            id="check_card"
-          ></i>
-          <i
-            v-if="!imageIsValid && imageName"
-            class="far fa-times-circle nocheck"
-            id="nocheck_card"
-          ></i>
+      </div>
+      <div class="totalInput" v-bind:style="[{ marginTop: '10px' }]">
+        <div class="input">
+          <label for="img"><i class="fas fa-image"></i></label>
+          <input
+            v-on:change="addImage"
+            id="img"
+            ref="upload"
+            accept="image/jpeg, image/png, image/jpg"
+            type="file"
+            name="img"
+            placeholder="Avatar (facultatif)"
+          />
         </div>
-        <div>
-          <small
-            class="smallVisible"
-            v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
-            >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
-          >
-        </div>
-         <button
-          :disabled="!formIsValid"
-          v-bind:class="[{ buttonActive: formIsValid }]"
+        <div
+          class="imageInput"
+          v-bind:class="[
+            {
+              inputValid: imageIsValid,
+            },
+            {
+              inputError: !imageIsValid && imageName !== null,
+            },
+          ]"
         >
-          Je valide
-        </button>
-      </form>
+          <p>{{ imageName }}</p>
+        </div>
+        <p class="inputImagePlaceHolder" v-bind:class="[{ active: imageName }]">
+          Avatar (facultatif)
+        </p>
+        <i
+          v-if="imageIsValid"
+          class="far fa-check-circle check"
+          id="check_card"
+        ></i>
+        <i
+          v-if="!imageIsValid && imageName"
+          class="far fa-times-circle nocheck"
+          id="nocheck_card"
+        ></i>
+      </div>
+      <div>
+        <small
+          class="smallVisible"
+          v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
+          >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
+        >
+      </div>
+      <button
+        :disabled="!formIsValid"
+        v-bind:class="[{ buttonActive: formIsValid }]"
+      >
+        Je valide
+      </button>
+    </form>
   </div>
 </template>
 
@@ -611,15 +614,15 @@ export default {
     };
   },
   methods: {
-      formSubmit(event) {
+    formSubmit(event) {
       event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
 
-      formData.append("image", document.querySelector("#img").files[0]);
+      formData.append("img", document.querySelector("#img").files[0], document.querySelector("#img").files[0].name);
       console.log("image", document.querySelector("#img").files[0]);
       console.log("handlesubmit", event, event.target.action);
-      console.log("image object", formData["image"]);
+      console.log("image object", document.querySelector("#img").files[0].name);
       console.log(
         "json",
         JSON.stringify(Object.fromEntries(formData.entries()))
@@ -628,17 +631,7 @@ export default {
       fetch("/api/order", {
         method: "POST",
         enctype: "multipart/form-data",
-        headers: {
-          Accept: "application/json",
-          enctype: "multipart/form-data",
-        },
         body: JSON.stringify(Object.fromEntries(formData.entries())),
-      });
-      this.$router.push({
-        name: "customer",
-        params: {
-          customerId: "1"
-        },
       });
     },
     showPassword() {
@@ -788,9 +781,9 @@ export default {
       return (
         this.lastNameIsValid &&
         this.firstNameIsValid &&
-        this.passwordIsValid && 
+        this.passwordIsValid &&
         this.passwordVerificationIsValid &&
-        this.emailIsValid && 
+        this.emailIsValid &&
         this.email.length > 0 &&
         this.phoneIsValid &&
         this.address.length > 4 &&
@@ -798,8 +791,8 @@ export default {
         this.cityIsValid &&
         this.countryIsValid &&
         (this.imageIsValid || this.imageName == null)
-      )
-    }
+      );
+    },
   },
   watch: {
     email: function () {

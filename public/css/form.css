@@ -41,7 +41,8 @@ form textarea {
 
 form .totalInput {
   position: relative;
-  margin: 30px 0 10px 0;
+  margin: 30px 0;
+  max-height: 100px;
 }
 
 form .totalInput .input {
@@ -227,12 +228,6 @@ form div .password_double_check {
   width: 100%;
 }
 
-form div #postcode {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-
 form div #password,
 form div #password_bis {
   padding-right: 30px;
@@ -292,6 +287,7 @@ form .threeInput .labelPublish {
 form .twoInput .totalInput,
 form .threeInput .totalInput {
   margin-top: 0;
+  min-height: 65px;
 }
 
 form .twoInput label,
@@ -502,12 +498,6 @@ form .locate {
       flex-wrap: wrap;
 }
 
-form .locate .postcode_form {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 form .date_form {
   width: 66%;
 }
@@ -555,6 +545,7 @@ form input[type="file"] {
   }
   form .twoInput .totalInput {
     width: 50%;
+    max-height: 65px;
   }
   form .threeInput {
     -webkit-box-pack: right;
