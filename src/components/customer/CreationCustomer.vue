@@ -568,6 +568,7 @@
           class="far fa-check-circle check"
           id="check_card"
         ></i>
+        <i v-if="imageIsValid" class="fas fa-times-circle deleteImage" v-on:click="deleteImage"></i>
         <i
           v-if="!imageIsValid && imageName"
           class="far fa-times-circle nocheck"
@@ -653,6 +654,9 @@ export default {
         console.error(error);
       }
     },
+    deleteImage(){
+      this.imageName = null;
+    }
   },
   computed: {
     firstNameIsValid() {
