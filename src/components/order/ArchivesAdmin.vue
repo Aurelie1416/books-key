@@ -7,22 +7,27 @@
         <div class="boxArrow">
           <i class="fas fa-sort-down arrow" v-on:click="showMenuOption"></i>
         </div>
-        <div>
-          <p
-            v-for="status in statusOrder"
-            :key="status.id"
-            class="option_menu"
-            v-on:click="optionSelect($event)"
-          >
-            {{ status.status }}
-          </p>
+        <div class="list">
+          <div>
+            <p
+              v-for="status in statusOrder"
+              :key="status.id"
+              class="option_menu"
+              v-on:click="optionSelect($event)"
+            >
+              {{ status.status }}
+            </p>
+          </div>
         </div>
       </div>
 
-      <button 
+      <button
         :disabled="!searchValid"
-          v-bind:class="[{ buttonActive: searchValid }]"
-      v-on:click="modificationStatus">Valider le changement</button>
+        v-bind:class="[{ buttonActive: searchValid }]"
+        v-on:click="modificationStatus"
+      >
+        Valider le changement
+      </button>
     </div>
 
     <table cellspacing="0" class="table">
@@ -185,15 +190,18 @@ export default {
     statusOrder() {
       return this.$store.state.statusOrder;
     },
-    searchValid(){
-      var arrayStatus = []
-      for(const status of this.statusOrder){
-        arrayStatus.push(status.status)
+    searchValid() {
+      var arrayStatus = [];
+      for (const status of this.statusOrder) {
+        arrayStatus.push(status.status);
       }
-      if(this.checkedStatus.length > 0 && arrayStatus.includes(this.optionSelected)){
-return true
+      if (
+        this.checkedStatus.length > 0 &&
+        arrayStatus.includes(this.optionSelected)
+      ) {
+        return true;
       }
-      return false
+      return false;
     },
   },
   methods: {
@@ -233,37 +241,7 @@ return true
       }
     },
     showMenuOption() {
-      let arrow = document.querySelector(".arrow");
-      let options = document.querySelectorAll(".option_menu");
-      let number = 1;
-      let zIndex = options.length;
-
-      if (arrow.style.transform == "rotateZ(-180deg) translateX(-5px)") {
-        arrow.style.transform = "rotateZ(0deg) translateX(5px)";
-        // options.style.borderBottom = ""
-        for (const option of options) {
-          option.style.height = "0px";
-          option.style.transition =
-            "height 200ms linear 450ms, top 500ms linear, border-bottom 0ms linear 700ms";
-          option.style.top = "20px";
-          number = 1;
-          option.style.borderBottom = "solid 1px transparent";
-        }
-      } else {
-        arrow.style.transform = "rotateZ(-180deg) translateX(-5px)";
-        // options.style.borderBottom = "solid 3px #645E4E"
-        for (const option of options) {
-          option.style.display = "flex";
-          option.style.height = "30px";
-          option.style.top = number * (20 + 1) + "px";
-          option.style.transition =
-            "all 500ms ease-in-out, background-color 0s";
-          option.style.zIndex = 100 + zIndex;
-          option.style.borderBottom = "solid 1px #645E4E";
-          zIndex--;
-          number++;
-        }
-      }
+      this.$store.commit("showMenuOption");
     },
   },
 };

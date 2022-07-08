@@ -1,6 +1,8 @@
 <template>
-<div id="cart">
-  <table v-if="books.length > 0" cellspacing="0">
+<section id="cart">
+  <h3>Ajouter un livre dans le panier</h3>
+  <add-book v-if="this.$route.name == 'creation-order'"></add-book>
+  <table class="table" v-if="books.length > 0" cellspacing="0">
     <caption>Mon panier</caption>
     <thead>
       <tr>
@@ -24,6 +26,7 @@
         <td data-label="Titre">
           <router-link :to="{ name: 'book', params:{bookId: book.id}}">
           <div>{{book.title}}</div>
+          <div>{{book.volume}}</div>
           <div>({{book.format}})</div>
           </router-link>
         </td>
@@ -52,15 +55,16 @@
 
   <!-- TOTAL CART-->
   <total-cart :books="books"></total-cart>
-</div>
+</section>
 </template>
 <script>
   import TotalCart from './TotalCart.vue'
-
+  import AddBook from './cart/AddBook.vue'
   export default {
       name: 'my-cart',
       components: {
-        TotalCart
+        TotalCart,
+        AddBook
       },
       created: function(){
         this.$store.dispatch('ajaxCart');

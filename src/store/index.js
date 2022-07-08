@@ -51,6 +51,42 @@ export default new Vuex.Store({
       }
     }
     state.cartBooks.push(newBook)
+  },
+  showMenuOption() {
+    let arrow = document.querySelector(".arrow");
+    let options = document.querySelectorAll(".option_menu");
+    let list = document.querySelector(".list");
+    let number = 0;
+    let zIndex = options.length;
+
+    if (arrow.style.transform == "rotateZ(-180deg) translateX(-5px)") {
+      arrow.style.transform = "rotateZ(0deg) translateX(5px)";
+      list.style.visibility = "hidden";
+      list.height = "0px";
+      for (const option of options) {
+        option.style.height = "0px";
+        option.style.transition =
+          "height 200ms linear 450ms, top 500ms linear, border-bottom 0ms linear 700ms";
+        option.style.top = "0px";
+        number = 0;
+        option.style.borderBottom = "solid 1px transparent";
+      }
+    } else {
+      arrow.style.transform = "rotateZ(-180deg) translateX(-5px)";
+      list.style.visibility = "visible";
+      list.style.height = "100px";
+      for (const option of options) {
+        option.style.display = "flex";
+        option.style.height = "30px";
+        option.style.top = number * (20 + 1) + "px";
+        option.style.transition =
+          "all 500ms ease-in-out, background-color 0s";
+        option.style.zIndex = 100 + zIndex;
+        option.style.borderBottom = "solid 1px #645E4E";
+        zIndex--;
+        number++;
+      }
+    }
   }
   },
   actions: {
@@ -62,7 +98,7 @@ export default new Vuex.Store({
         .then(response => response.json())
         .then(result => {
             for(let i = 0; i < result.cart.length; i++){
-                let book = { id:result.cart[i].id, image:result.cart[i].image, title:result.cart[i].title, writer:result.cart[i].writer, price:result.cart[i].price, quantity:result.cart[i].quantity, publication_date:result.cart[i].publication_date, edition:result.cart[i].edition, format:result.cart[i].format, page_number:result.cart[i].page_number, summary:result.cart[i].summary }
+                let book = { id:result.cart[i].id, image:result.cart[i].image, univers:result.cart[i].univers, serial:result.cart[i].serial, volume:result.cart[i].volume, title:result.cart[i].title, writer:result.cart[i].writer, price:result.cart[i].price, quantity:result.cart[i].quantity, publication_date:result.cart[i].publication_date, edition:result.cart[i].edition, format:result.cart[i].format, page_number:result.cart[i].page_number, summary:result.cart[i].summary }
                 cartBooks.push(book);
             }
   
@@ -94,7 +130,7 @@ export default new Vuex.Store({
       .then(response => response.json())
       .then(result => {
           for(let i = 0; i < result.books.length; i++){
-              let book = { id:result.books[i].id, image:result.books[i].image, title:result.books[i].title, writer:result.books[i].writer, price:result.books[i].price, quantity:result.books[i].quantity, publication_date:result.books[i].publication_date, edition:result.books[i].edition, format:result.books[i].format, page_number:result.books[i].page_number, summary:result.books[i].summary }
+              let book = { id:result.books[i].id, image:result.books[i].image, univers:result.books[i].univers, serial:result.books[i].serial, volume:result.books[i].volume, title:result.books[i].title, writer:result.books[i].writer, price:result.books[i].price, quantity:result.books[i].quantity, publication_date:result.books[i].publication_date, edition:result.books[i].edition, format:result.books[i].format, page_number:result.books[i].page_number, summary:result.books[i].summary }
               listBooks.push(book);
           }
 

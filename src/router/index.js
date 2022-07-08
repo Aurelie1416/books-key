@@ -119,6 +119,11 @@ const routes = [
     path: '/creation-publishing-house',
     name: 'creation-edition',
     component: () => import('../views/admin/publishingHouse/PageCreationPublishingHouse.vue')
+  },
+  {
+    path: '/creation-order/:customerId',
+    name: 'creation-order',
+    component: () => import('../views/PageCreationOrder.vue')
   }
 ]
 

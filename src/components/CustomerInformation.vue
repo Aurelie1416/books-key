@@ -45,6 +45,9 @@
         </tr>
       </tbody>
     </table>
+    <router-link :to="{ name: 'creation-order', params:{customerId: this.$route.params.customerId}}"
+      >Créer une commande</router-link
+    >
   </section>
 </template> 
 

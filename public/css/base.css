@@ -43,13 +43,18 @@
 }
 
 .menu_select .option_menu:hover {
-  color: white !important;
-  -webkit-transition: color 0;
-  transition: color 0;
+  color: #e5dabe;
+  -webkit-transition: color 0 !important;
+  transition: color 0 !important;
+}
+
+.menu_select .list {
+  position: absolute;
+  top: 21px;
 }
 
 .menu_select:hover {
-  border-bottom: 2px !important;
+  border-bottom-color: transparent !important;
 }
 
 body {
@@ -130,28 +135,115 @@ body {
   }
 }
 
-.body, nav, input {
+@-webkit-keyframes heightDrop {
+  from {
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+  }
+  to {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+
+@keyframes heightDrop {
+  from {
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+  }
+  to {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+
+@-webkit-keyframes heightDropDown {
+  from {
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+  }
+  to {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+
+@keyframes heightDropDown {
+  from {
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+  }
+  to {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+  }
+}
+
+.body,
+nav,
+input {
   color: #645E4E;
   font-family: 'Itim', cursive;
 }
 
-.body h1, .body h2, .body h3, .body th, .body caption, nav h1, nav h2, nav h3, nav th, nav caption, input h1, input h2, input h3, input th, input caption {
+.body h1,
+.body h2,
+.body h3,
+.body th,
+.body caption,
+nav h1,
+nav h2,
+nav h3,
+nav th,
+nav caption,
+input h1,
+input h2,
+input h3,
+input th,
+input caption {
   font-family: 'Architects Daughter', cursive;
   color: #009176;
   font-weight: bold;
   text-align: center;
 }
 
-.body a, .body .menu_info, .body .menu_synopsis, .body button, .body .connect, nav a, nav .menu_info, nav .menu_synopsis, nav button, nav .connect, input a, input .menu_info, input .menu_synopsis, input button, input .connect {
+.body a,
+.body .menu_info,
+.body .menu_synopsis,
+.body button,
+.body .connect,
+nav a,
+nav .menu_info,
+nav .menu_synopsis,
+nav button,
+nav .connect,
+input a,
+input .menu_info,
+input .menu_synopsis,
+input button,
+input .connect {
   cursor: pointer;
 }
 
-.body a, .body .menu, nav a, nav .menu, input a, input .menu {
+.body a,
+.body .menu,
+nav a,
+nav .menu,
+input a,
+input .menu {
   text-decoration: none;
   color: #645E4E;
 }
 
-.body a:hover, .body .menu:hover, .body .connect:hover, nav a:hover, nav .menu:hover, nav .connect:hover, input a:hover, input .menu:hover, input .connect:hover {
+.body a:hover,
+.body .menu:hover,
+.body .connect:hover,
+nav a:hover,
+nav .menu:hover,
+nav .connect:hover,
+input a:hover,
+input .menu:hover,
+input .connect:hover {
   color: #009176;
 }
 
@@ -167,7 +259,8 @@ body {
   display: none;
 }
 
-#nav_admin, #nav_admin_test {
+#nav_admin,
+#nav_admin_test {
   border-bottom-right-radius: 10px;
   position: fixed;
   left: 0%;
@@ -180,7 +273,8 @@ body {
   background: linear-gradient(-90deg, #f9f5eb 0%, #e5dabe 30%, #e5dabe 100%) !important;
 }
 
-#nav_admin .fade, #nav_admin_test .fade {
+#nav_admin .fade,
+#nav_admin_test .fade {
   width: 100%;
   height: 100px;
   position: relative;
@@ -190,7 +284,8 @@ body {
   background-image: radial-gradient(circle at bottom right, #f9f5eb, #e5dabe, #e5dabe, #e5dabe, #e5dabe);
 }
 
-#nav_admin .menu_close, #nav_admin_test .menu_close {
+#nav_admin .menu_close,
+#nav_admin_test .menu_close {
   position: relative;
   font-size: 2em;
   margin-right: 0;
@@ -200,13 +295,15 @@ body {
   height: fit-content;
 }
 
-#nav_admin .menu_close .close, #nav_admin_test .menu_close .close {
+#nav_admin .menu_close .close,
+#nav_admin_test .menu_close .close {
   position: absolute;
   right: 150px;
   top: -10px;
 }
 
-#nav_admin div, #nav_admin_test div {
+#nav_admin div,
+#nav_admin_test div {
   position: relative;
   top: 100px;
   display: -webkit-box;
@@ -226,7 +323,8 @@ body {
   padding-right: 20px;
 }
 
-#nav_admin div a:hover, #nav_admin_test div a:hover {
+#nav_admin div a:hover,
+#nav_admin_test div a:hover {
   border-bottom: solid #009176 3px;
 }
 
@@ -425,7 +523,8 @@ header div nav .menu_select .option_menu:hover {
   transition: background-color 0s;
 }
 
-header div nav .menu_select .option_menu:hover a, header div nav .menu_select .option_menu:hover p {
+header div nav .menu_select .option_menu:hover a,
+header div nav .menu_select .option_menu:hover p {
   color: #e5dabe;
 }
 
@@ -436,6 +535,58 @@ header div nav:hover .menu_select {
 main {
   min-height: calc(100vh - 100px);
   margin-top: 100px !important;
+}
+
+main #addToCart {
+  text-align: center;
+}
+
+main #addToCart .boxOption {
+  width: 75%;
+}
+
+main #addToCart .list {
+  max-height: 85px;
+  overflow: scroll;
+  width: 100%;
+  visibility: hidden;
+  display: inline-block;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+main #addToCart .list .option_menu {
+  width: 100% !important;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+main #addToCart .list .option_menu input {
+  width: initial !important;
+}
+
+main #addToCart .menu_select {
+  border-bottom: none !important;
+}
+
+main #addToCart .menu_select label {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main #addToCart .menu_select input {
+  height: 15px;
+  width: 100% !important;
+}
+
+main #addToCart .menu_select:hover {
+  border-bottom: none !important;
+}
+
+main #addToCart button {
+  margin-top: 10px;
 }
 
 main input[type="checkbox"] {
@@ -550,7 +701,7 @@ main .menu_select .option_menu {
   margin: auto;
   overflow: hidden;
   width: 130px;
-  top: 20px;
+  top: 0;
   left: 0%;
   text-align: center;
 }
@@ -569,7 +720,8 @@ main .menu_select .option_menu:hover {
   transition: background-color 0s;
 }
 
-main .menu_select .option_menu:hover a, main .menu_select .option_menu:hover p {
+main .menu_select .option_menu:hover a,
+main .menu_select .option_menu:hover p {
   color: #e5dabe;
 }
 
@@ -708,7 +860,8 @@ main section input[type="radio"] {
           appearance: none;
 }
 
-main section input:focus-visible, main section textarea:focus-visible {
+main section input:focus-visible,
+main section textarea:focus-visible {
   outline: solid 2px #645E4E;
 }
 
@@ -837,7 +990,8 @@ main .buttonMoreLess {
   height: 40px;
 }
 
-main .buttonMoreLess .more, main .buttonMoreLess .less {
+main .buttonMoreLess .more,
+main .buttonMoreLess .less {
   height: 20px;
   width: 40px;
   border: 1px solid black;
@@ -857,7 +1011,8 @@ main .buttonMoreLess .more, main .buttonMoreLess .less {
   cursor: pointer;
 }
 
-main .buttonMoreLess .more p, main .buttonMoreLess .less p {
+main .buttonMoreLess .more p,
+main .buttonMoreLess .less p {
   color: #645E4E;
   margin: 0;
 }
@@ -1084,7 +1239,8 @@ footer div .pinterest:hover {
   header {
     width: 66%;
   }
-  #nav_admin, #nav_admin_test {
+  #nav_admin,
+  #nav_admin_test {
     width: 15%;
     display: -webkit-box;
     display: -ms-flexbox;

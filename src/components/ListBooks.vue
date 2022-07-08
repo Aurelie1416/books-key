@@ -7,7 +7,7 @@
                 <router-link :to="{ name: 'book', params:{bookId: book.id}}">
                 <a href="#" class="book">
                     <img :src="book.image" alt="book cover">
-                    <h3>{{book.title}}</h3>
+                    <h3>{{book.title}}{{book.volume}}</h3>
                     <p>{{book.writer}}</p>
                     <p>{{book.price}}&euro;</p>
                 </a>

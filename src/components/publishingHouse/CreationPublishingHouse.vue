@@ -200,7 +200,7 @@
         <small
           class="smallVisible"
           v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
-          >Seule les images de type PNG, JPEG ou JPG sont acceptées</small
+          >Seule les images de type PNG, JPEG ou JPG sont acceptées (taille max : 1Mo)</small
         >
       </div>
       <textarea
