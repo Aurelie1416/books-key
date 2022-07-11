@@ -8,7 +8,7 @@
     />
     <i v-else class="fas fa-user-circle avatarLogo"></i>
     <h2>{{ customer.first_name }} {{ customer.last_name }}</h2>
-    <table cellspacing="0" >
+    <table cellspacing="0" class="table">
       <thead>
         <tr>
           <th scope="col">Nom</th>
@@ -45,9 +45,6 @@
         </tr>
       </tbody>
     </table>
-    <router-link :to="{ name: 'creation-order', params:{customerId: this.$route.params.customerId}}"
-      >Créer une commande</router-link
-    >
   </section>
 </template> 
 

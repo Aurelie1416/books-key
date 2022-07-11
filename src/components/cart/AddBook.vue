@@ -40,7 +40,8 @@
         </div>
       </div>
     </div>
-    <button v-on:click="addBookInCart(checkedBooks)">Ajouter au panier</button>
+    <button :disabled="checkedBooks.length <= 0"
+        v-bind:class="[{ buttonActive: checkedBooks.length > 0 }]" v-on:click="addBookInCart(checkedBooks)">Ajouter au panier</button>
   </div>
 </template>
 <script>
