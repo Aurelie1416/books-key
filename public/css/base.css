@@ -359,6 +359,8 @@ header div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header div #logo {
@@ -530,6 +532,11 @@ header div nav .menu_select .option_menu:hover p {
 
 header div nav:hover .menu_select {
   border-bottom: 3px solid #645E4E;
+}
+
+header .nav {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main {

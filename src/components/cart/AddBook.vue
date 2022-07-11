@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <button v-on:click="addBookInCart(checkedBooks)">Ajouter aux panier</button>
+    <button v-on:click="addBookInCart(checkedBooks)">Ajouter au panier</button>
   </div>
 </template>
 <script>

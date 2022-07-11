@@ -14,6 +14,7 @@
             <router-link :to="{name: 'archives', params: { customerId: 6 }}">Mes archives</router-link> |
             <router-link :to="{name: 'orders-admin'}">Liste des commandes</router-link> |
             <router-link :to="{name: 'creation-edition'}">Création maison édition</router-link> |
+            <router-link :to="{name: 'creation-writer'}">Création écrivain</router-link> |
             <router-link :to="{name: 'creation-order', params: { customerId: 6 }}">Création commande</router-link> |
             <router-link :to="{name: 'books'}">books</router-link>
           </div>

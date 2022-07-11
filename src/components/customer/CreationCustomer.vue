@@ -1,6 +1,5 @@
 <template>
   <div id="inscription">
-    <h2>Création d'un client</h2>
     <form
       v-on:submit.prevent="formSubmit"
       method="post"
@@ -83,7 +82,7 @@
           >
         </div>
       </div>
-      <div class="twoInput">
+      <div v-if="this.$route.name == 'inscription'" class="twoInput">
         <div class="totalInput">
           <div>
             <div class="input">
@@ -534,7 +533,7 @@
           </div>
         </div>
       </div>
-      <div class="totalInput" v-bind:style="[{ marginTop: '10px' }]">
+      <div class="totalInput" id="inputFile" v-bind:style="[{ marginTop: '10px' }]">
         <div class="input">
           <label for="img"><i class="fas fa-image"></i></label>
           <input
@@ -568,7 +567,11 @@
           class="far fa-check-circle check"
           id="check_card"
         ></i>
-        <i v-if="imageIsValid" class="fas fa-times-circle deleteImage" v-on:click="deleteImage"></i>
+        <i
+          v-if="imageIsValid"
+          class="fas fa-times-circle deleteImage"
+          v-on:click="deleteImage"
+        ></i>
         <i
           v-if="!imageIsValid && imageName"
           class="far fa-times-circle nocheck"
@@ -579,7 +582,8 @@
         <small
           class="smallVisible"
           v-bind:class="[{ inputWrong: !imageIsValid && imageName }]"
-          >Seule les images de type PNG, JPEG ou JPG sont acceptées (taille max : 1Mo)</small
+          >Seule les images de type PNG, JPEG ou JPG sont acceptées (taille max
+          : 1Mo)</small
         >
       </div>
       <button
@@ -620,7 +624,11 @@ export default {
       const form = event.target;
       const formData = new FormData(form);
 
-      formData.append("img", document.querySelector("#img").files[0], document.querySelector("#img").files[0].name);
+      formData.append(
+        "img",
+        document.querySelector("#img").files[0],
+        document.querySelector("#img").files[0].name
+      );
       console.log("image", document.querySelector("#img").files[0]);
       console.log("handlesubmit", event, event.target.action);
       console.log("image object", document.querySelector("#img").files[0].name);
@@ -654,9 +662,9 @@ export default {
         console.error(error);
       }
     },
-    deleteImage(){
+    deleteImage() {
       this.imageName = null;
-    }
+    },
   },
   computed: {
     firstNameIsValid() {
@@ -693,31 +701,31 @@ export default {
       }
     },
     numberCaracterIsValid() {
-      if (this.password.length >= 8) {
+      if (this.password && this.password.length >= 8) {
         return true;
       }
       return false;
     },
     lowercaseIsValid() {
-      if (this.password.match(/[a-z]/)) {
+      if (this.password && this.password.match(/[a-z]/)) {
         return true;
       }
       return false;
     },
     uppercaseIsValid() {
-      if (this.password.match(/[A-Z]/)) {
+      if (this.password && this.password.match(/[A-Z]/)) {
         return true;
       }
       return false;
     },
     numberIsValid() {
-      if (this.password.match(/\d/)) {
+      if (this.password && this.password.match(/\d/)) {
         return true;
       }
       return false;
     },
     specialCaracterIsValid() {
-      if (this.password.match(/[_\W]/)) {
+      if (this.password && this.password.match(/[_\W]/)) {
         return true;
       }
       return false;
@@ -736,12 +744,14 @@ export default {
     },
     passwordVerificationIsValid() {
       if (
+        this.password &&
+        this.password_verification &&
         this.password_verification.length > 0 &&
         this.password.length > 0 &&
         this.password === this.password_verification
       ) {
         return true;
-      }
+      } 
       return false;
     },
     postcodeIsValid() {
@@ -782,20 +792,34 @@ export default {
       return false;
     },
     formIsValid: function () {
+      if (this.$route.name == "inscription") {
+        return (
+          this.lastNameIsValid &&
+          this.firstNameIsValid &&
+          this.passwordIsValid &&
+          this.passwordVerificationIsValid &&
+          this.emailIsValid &&
+          this.email.length > 0 &&
+          this.phoneIsValid &&
+          this.address.length > 4 &&
+          this.postcodeIsValid &&
+          this.cityIsValid &&
+          this.countryIsValid &&
+          (this.imageIsValid || this.imageName == null)
+        );
+      }
       return (
-        this.lastNameIsValid &&
-        this.firstNameIsValid &&
-        this.passwordIsValid &&
-        this.passwordVerificationIsValid &&
-        this.emailIsValid &&
-        this.email.length > 0 &&
-        this.phoneIsValid &&
-        this.address.length > 4 &&
-        this.postcodeIsValid &&
-        this.cityIsValid &&
-        this.countryIsValid &&
-        (this.imageIsValid || this.imageName == null)
-      );
+          this.lastNameIsValid &&
+          this.firstNameIsValid &&
+          this.emailIsValid &&
+          this.email.length > 0 &&
+          this.phoneIsValid &&
+          this.address.length > 4 &&
+          this.postcodeIsValid &&
+          this.cityIsValid &&
+          this.countryIsValid &&
+          (this.imageIsValid || this.imageName == null)
+        );
     },
   },
   watch: {

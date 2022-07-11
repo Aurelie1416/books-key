@@ -1,0 +1,36 @@
+{
+    "roles": [
+        {
+            "id": 1,
+            "role": "Aureur"
+        },
+        {
+            "id": 2,
+            "role":"Auteur principal"
+        },
+        {
+            "id": 3,
+            "role": "Co-auteur"
+        },
+        {
+            "id": 4,
+            "role":"Auteur secondaire"
+        },
+        {
+            "id": 5,
+            "role":"Traducteur"
+        },
+        {
+            "id": 6,
+            "role":"Dessinateur"
+        },
+        {
+            "id": 7,
+            "role":"Mangaka"
+        },
+        {
+            "id": 8,
+            "role":"Groupe"
+        }
+    ]
+}

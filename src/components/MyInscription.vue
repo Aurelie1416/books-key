@@ -1,6 +1,5 @@
 <template>
   <div id="inscription">
-      <h2>Inscrivez-vous !</h2>
        <form
         v-on:submit.prevent="formSubmit"
         method="post"
@@ -83,7 +82,7 @@
             >
           </div>
         </div>
-        <div class="twoInput">
+        <div v-if="this.$route.name == 'inscription'" class="twoInput">
           <div class="totalInput">
             <div class="input">
               <label for="password">

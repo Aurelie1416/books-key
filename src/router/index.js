@@ -121,6 +121,16 @@ const routes = [
     component: () => import('../views/admin/publishingHouse/PageCreationPublishingHouse.vue')
   },
   {
+    path: '/creation-writer',
+    name: 'creation-writer',
+    component: () => import('../views/admin/writer/PageCreationWriter.vue')
+  },
+  // {
+  //   path: '/creation-group-writer',
+  //   name: 'creation-group-writer',
+  //   component: () => import('../views/admin/writer/PageCreationGroupWriters.vue')
+  // },
+  {
     path: '/creation-order/:customerId',
     name: 'creation-order',
     component: () => import('../views/PageCreationOrder.vue')

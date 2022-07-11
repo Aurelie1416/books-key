@@ -86,17 +86,6 @@
               <label class="labelPublish" for="publicationDate"
                 >Publié le</label
               >
-              <!-- <input
-                type="date"
-                v-bind:class="[
-                  { inputValid: dateIsValid && publication_date !== null },
-                  { inputInvalid: !dateIsValid && publication_date !== null },
-                ]"
-                v-model="publication_date"
-                name="publicationDate"
-                placeholder="Date de publication"
-                id="publicationDate"
-              /> -->
               <date-picker
                 :disabledDates="disabledDates" 
                 type="date"

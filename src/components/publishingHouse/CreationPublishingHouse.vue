@@ -155,7 +155,7 @@
           >Veuillez rentrer une date valide</small
         >
       </div>
-      <div class="totalInput" v-bind:style="[{ margin: '10px auto 0 auto' }]">
+      <div class="totalInput" id="inputFile" v-bind:style="[{ margin: '10px auto 0 auto' }]">
         <div class="input">
           <label for="image"><i class="fas fa-image"></i></label>
           <input

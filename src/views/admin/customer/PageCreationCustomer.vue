@@ -1,5 +1,6 @@
 <template>
 <section>
+  <h2>Inscription d'un client</h2>
   <creation-customer></creation-customer>
 </section>
     

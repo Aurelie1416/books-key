@@ -260,6 +260,7 @@ header {
 
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         #logo {
             min-width: 155px;
@@ -402,6 +403,10 @@ header {
                 border-bottom: 3px solid #645E4E;
             }
         }
+    }
+
+    .nav{
+        flex-wrap: wrap;
     }
 }
 
