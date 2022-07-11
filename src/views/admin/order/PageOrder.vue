@@ -8,7 +8,7 @@
 </template>
 <script>
 
-import OrderCustomer from '../../../components/CustomerInformationByOrder.vue'
+import OrderCustomer from '../../../components/customer/CustomerInformationByOrder.vue'
 import ListBooksByOrder from '../../../components/ListBooksByOrder.vue'
 import OrderInformation from '../../../components/OrderInformation.vue'
 

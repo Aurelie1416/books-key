@@ -1,6 +1,6 @@
 <template>
   <section>
-    <table cellspacing="0" v-if="customer">
+    <table cellspacing="0" v-if="customer" class="table">
       <thead>
         <tr>
           <th>Client</th>
