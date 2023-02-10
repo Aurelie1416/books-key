@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-10T15:20:06.925Z" agent="5.0 (Windows)" etag="iuDvF9-ik77vwtMKTrb1" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-10T15:20:42.178Z" agent="5.0 (Windows)" etag="gdrjdz5aq7exRogRMfeb" version="20.8.20" type="github">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
     <mxGraphModel dx="992" dy="525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -25,10 +25,10 @@
             <mxPoint x="102" y="258" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LDycZf8e1BkoxPAIRzwF-11" value="$store.dispatch(&quot;register&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" target="LDycZf8e1BkoxPAIRzwF-12">
+        <mxCell id="LDycZf8e1BkoxPAIRzwF-11" value="$store.dispatch(&quot;register&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="102" y="280.33" as="sourcePoint" />
-            <mxPoint x="182" y="280.33" as="targetPoint" />
+            <mxPoint x="102" y="288.33" as="sourcePoint" />
+            <mxPoint x="267" y="288" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="LDycZf8e1BkoxPAIRzwF-13" value="Api REST" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
