@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-17T10:34:49.582Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="RLg9D6Ix4IXk7wIWhlkv" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-17T10:35:19.660Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="6kvY3MrT_85SLoQugiNv" version="20.8.20" type="github">
   <diagram name="Page-1" id="LUoCceZ1VoK3iIfSzrem">
     <mxGraphModel dx="1037" dy="1718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -85,7 +85,7 @@
         <mxCell id="ZAS3RGwQkl1SYjkoDhC9-229" value="Categories" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ZAS3RGwQkl1SYjkoDhC9-227">
           <mxGeometry x="27.114178253798542" width="37.73672073599255" height="30.29885351927079" as="geometry" />
         </mxCell>
-        <mxCell id="ZAS3RGwQkl1SYjkoDhC9-230" value="Manage beer&#39;s types" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="ZAS3RGwQkl1SYjkoDhC9-227">
+        <mxCell id="ZAS3RGwQkl1SYjkoDhC9-230" value="Manage categories" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="ZAS3RGwQkl1SYjkoDhC9-227">
           <mxGeometry x="9.87798185520299" y="38.49943269882307" width="65.53947726035089" height="52.4403233987379" as="geometry" />
         </mxCell>
         <mxCell id="ZAS3RGwQkl1SYjkoDhC9-244" value="" style="group" vertex="1" connectable="0" parent="ZAS3RGwQkl1SYjkoDhC9-52">
