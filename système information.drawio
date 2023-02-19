@@ -1,1 +1,101 @@
-<mxfile host="app.diagrams.net" modified="2023-02-19T15:37:57.699Z" agent="5.0 (Windows)" version="20.8.20" etag="EkHGc8zM4GNnl_NXHVII" type="github"><diagram name="Page-1" id="8bNCDfmMqcmgkt9bKeqj">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-02-19T17:19:31.766Z" agent="5.0 (Windows)" etag="NoW5ZTnUtIxG5f2LSdjD" version="20.8.20" type="github">
+  <diagram name="Page-1" id="8bNCDfmMqcmgkt9bKeqj">
+    <mxGraphModel dx="2219" dy="2179" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.196;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="FqXSxySdtkH1b2dzIzgi-1" target="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="FqXSxySdtkH1b2dzIzgi-1" target="FqXSxySdtkH1b2dzIzgi-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-1" value="PIM - Akeneo" style="swimlane;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="410" y="-20" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-20" value="&lt;b&gt;Gestion de l&#39;information produit&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-1">
+          <mxGeometry x="60" y="35" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-2" value="WMS - Speed" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="830" y="230" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-12" value="&lt;b&gt;Système de gestion de dépôt&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-2">
+          <mxGeometry x="10" y="35" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="FqXSxySdtkH1b2dzIzgi-3" target="FqXSxySdtkH1b2dzIzgi-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-3" value="Boutique e-commerce - MAGENTO" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#f9f7ed;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="230" width="500" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-4" value="&lt;div&gt;BACK OFFICE&lt;/div&gt;&lt;div&gt;Administration de Magento&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="30" y="60" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-10" value="atida.fr" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="270" y="35" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-9" value="santediscount.be" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="200" y="85" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-8" value="sanareva.co.uk" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="310" y="85" width="95" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-7" value="sanareva.it" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="260" y="160" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-6" value="sanareva.es" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="160" y="160" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-5" value="sanareva.pt" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry x="380" y="165" width="80" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-15" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="480" y="200" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="FqXSxySdtkH1b2dzIzgi-15" target="FqXSxySdtkH1b2dzIzgi-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="130" as="targetPoint" />
+            <mxPoint x="350" y="90" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-14" value="&lt;div&gt;&lt;b&gt;Echange WMS -&amp;gt; Magento :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;stocks de produits (état total du stock une fois par jour)&lt;/li&gt;&lt;/ul&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Rapport de réception des commandes fournisseurs&lt;/li&gt;&lt;li&gt;Rapport d&#39;expédition des commandes clients&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-15">
+          <mxGeometry width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-19" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="480" y="380" width="305" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="FqXSxySdtkH1b2dzIzgi-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-40" as="sourcePoint" />
+            <mxPoint x="350" y="-70" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="320" y="-40" />
+              <mxPoint x="320" y="-70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-18" value="&lt;div&gt;&lt;b&gt;Echange Magento -&amp;gt; WMS&lt;/b&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Commandes clients &lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&amp;nbsp;&amp;nbsp; (nouvelle commande, &lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&amp;nbsp;&amp;nbsp; annulation de commande,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&amp;nbsp;&amp;nbsp; remboursement partiel de commande)&lt;ul&gt;&lt;li&gt;Commandes fournisseurs&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=1;points=[];autosize=1;strokeColor=none;fillColor=none;expand=0;fixedWidth=0;resizeWidth=1;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-19">
+          <mxGeometry x="45" y="-46" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-23" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="10" y="-53.5" width="350" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-25" value="&lt;div&gt;&lt;b&gt;Echange PIm -&amp;gt; Magento :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Produits&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; (Contenus -&amp;gt; nom, description, méta...,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; Disponibilités -&amp;gt; statut, visibilité...&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; Attributs, Catégories, Marques, Images&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Marques&lt;/li&gt;&lt;li&gt;Catégories&lt;/li&gt;&lt;li&gt;Option d&#39;attributs&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-23">
+          <mxGeometry x="40" y="-35" width="270" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-26" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="276" y="66.5" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-28" value="&lt;div&gt;&lt;b&gt;Echange Magento -&amp;gt; Pim :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Produits (disponibilités, tarifs, stock...)&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-26">
+          <mxGeometry x="45" y="20" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-30" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="660" y="-43.5" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="FqXSxySdtkH1b2dzIzgi-31" value="&lt;div&gt;&lt;b&gt;Echange Pim -&amp;gt; WMS :&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div align=&quot;left&quot;&gt;&lt;ul&gt;&lt;li&gt;Produits (ID, CIP, Nom, EAN13...)&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FqXSxySdtkH1b2dzIzgi-30">
+          <mxGeometry x="55" y="20" width="240" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
