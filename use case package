@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-24T10:02:30.641Z" agent="5.0 (Windows)" etag="DpneN8SgTo1Wiauv1xnQ" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-24T10:15:24.884Z" agent="5.0 (Windows)" etag="k4mVGizHx1N4FqPWwsd2" version="20.8.20" type="github">
   <diagram name="Page-1" id="LUoCceZ1VoK3iIfSzrem">
     <mxGraphModel dx="1502" dy="1769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -523,7 +523,7 @@
         <mxCell id="ZAS3RGwQkl1SYjkoDhC9-207" value="Super Admin" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ZAS3RGwQkl1SYjkoDhC9-208" vertex="1">
           <mxGeometry x="14" width="94.22222222222223" height="39.38613861386139" as="geometry" />
         </mxCell>
-        <mxCell id="ZAS3RGwQkl1SYjkoDhC9-209" value="Manage employeersz" style="ellipse;whiteSpace=wrap;html=1;" parent="ZAS3RGwQkl1SYjkoDhC9-208" vertex="1">
+        <mxCell id="ZAS3RGwQkl1SYjkoDhC9-209" value="Manage employeers" style="ellipse;whiteSpace=wrap;html=1;" parent="ZAS3RGwQkl1SYjkoDhC9-208" vertex="1">
           <mxGeometry x="38.22000000000003" y="48.00175572519086" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ZAS3RGwQkl1SYjkoDhC9-212" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeWidth=2;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" source="ZAS3RGwQkl1SYjkoDhC9-210" edge="1">
